@@ -1,0 +1,114 @@
+﻿  AudioManager.cpp
+  BallMoveBehaviour.cpp
+  Collisions.cpp
+  Component.cpp
+  Entity.cpp
+  Font.cpp
+  FontsManager.cpp
+  GameCtrl.cpp
+  GameLogic.cpp
+  InputHandler.cpp
+  jute.cpp
+  main.cpp
+C:\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h(303,1): warning C4005: '_malloca': macro redefinition
+C:\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h(122): message : see previous definition of '_malloca'
+  Manager.cpp
+  ObjectPool.cpp
+  PaddleKBCtrl.cpp
+  PaddleMouseCtrl.cpp
+  PaddleMoveBehaviour.cpp
+  PingPong.cpp
+  RandomNumberGenerator.cpp
+  Rectangle.cpp
+  Generating Code...
+  Compiling...
+  Resources.cpp
+  ScoreManager.cpp
+  ScoreViewer.cpp
+  SDLAudioManager.cpp
+  SDLFontsManager.cpp
+  SDLGame.cpp
+  SDLTexturesManager.cpp
+  sdl_macros.cpp
+  SimpleMoveBahviour.cpp
+  SRandBasedGenerator.cpp
+U:\hlocal\Proyecto SDL para Visual Studio-20200211\TPV2\SDLProject\TPV2\SRandBasedGenerator.cpp(11,8): warning C4244: 'initializing': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Texture.cpp
+  TexturesManager.cpp
+  Transform.cpp
+  Vector2D.cpp
+  Generating Code...
+     Creating library U:\hlocal\Proyecto SDL para Visual Studio-20200211\TPV2\SDLProject\bin\TPV2Debug.lib and object U:\hlocal\Proyecto SDL para Visual Studio-20200211\TPV2\SDLProject\bin\TPV2Debug.exp
+Font.obj : error LNK2019: unresolved external symbol TTF_OpenFont referenced in function "public: bool __cdecl Font::load(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)" (?load@Font@@QEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z)
+Font.obj : error LNK2019: unresolved external symbol TTF_RenderText_Solid referenced in function "public: struct SDL_Surface * __cdecl Font::renderText(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct SDL_Color)const " (?renderText@Font@@QEBAPEAUSDL_Surface@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@USDL_Color@@@Z)
+Font.obj : error LNK2019: unresolved external symbol TTF_CloseFont referenced in function "public: void __cdecl Font::close(void)" (?close@Font@@QEAAXXZ)
+InputHandler.obj : error LNK2019: unresolved external symbol SDL_GetKeyboardState referenced in function "private: __cdecl InputHandler::InputHandler(void)" (??0InputHandler@@AEAA@XZ)
+InputHandler.obj : error LNK2019: unresolved external symbol SDL_PollEvent referenced in function "public: void __cdecl InputHandler::update(void)" (?update@InputHandler@@QEAAXXZ)
+main.obj : error LNK2019: unresolved external symbol SDL_CreateWindow referenced in function "void __cdecl firstTest(void)" (?firstTest@@YAXXZ)
+SDLGame.obj : error LNK2001: unresolved external symbol SDL_CreateWindow
+main.obj : error LNK2019: unresolved external symbol SDL_DestroyWindow referenced in function "void __cdecl firstTest(void)" (?firstTest@@YAXXZ)
+SDLGame.obj : error LNK2001: unresolved external symbol SDL_DestroyWindow
+main.obj : error LNK2019: unresolved external symbol SDL_CreateRenderer referenced in function "void __cdecl firstTest(void)" (?firstTest@@YAXXZ)
+SDLGame.obj : error LNK2001: unresolved external symbol SDL_CreateRenderer
+main.obj : error LNK2019: unresolved external symbol SDL_SetRenderDrawColor referenced in function "void __cdecl firstTest(void)" (?firstTest@@YAXXZ)
+PingPong.obj : error LNK2001: unresolved external symbol SDL_SetRenderDrawColor
+Rectangle.obj : error LNK2001: unresolved external symbol SDL_SetRenderDrawColor
+SDLGame.obj : error LNK2001: unresolved external symbol SDL_SetRenderDrawColor
+main.obj : error LNK2019: unresolved external symbol SDL_RenderClear referenced in function "void __cdecl firstTest(void)" (?firstTest@@YAXXZ)
+PingPong.obj : error LNK2001: unresolved external symbol SDL_RenderClear
+SDLGame.obj : error LNK2001: unresolved external symbol SDL_RenderClear
+main.obj : error LNK2019: unresolved external symbol SDL_RenderPresent referenced in function "void __cdecl firstTest(void)" (?firstTest@@YAXXZ)
+PingPong.obj : error LNK2001: unresolved external symbol SDL_RenderPresent
+SDLGame.obj : error LNK2001: unresolved external symbol SDL_RenderPresent
+main.obj : error LNK2019: unresolved external symbol SDL_DestroyRenderer referenced in function "void __cdecl firstTest(void)" (?firstTest@@YAXXZ)
+SDLGame.obj : error LNK2001: unresolved external symbol SDL_DestroyRenderer
+main.obj : error LNK2019: unresolved external symbol SDL_Delay referenced in function "void __cdecl firstTest(void)" (?firstTest@@YAXXZ)
+PingPong.obj : error LNK2001: unresolved external symbol SDL_Delay
+main.obj : error LNK2019: unresolved external symbol SDL_Init referenced in function "void __cdecl firstTest(void)" (?firstTest@@YAXXZ)
+SDLGame.obj : error LNK2001: unresolved external symbol SDL_Init
+main.obj : error LNK2019: unresolved external symbol SDL_Quit referenced in function "void __cdecl firstTest(void)" (?firstTest@@YAXXZ)
+SDLGame.obj : error LNK2001: unresolved external symbol SDL_Quit
+PaddleKBCtrl.obj : error LNK2019: unresolved external symbol SDL_GetScancodeFromKey referenced in function "public: bool __cdecl InputHandler::isKeyDown(int)" (?isKeyDown@InputHandler@@QEAA_NH@Z)
+PingPong.obj : error LNK2001: unresolved external symbol SDL_GetScancodeFromKey
+PingPong.obj : error LNK2019: unresolved external symbol SDL_GetWindowFlags referenced in function "private: void __cdecl PingPong::handleInput(void)" (?handleInput@PingPong@@AEAAXXZ)
+PingPong.obj : error LNK2019: unresolved external symbol SDL_SetWindowFullscreen referenced in function "private: void __cdecl PingPong::handleInput(void)" (?handleInput@PingPong@@AEAAXXZ)
+PingPong.obj : error LNK2019: unresolved external symbol SDL_GetTicks referenced in function "public: unsigned int __cdecl SDLGame::getTime(void)" (?getTime@SDLGame@@QEAAIXZ)
+Rectangle.obj : error LNK2019: unresolved external symbol SDL_RenderFillRect referenced in function "public: virtual void __cdecl Rectangle::draw(void)" (?draw@Rectangle@@UEAAXXZ)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol SDL_RWFromFile referenced in function "public: virtual bool __cdecl SDLAudioManager::loadSound(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?loadSound@SDLAudioManager@@UEAA_NHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_Init referenced in function "public: virtual bool __cdecl SDLAudioManager::init(void)" (?init@SDLAudioManager@@UEAA_NXZ)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_Quit referenced in function "public: virtual __cdecl SDLAudioManager::~SDLAudioManager(void)" (??1SDLAudioManager@@UEAA@XZ)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_OpenAudio referenced in function "public: virtual bool __cdecl SDLAudioManager::init(void)" (?init@SDLAudioManager@@UEAA_NXZ)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_AllocateChannels referenced in function "public: virtual bool __cdecl SDLAudioManager::init(void)" (?init@SDLAudioManager@@UEAA_NXZ)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_LoadWAV_RW referenced in function "public: virtual bool __cdecl SDLAudioManager::loadSound(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?loadSound@SDLAudioManager@@UEAA_NHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_LoadMUS referenced in function "public: virtual bool __cdecl SDLAudioManager::loadMusic(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?loadMusic@SDLAudioManager@@UEAA_NHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_FreeChunk referenced in function "public: virtual __cdecl SDLAudioManager::~SDLAudioManager(void)" (??1SDLAudioManager@@UEAA@XZ)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_FreeMusic referenced in function "public: virtual __cdecl SDLAudioManager::~SDLAudioManager(void)" (??1SDLAudioManager@@UEAA@XZ)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_PlayChannelTimed referenced in function "public: virtual int __cdecl SDLAudioManager::playChannel(int,int,int)" (?playChannel@SDLAudioManager@@UEAAHHHH@Z)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_PlayMusic referenced in function "public: virtual void __cdecl SDLAudioManager::playMusic(int,int)" (?playMusic@SDLAudioManager@@UEAAXHH@Z)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_Volume referenced in function "public: virtual int __cdecl SDLAudioManager::setChannelVolume(int,int)" (?setChannelVolume@SDLAudioManager@@UEAAHHH@Z)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_VolumeMusic referenced in function "public: virtual int __cdecl SDLAudioManager::setMusicVolume(int)" (?setMusicVolume@SDLAudioManager@@UEAAHH@Z)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_HaltChannel referenced in function "public: virtual void __cdecl SDLAudioManager::haltChannel(int)" (?haltChannel@SDLAudioManager@@UEAAXH@Z)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_HaltMusic referenced in function "public: virtual void __cdecl SDLAudioManager::haltMusic(void)" (?haltMusic@SDLAudioManager@@UEAAXXZ)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_Pause referenced in function "public: virtual void __cdecl SDLAudioManager::pauseChannel(int)" (?pauseChannel@SDLAudioManager@@UEAAXH@Z)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_Resume referenced in function "public: virtual void __cdecl SDLAudioManager::resumeChannel(int)" (?resumeChannel@SDLAudioManager@@UEAAXH@Z)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_PauseMusic referenced in function "public: virtual void __cdecl SDLAudioManager::pauseMusic(void)" (?pauseMusic@SDLAudioManager@@UEAAXXZ)
+SDLAudioManager.obj : error LNK2019: unresolved external symbol Mix_ResumeMusic referenced in function "public: virtual void __cdecl SDLAudioManager::resumeMusic(void)" (?resumeMusic@SDLAudioManager@@UEAAXXZ)
+SDLFontsManager.obj : error LNK2019: unresolved external symbol TTF_Init referenced in function "public: virtual bool __cdecl SDLFontsManager::init(void)" (?init@SDLFontsManager@@UEAA_NXZ)
+SDLFontsManager.obj : error LNK2019: unresolved external symbol TTF_Quit referenced in function "public: virtual __cdecl SDLFontsManager::~SDLFontsManager(void)" (??1SDLFontsManager@@UEAA@XZ)
+SDLGame.obj : error LNK2019: unresolved external symbol SDL_ShowCursor referenced in function "private: void __cdecl SDLGame::initSDL(void)" (?initSDL@SDLGame@@AEAAXXZ)
+SDLTexturesManager.obj : error LNK2019: unresolved external symbol IMG_Init referenced in function "public: virtual bool __cdecl SDLTexturesManager::init(void)" (?init@SDLTexturesManager@@UEAA_NXZ)
+SDLTexturesManager.obj : error LNK2019: unresolved external symbol IMG_Quit referenced in function "public: virtual __cdecl SDLTexturesManager::~SDLTexturesManager(void)" (??1SDLTexturesManager@@UEAA@XZ)
+Texture.obj : error LNK2019: unresolved external symbol SDL_FreeSurface referenced in function "public: bool __cdecl Texture::loadFromImg(struct SDL_Renderer *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?loadFromImg@Texture@@QEAA_NPEAUSDL_Renderer@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Texture.obj : error LNK2019: unresolved external symbol SDL_CreateTextureFromSurface referenced in function "public: bool __cdecl Texture::loadFromImg(struct SDL_Renderer *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?loadFromImg@Texture@@QEAA_NPEAUSDL_Renderer@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Texture.obj : error LNK2019: unresolved external symbol SDL_RenderCopy referenced in function "public: void __cdecl Texture::render(struct SDL_Renderer *,struct SDL_Rect const &,struct SDL_Rect *)const " (?render@Texture@@QEBAXPEAUSDL_Renderer@@AEBUSDL_Rect@@PEAU3@@Z)
+Texture.obj : error LNK2019: unresolved external symbol SDL_RenderCopyEx referenced in function "public: void __cdecl Texture::render(struct SDL_Renderer *,struct SDL_Rect const &,double,struct SDL_Rect *)const " (?render@Texture@@QEBAXPEAUSDL_Renderer@@AEBUSDL_Rect@@NPEAU3@@Z)
+Texture.obj : error LNK2019: unresolved external symbol SDL_DestroyTexture referenced in function "public: void __cdecl Texture::close(void)" (?close@Texture@@QEAAXXZ)
+Texture.obj : error LNK2019: unresolved external symbol IMG_Load referenced in function "public: bool __cdecl Texture::loadFromImg(struct SDL_Renderer *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?loadFromImg@Texture@@QEAA_NPEAUSDL_Renderer@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+U:\hlocal\Proyecto SDL para Visual Studio-20200211\TPV2\SDLProject\SDL2-2.0.7\lib\x86\SDL2.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+U:\hlocal\Proyecto SDL para Visual Studio-20200211\TPV2\SDLProject\SDL2-2.0.7\lib\x86\SDL2main.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+U:\hlocal\Proyecto SDL para Visual Studio-20200211\TPV2\SDLProject\SDL2_image-2.0.1\lib\x86\SDL2_image.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+U:\hlocal\Proyecto SDL para Visual Studio-20200211\TPV2\SDLProject\SDL2_ttf-2.0.14\lib\x86\SDL2_ttf.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+U:\hlocal\Proyecto SDL para Visual Studio-20200211\TPV2\SDLProject\SDL2_mixer-2.0.2\lib\x86\SDL2_mixer.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+U:\hlocal\Proyecto SDL para Visual Studio-20200211\TPV2\SDLProject\SDL2_net-2.0.1\lib\x86\SDL2_net.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+U:\hlocal\Proyecto SDL para Visual Studio-20200211\TPV2\SDLProject\bin\TPV2Debug.exe : fatal error LNK1120: 51 unresolved externals
