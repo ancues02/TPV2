@@ -19,14 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AudioManager.cpp" />
-    <ClCompile Include="BallMoveBehaviour.cpp" />
     <ClCompile Include="Collisions.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="FighterViewer.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="FontsManager.cpp" />
     <ClCompile Include="GameCtrl.cpp" />
@@ -36,10 +38,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="ObjectPool.cpp" />
-    <ClCompile Include="PaddleKBCtrl.cpp" />
+    <ClCompile Include="FighterCtrl.cpp" />
     <ClCompile Include="PaddleMouseCtrl.cpp" />
     <ClCompile Include="PaddleMoveBehaviour.cpp" />
-    <ClCompile Include="PingPong.cpp" />
+    <ClCompile Include="Asteroids.cpp" />
     <ClCompile Include="RandomNumberGenerator.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Resources.cpp" />
@@ -56,15 +58,16 @@
     <ClCompile Include="TexturesManager.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Vector2D.cpp" />
+    <ClCompile Include="VelocityVectorViewer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AudioManager.h" />
-    <ClInclude Include="BallMoveBehaviour.h" />
     <ClInclude Include="checkML.h" />
     <ClInclude Include="Collisions.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ecs.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="FighterViewer.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="FontsManager.h" />
     <ClInclude Include="GameCtrl.h" />
@@ -73,10 +76,10 @@
     <ClInclude Include="jute.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="ObjectPool.h" />
-    <ClInclude Include="PaddleKBCtrl.h" />
+    <ClInclude Include="FighterCtrl.h" />
     <ClInclude Include="PaddleMouseCtrl.h" />
     <ClInclude Include="PaddleMoveBehaviour.h" />
-    <ClInclude Include="PingPong.h" />
+    <ClInclude Include="Asteroids.h" />
     <ClInclude Include="RandomNumberGenerator.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Resources.h" />
@@ -93,6 +96,7 @@
     <ClInclude Include="TexturesManager.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="VelocityVectorViewer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
