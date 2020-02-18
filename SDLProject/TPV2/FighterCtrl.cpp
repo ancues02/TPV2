@@ -1,7 +1,6 @@
 #include "FighterCtrl.h"
 #include "InputHandler.h"
 #include "Entity.h"
-#include "Transform.h"
 
 FighterCtrl::FighterCtrl() :
 	FighterCtrl(SDLK_LEFT, SDLK_RIGHT, SDLK_UP) {

@@ -16,7 +16,10 @@ vector<Resources::ImageInfo> Resources::images_ {
 		{ AIIcon, "resources/images/ai.png" }, //
 		{ SpaceShips, "resources/images/spaceships.png" }, //
 		{ Airplanes, "resources/images/airplanes.png" }, //
-		{ Star, "resources/images/star.png" } //
+		{ Star, "resources/images/star.png" }, //	
+		{ Heart, "resources/images/heart.png" } //
+
+
 };
 
 vector<Resources::TextMsgInfo> Resources::messages_ {

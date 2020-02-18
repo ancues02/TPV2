@@ -19,7 +19,7 @@ public:
 		SpaceShips,
 		Airplanes,
 		Star,
-
+		Heart,
 		// text
 		HelloWorld,
 		PressAnyKey,

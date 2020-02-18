@@ -24,6 +24,8 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Asteroid.cpp" />
+    <ClCompile Include="AsteroidPool.cpp" />
     <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="Collisions.cpp" />
     <ClCompile Include="Component.cpp" />
@@ -34,6 +36,8 @@
     <ClCompile Include="FontsManager.cpp" />
     <ClCompile Include="GameCtrl.cpp" />
     <ClCompile Include="GameLogic.cpp" />
+    <ClCompile Include="Gun.cpp" />
+    <ClCompile Include="Health.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="jute.cpp" />
     <ClCompile Include="main.cpp" />
@@ -61,6 +65,8 @@
     <ClCompile Include="VelocityVectorViewer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Asteroid.h" />
+    <ClInclude Include="AsteroidPool.h" />
     <ClInclude Include="AudioManager.h" />
     <ClInclude Include="checkML.h" />
     <ClInclude Include="Collisions.h" />
@@ -73,6 +79,8 @@
     <ClInclude Include="FontsManager.h" />
     <ClInclude Include="GameCtrl.h" />
     <ClInclude Include="GameLogic.h" />
+    <ClInclude Include="Gun.h" />
+    <ClInclude Include="Health.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="jute.h" />
     <ClInclude Include="Manager.h" />

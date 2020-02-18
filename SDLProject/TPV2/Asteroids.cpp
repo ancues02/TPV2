@@ -16,6 +16,9 @@
 #include "Transform.h"
 #include "SDLGame.h"
 
+#include "FighterViewer.h"
+#include "Health.h"
+#include "Gun.h"
 #include "SDL_macros.h"
 
 using namespace std;
@@ -37,37 +40,25 @@ void Asteroids::initGame() {
 
 	entityManager_ = new EntityManager(game_);
 
-	Entity *leftPaddle = entityManager_->addEntity();
-	Transform *leftPaddleTR = leftPaddle->addComponent<Transform>();
-	leftPaddle->addComponent<FighterCtrl>();
-	leftPaddle->addComponent<FighterMotion>();
-	leftPaddle->addComponent<Rectangle,SDL_Color>({COLOR(0xAA0000FF)});
-	leftPaddleTR->setPos(5, game_->getWindowHeight() / 2 - 25);
-	leftPaddleTR->setWH(10, 50);
-	leftPaddle->addComponent<VelocityVectorViewer>();
+	Entity *Fighter = entityManager_->addEntity();
+	Transform * FighterTr = Fighter->addComponent<Transform>();
+	Fighter->addComponent<FighterCtrl>();
+	Fighter->addComponent<FighterMotion>();
+	//leftPaddle->addComponent<Rectangle,SDL_Color>({COLOR(0xAA0000FF)});
+	FighterTr->setPos(5, game_->getWindowHeight() / 2 - 25);
+	FighterTr->setWH(100, 100);
+	//leftPaddle->addComponent<VelocityVectorViewer>();
+	Fighter->addComponent<FighterViewer>();
+	Fighter->addComponent<Health>();
+	Fighter->addComponent<Gun>();
+	
 
-
-	Entity *rightPaddle = entityManager_->addEntity();
-	Transform *rightPaddleTR = rightPaddle->addComponent<Transform>();
-	rightPaddle->addComponent<FighterCtrl>(SDLK_w,SDLK_s,SDLK_x);
-	rightPaddle->addComponent<FighterMotion>();
-	rightPaddle->addComponent<Rectangle,SDL_Color>({COLOR(0x0000AAFF)});
-	rightPaddleTR->setPos(game_->getWindowWidth() - 15,
-			game_->getWindowHeight() / 2 - 25);
-	rightPaddleTR->setWH(10, 50);
-
-	Entity *ball = entityManager_->addEntity();
-	Transform *ballTR = ball->addComponent<Transform>();
-	ball->addComponent<Rectangle>();
-	ballTR->setPos(game_->getWindowWidth() / 2 - 6,
-			game_->getWindowHeight() / 2 - 6);
-	ballTR->setWH(11, 11);
 
 	Entity *gameManager = entityManager_->addEntity();
 	gameManager->addComponent<ScoreManager>(5);
-	gameManager->addComponent<GameLogic>(ballTR, leftPaddleTR, rightPaddleTR);
+	//gameManager->addComponent<GameLogic>(ballTR, leftPaddleTR, rightPaddleTR);
 	gameManager->addComponent<ScoreViewer>();
-	gameManager->addComponent<GameCtrl>(GETCMP2(ball, Transform));
+	//gameManager->addComponent<GameCtrl>(GETCMP2(ball, Transform));
 }
 
 void Asteroids::closeGame() {
@@ -112,6 +103,7 @@ void Asteroids::handleInput() {
 			} else {
 				SDL_SetWindowFullscreen(game_->getWindow(),
 						SDL_WINDOW_FULLSCREEN);
+				
 			}
 		}
 	}

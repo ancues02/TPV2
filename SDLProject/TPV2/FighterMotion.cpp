@@ -4,7 +4,7 @@
 
 
 FighterMotion::FighterMotion() :
-	Component(ecs::PaddleMoveBehaviour), tr_(nullptr) {
+	Component(ecs::FighterMotion), tr_(nullptr) {
 }
 
 FighterMotion::~FighterMotion() {
@@ -13,14 +13,14 @@ FighterMotion::~FighterMotion() {
 void FighterMotion::init() {
 	tr_ = GETCMP1_(Transform);
 }
-
+//modificamos la posicion dependiendo de la velocidad sin que pueda salirse de los limites y desacelera
 void FighterMotion::update() {
 
 	Vector2D v = tr_->getPos() + tr_->getVel();
-	//v = v * 0.9;
 	double y = v.getY();
 	double x = v.getX();
 
+	//comprobar limites y rebotes
 	if (y <= 0) {
 		v.setY(0);
 		tr_->setVelY(-tr_->getVel().getY());
@@ -35,7 +35,6 @@ void FighterMotion::update() {
 	}
 	else if (x + tr_->getW() >= game_->getWindowWidth()) {
 		v.setX(game_->getWindowWidth() - tr_->getW());
-
 		tr_->setVelX(-tr_->getVel().getX());
 	}
 	tr_->setVel(tr_->getVel() * 0.995);

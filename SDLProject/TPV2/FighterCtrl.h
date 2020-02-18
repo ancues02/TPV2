@@ -6,15 +6,15 @@
 class FighterCtrl : public Component {
 public:
 	FighterCtrl();
-	FighterCtrl(SDL_Keycode up, SDL_Keycode down, SDL_Keycode stop);
+	FighterCtrl(SDL_Keycode left, SDL_Keycode right, SDL_Keycode mov);
 	virtual ~FighterCtrl();
 
-	inline void setCtrlKeys(SDL_Keycode up, SDL_Keycode down,
-			SDL_Keycode stop) {
-		rotateLeft = up;
-		rotateRight = down;
-		move = stop;
-	}
+	/*inline void setCtrlKeys(SDL_Keycode left, SDL_Keycode right,
+			SDL_Keycode mov) {
+		rotateLeft = left;
+		rotateRight = right;
+		move = mov;
+	}*/
 
 	void init() override;
 	void update() override;
