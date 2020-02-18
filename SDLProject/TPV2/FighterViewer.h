@@ -5,7 +5,7 @@
 
 class FighterViewer:public Component{
 public:
-	FighterViewer();
+	FighterViewer(Texture* texture);
 	virtual ~FighterViewer();
 	void init() override;
 	void draw() override;

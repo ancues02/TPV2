@@ -28,6 +28,7 @@
     <ClCompile Include="Collisions.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="FighterMotion.cpp" />
     <ClCompile Include="FighterViewer.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="FontsManager.cpp" />
@@ -40,7 +41,6 @@
     <ClCompile Include="ObjectPool.cpp" />
     <ClCompile Include="FighterCtrl.cpp" />
     <ClCompile Include="PaddleMouseCtrl.cpp" />
-    <ClCompile Include="PaddleMoveBehaviour.cpp" />
     <ClCompile Include="Asteroids.cpp" />
     <ClCompile Include="RandomNumberGenerator.cpp" />
     <ClCompile Include="Rectangle.cpp" />
@@ -67,6 +67,7 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="ecs.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="FighterMotion.h" />
     <ClInclude Include="FighterViewer.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="FontsManager.h" />
@@ -78,7 +79,6 @@
     <ClInclude Include="ObjectPool.h" />
     <ClInclude Include="FighterCtrl.h" />
     <ClInclude Include="PaddleMouseCtrl.h" />
-    <ClInclude Include="PaddleMoveBehaviour.h" />
     <ClInclude Include="Asteroids.h" />
     <ClInclude Include="RandomNumberGenerator.h" />
     <ClInclude Include="Rectangle.h" />

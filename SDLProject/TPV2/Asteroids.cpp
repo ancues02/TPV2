@@ -8,7 +8,7 @@
 #include "FighterCtrl.h"
 #include "VelocityVectorViewer.h"
 #include "PaddleMouseCtrl.h"
-#include "PaddleMoveBehaviour.h"
+#include "FighterMotion.h"
 #include "Rectangle.h"
 #include "ScoreManager.h"
 #include "ScoreViewer.h"
@@ -40,7 +40,7 @@ void Asteroids::initGame() {
 	Entity *leftPaddle = entityManager_->addEntity();
 	Transform *leftPaddleTR = leftPaddle->addComponent<Transform>();
 	leftPaddle->addComponent<FighterCtrl>();
-	leftPaddle->addComponent<PaddleMoveBehaviour>();
+	leftPaddle->addComponent<FighterMotion>();
 	leftPaddle->addComponent<Rectangle,SDL_Color>({COLOR(0xAA0000FF)});
 	leftPaddleTR->setPos(5, game_->getWindowHeight() / 2 - 25);
 	leftPaddleTR->setWH(10, 50);
@@ -50,7 +50,7 @@ void Asteroids::initGame() {
 	Entity *rightPaddle = entityManager_->addEntity();
 	Transform *rightPaddleTR = rightPaddle->addComponent<Transform>();
 	rightPaddle->addComponent<FighterCtrl>(SDLK_w,SDLK_s,SDLK_x);
-	rightPaddle->addComponent<PaddleMoveBehaviour>();
+	rightPaddle->addComponent<FighterMotion>();
 	rightPaddle->addComponent<Rectangle,SDL_Color>({COLOR(0x0000AAFF)});
 	rightPaddleTR->setPos(game_->getWindowWidth() - 15,
 			game_->getWindowHeight() / 2 - 25);

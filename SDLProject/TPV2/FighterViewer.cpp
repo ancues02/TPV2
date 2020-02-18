@@ -3,10 +3,11 @@
 #include  "Entity.h"
 #include "SDL_macros.h"
 
-FighterViewer::FighterViewer() :
+FighterViewer::FighterViewer(Texture* texture) :
 	Component(ecs::FighterViewer),
-	tr_(nullptr)
-	//texture(Resources::images_[Resources::Airplanes].fileName);
+	tr_(nullptr),
+	//Resources::ImageInfo;
+	texture(texture)
 {}
 
 FighterViewer::~FighterViewer(){}

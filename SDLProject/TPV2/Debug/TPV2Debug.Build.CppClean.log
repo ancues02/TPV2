@@ -1,13 +1,12 @@
 u:\hlocal\tpv2\sdlproject\tpv2\debug\vc142.pdb
 u:\hlocal\tpv2\sdlproject\tpv2\debug\vc142.idb
-u:\hlocal\tpv2\sdlproject\tpv2\debug\rectangle.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\randomnumbergenerator.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\asteroids.obj
-u:\hlocal\tpv2\sdlproject\tpv2\debug\paddlemovebehaviour.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\paddlemousectrl.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\fighterctrl.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\objectpool.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\manager.obj
+u:\hlocal\tpv2\sdlproject\tpv2\debug\main.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\jute.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\inputhandler.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\gamelogic.obj
@@ -15,6 +14,7 @@ u:\hlocal\tpv2\sdlproject\tpv2\debug\gamectrl.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\fontsmanager.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\font.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\fighterviewer.obj
+u:\hlocal\tpv2\sdlproject\tpv2\debug\fightermotion.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\entity.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\component.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\collisions.obj
@@ -34,7 +34,7 @@ u:\hlocal\tpv2\sdlproject\tpv2\debug\sdlaudiomanager.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\scoreviewer.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\scoremanager.obj
 u:\hlocal\tpv2\sdlproject\tpv2\debug\resources.obj
-u:\hlocal\tpv2\sdlproject\tpv2\debug\main.obj
+u:\hlocal\tpv2\sdlproject\tpv2\debug\rectangle.obj
 u:\hlocal\tpv2\sdlproject\bin\tpv2debug.ilk
 u:\hlocal\tpv2\sdlproject\bin\tpv2debug.exe
 u:\hlocal\tpv2\sdlproject\bin\tpv2debug.pdb
