@@ -1,1 +1,4 @@
-This is the basic version of PingPong. It has a class Paddle and Ball to inherit directly from GameObject. The logic of the game is in PingPong.
+
+This version of ping pong uses the first design of Entity-Component that we have done in class.
+
+The SDLGame class is not a singleton.

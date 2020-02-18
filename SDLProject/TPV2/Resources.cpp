@@ -22,7 +22,7 @@ vector<Resources::ImageInfo> Resources::images_ {
 vector<Resources::TextMsgInfo> Resources::messages_ {
 //
 		{ HelloWorld, "Hello World", { COLOR(0xaaffffff) }, ARIAL16 }, //
-		{ PresAnyKey, "Press Any Key ...", { COLOR(0xaaffbbff) }, ARIAL24 }, //
+		{ PressAnyKey, "Press Any Key to Start", { COLOR(0xaaffbbff) }, ARIAL24 }, //
 		{ GameOver, "Game Over", { COLOR(0xffffbbff) }, ARIAL24 } //
 };
 

@@ -18,7 +18,7 @@ public:
 	}
 
 	template<typename T, typename ... TArgs>
-	T* addComponent(TArgs ...mArgs) {
+	T* addComponent(TArgs&& ...mArgs) {
 		T *c(new T(std::forward<TArgs>(mArgs)...));
 		std::unique_ptr<Component> uPtr(c);
 		components_.push_back(std::move(uPtr));

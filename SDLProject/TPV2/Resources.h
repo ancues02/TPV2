@@ -9,7 +9,7 @@ using namespace std;
 class Resources {
 public:
 
-	enum TextureId : int {
+	enum TextureId : std::size_t {
 		// images
 		Blank,
 		TennisBall,
@@ -22,11 +22,11 @@ public:
 
 		// text
 		HelloWorld,
-		PresAnyKey,
-		GameOver
+		PressAnyKey,
+		GameOver,
 	};
 
-	enum AudioId : int {
+	enum AudioId : std::size_t {
 		// music
 		Beat,
 		Cheer,
@@ -37,7 +37,7 @@ public:
 		Paddle_Hit
 	};
 
-	enum FontId : int {
+	enum FontId : std::size_t {
 		ARIAL16, ARIAL24,
 	};
 
