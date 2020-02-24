@@ -1,1 +1,5 @@
-﻿
+﻿  AsteroidPool.cpp
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.cpp(11,6): error C2612: 'identificador' final no válido en la lista de inicializadores de base/miembro
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.cpp(25,1): fatal error C1004: se encontró un final de archivo no esperado
+  Asteroids.cpp
+  Generando código...

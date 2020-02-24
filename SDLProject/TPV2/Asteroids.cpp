@@ -20,7 +20,7 @@
 #include "Health.h"
 #include "Gun.h"
 #include "SDL_macros.h"
-
+#include "AsteroidPool.h"
 using namespace std;
 
 Asteroids::Asteroids() :
@@ -35,6 +35,9 @@ Asteroids::~Asteroids() {
 }
 
 void Asteroids::initGame() {
+	AsteroidPool as;
+	as.init();
+	as.generateAsteroids(10);
 
 	game_ = SDLGame::init("Asteroids", _WINDOW_WIDTH_, _WINDOW_HEIGHT_);
 
