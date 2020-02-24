@@ -20,17 +20,23 @@ void AsteroidPool::generateAsteroids(int n) {
 		break;
 	}
 	Vector2D c(0, 0);
-	int rx = random.nextInt(-50, 50),
+	double rx = random.nextInt(-50, 50),
 		ry = random.nextInt(-50, 50);
-	c.setX(game_->getWindowWidth / 2 +rx);
-	c.setY(game_->getWindowHeight / 2 +ry);
+	c.setX(game_->getWindowWidth() / 2 +rx);
+	c.setY(game_->getWindowHeight() / 2 +ry);
 	
 	Vector2D vel = (c - p).normalize() * (random.nextInt(0, 10) / 10.0);
+
+	cout << vel << endl << c << endl << p;
+
+	//Asteroid as(game_, entity_->getEntityMangr());
+	
+	//10 + 3 * g
 }
 
 AsteroidPool::AsteroidPool() :
-	Component(ecs::AsteroidPool),
-	pool([](Asteroid* o) {return o->inUse; })
+	Component(ecs::AsteroidPool)//,
+	//pool([](Asteroid* o) {return o->inUse; })
 {}
 	
 AsteroidPool::~AsteroidPool() {

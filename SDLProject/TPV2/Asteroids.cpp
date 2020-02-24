@@ -35,9 +35,7 @@ Asteroids::~Asteroids() {
 }
 
 void Asteroids::initGame() {
-	AsteroidPool as;
-	as.init();
-	as.generateAsteroids(10);
+	
 
 	game_ = SDLGame::init("Asteroids", _WINDOW_WIDTH_, _WINDOW_HEIGHT_);
 
@@ -54,14 +52,19 @@ void Asteroids::initGame() {
 	Fighter->addComponent<FighterViewer>();
 	Fighter->addComponent<Health>();
 	Fighter->addComponent<Gun>();
-	
 
+	
+	/*Fighter->addComponent<AsteroidPool>();
+	Fighter->getComponent(ecs::CmpIdType(ecs::AsteroidPool));*/
+	
 
 	Entity *gameManager = entityManager_->addEntity();
 	gameManager->addComponent<ScoreManager>(5);
 	//gameManager->addComponent<GameLogic>(ballTR, leftPaddleTR, rightPaddleTR);
 	gameManager->addComponent<ScoreViewer>();
 	//gameManager->addComponent<GameCtrl>(GETCMP2(ball, Transform));
+
+	
 }
 
 void Asteroids::closeGame() {

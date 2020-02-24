@@ -1,5 +1,39 @@
-﻿  AsteroidPool.cpp
-F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.cpp(11,6): error C2612: 'identificador' final no válido en la lista de inicializadores de base/miembro
-F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.cpp(25,1): fatal error C1004: se encontró un final de archivo no esperado
+﻿  Asteroid.cpp
+  AsteroidPool.cpp
+  Entity.cpp
+  FighterMotion.cpp
+  FighterViewer.cpp
+  GameCtrl.cpp
+  GameLogic.cpp
+  Gun.cpp
+  Health.cpp
+  Manager.cpp
+  FighterCtrl.cpp
+  PaddleMouseCtrl.cpp
   Asteroids.cpp
+  Rectangle.cpp
+  ScoreViewer.cpp
+  SimpleMoveBahviour.cpp
+  VelocityVectorViewer.cpp
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,86): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,71): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,56): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,41): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,86): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,71): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,56): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,41): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,86): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,71): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,56): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,41): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,86): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,71): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,56): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,41): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,64): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,48): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,34): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,31): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
   Generando código...
+  TPV2.vcxproj -> F:\UCM\TPV2\TPV2\SDLProject\bin\TPV2Debug.exe
