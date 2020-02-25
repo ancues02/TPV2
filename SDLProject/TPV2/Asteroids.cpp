@@ -21,6 +21,9 @@
 #include "Gun.h"
 #include "SDL_macros.h"
 #include "AsteroidPool.h"
+#include "AsteroidsMotion.h"
+#include "AsteroidsViewer.h"
+
 using namespace std;
 
 Asteroids::Asteroids() :
@@ -55,8 +58,13 @@ void Asteroids::initGame() {
 
 	
 	/*Fighter->addComponent<AsteroidPool>();
-	Fighter->getComponent(ecs::CmpIdType(ecs::AsteroidPool));*/
+	Fighter->getComponent<AsteroidPool>(ecs::CmpIdType(ecs::AsteroidPool))->generateAsteroids(10);*/
 	
+	Entity* AsteroidPool_ = entityManager_->addEntity();
+	AsteroidPool_->addComponent<AsteroidPool>();
+	AsteroidPool_->addComponent<AsteroidsMotion>();
+	AsteroidPool_->addComponent<AsteroidsViewer>();
+
 
 	Entity *gameManager = entityManager_->addEntity();
 	gameManager->addComponent<ScoreManager>(5);

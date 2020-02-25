@@ -20,6 +20,7 @@ public:
 		Airplanes,
 		Star,
 		Heart,
+		Asteroid,
 		// text
 		HelloWorld,
 		PressAnyKey,

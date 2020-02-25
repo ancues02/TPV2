@@ -24,9 +24,11 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Asteroid.cpp" />
     <ClCompile Include="AsteroidPool.cpp" />
+    <ClCompile Include="AsteroidsMotion.cpp" />
+    <ClCompile Include="AsteroidsViewer.cpp" />
     <ClCompile Include="AudioManager.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Collisions.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Entity.cpp" />
@@ -65,9 +67,11 @@
     <ClCompile Include="VelocityVectorViewer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Asteroid.h" />
     <ClInclude Include="AsteroidPool.h" />
+    <ClInclude Include="AsteroidsMotion.h" />
+    <ClInclude Include="AsteroidsViewer.h" />
     <ClInclude Include="AudioManager.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="checkML.h" />
     <ClInclude Include="Collisions.h" />
     <ClInclude Include="Component.h" />
