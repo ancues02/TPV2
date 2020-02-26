@@ -1,8 +1,7 @@
 #pragma once
 #include "Component.h"
 #include "ObjectPool.h"
-#include "Bullet.h"
-#include "SRandBasedGenerator.h"
+#include "BulletsPool.h"
 class AsteroidPool : public Component
 {
 public:
@@ -20,13 +19,14 @@ public:
 	
 
 	void init() override;
-	void update() override;
+	//void update() override;
 	void generateAsteroids(int n);
 	void disableAll();
-	void onCollision(Asteroid* a, Bullet* b);
+	void onCollision(Asteroid* a, BulletsPool::Bullet* b);
 	size_t getNumOfAsteroid();
 	std::vector<Asteroid*> getPool();
 private:
+
 	ObjectPool<Asteroid,30> pool;
 };
 

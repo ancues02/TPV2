@@ -21,6 +21,7 @@ public:
 		Star,
 		Heart,
 		Asteroid,
+		Bullet,
 		// text
 		HelloWorld,
 		PressAnyKey,

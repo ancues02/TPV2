@@ -27,6 +27,7 @@ void Gun::update() {
 	if (ih->keyDownEvent()) {
 		if (ih->isKeyDown(shoot)) {
 			cout << "DISPAROOOOO";
+
 		}
 		
 

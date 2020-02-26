@@ -23,6 +23,7 @@
 #include "AsteroidPool.h"
 #include "AsteroidsMotion.h"
 #include "AsteroidsViewer.h"
+#include "BulletsPool.h"
 
 using namespace std;
 

@@ -1,2 +1,55 @@
 ﻿  AsteroidPool.cpp
-  TPV2.vcxproj -> U:\hlocal\TPV2\SDLProject\bin\TPV2Debug.exe
+  AsteroidsMotion.cpp
+  AsteroidsViewer.cpp
+  BulletsMotion.cpp
+  BulletsPool.cpp
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\BulletsPool.cpp(41,15): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\BulletsPool.cpp(42,16): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+  BulletsViewer.cpp
+  Component.cpp
+  Entity.cpp
+  FighterMotion.cpp
+  FighterViewer.cpp
+  GameCtrl.cpp
+  GameLogic.cpp
+  Gun.cpp
+  Health.cpp
+  main.cpp
+  Manager.cpp
+  FighterCtrl.cpp
+  PaddleMouseCtrl.cpp
+  Asteroids.cpp
+  Rectangle.cpp
+  Generando código...
+  Compilando...
+  Resources.cpp
+  ScoreManager.cpp
+  ScoreViewer.cpp
+  SDLGame.cpp
+  SimpleMoveBahviour.cpp
+  Transform.cpp
+  VelocityVectorViewer.cpp
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\BulletsPool.cpp(43,39): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,86): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,71): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,56): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,41): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,86): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,71): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,56): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,41): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,86): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,71): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,56): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,41): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,86): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,71): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,56): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,41): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,64): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,48): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,34): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+  Generando código...
+C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,31): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+     Creando biblioteca C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\bin\TPV2Debug.lib y objeto C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\bin\TPV2Debug.exp
+  TPV2.vcxproj -> C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\bin\TPV2Debug.exe

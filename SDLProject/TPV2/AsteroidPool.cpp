@@ -1,4 +1,5 @@
 #include "AsteroidPool.h"
+//creacion y activacion de n asteroides en posiciones aleatorias con velocidades aleatorias
 void AsteroidPool::generateAsteroids(int n) {
 
 	for (int i = 0; i < n; i++) {
@@ -33,7 +34,7 @@ void AsteroidPool::generateAsteroids(int n) {
 
 			Vector2D vel = (c - p).normalize() * (game_->getRandGen()->nextInt(0, 11))/10;
 
-			cout << vel << endl << c << endl << p << endl << endl;
+			//cout << vel << endl << c << endl << p << endl << endl;
 			a->pos_ = p;
 			a->vel = vel;
 			a->rotation = game_->getRandGen()->nextInt(0, 361);
@@ -41,6 +42,7 @@ void AsteroidPool::generateAsteroids(int n) {
 			a->height_ = a->width_ = 10 + 3 * a->gen;
 			a->inUse = true;
 		}	
+
 	}
 }
 
@@ -51,18 +53,18 @@ AsteroidPool::AsteroidPool() :
 	
 AsteroidPool::~AsteroidPool() {
 }
-
+//inicializamos del pool
 void AsteroidPool::init() {
 	generateAsteroids(10);
 }
 
-void AsteroidPool::update() {
+/*void AsteroidPool::update() {
 
 	//for (auto& a : pool.getPool()) {
 	//	a->pos_ = a->pos_ + a->vel;
 	//}
-}
-
+}*/
+//desactivamos todos los asteroides del pool
 void AsteroidPool::disableAll() {
 	for (auto& a : pool.getPool()) {
 		a->inUse = false;
@@ -71,7 +73,7 @@ void AsteroidPool::disableAll() {
 
 //Desactiva la bala y activa dos asteroides con vel  diferente y pos parecida al asteroide padre
 //bajamos uno a su generacion (si es 0 no crea)
-void AsteroidPool::onCollision(Asteroid* a, Bullet* b) {
+void AsteroidPool::onCollision(Asteroid* a, BulletsPool::Bullet* b) {
 	//b->inUse = false;
 	a->inUse = false;
 	if (a->gen > 0) {
@@ -92,7 +94,11 @@ void AsteroidPool::onCollision(Asteroid* a, Bullet* b) {
 }
 
 size_t AsteroidPool::getNumOfAsteroid() {
-	return pool.getPool().size();
+	int numAsteroid = 0;
+	for (auto& a : pool.getPool()) {
+		if (a->inUse) numAsteroid++;
+	}
+	return numAsteroid;
 }
 
  std::vector<AsteroidPool::Asteroid*> AsteroidPool::getPool(){

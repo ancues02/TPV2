@@ -1,6 +1,7 @@
 #pragma once
 #include "Component.h"
 #include  "Transform.h"
+#include "BulletsPool.h"
 
 class Gun : public Component
 {
