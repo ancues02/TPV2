@@ -1,14 +1,16 @@
 #include "BulletsPool.h"
+#include "AsteroidPool.h"
+
 BulletsPool::BulletsPool() :
 	Component(ecs::BulletsPool),
 	pool([](Bullet* o) {return o->inUse; })
+
 {}
 
 BulletsPool::~BulletsPool() {
 }
 
 void BulletsPool::init() {
-	//generateAsteroids(10);
 }
 
 /*void AsteroidPool::update() {
@@ -26,11 +28,11 @@ void BulletsPool::disableAll() {
 
 //Desactiva la bala y activa dos asteroides con vel  diferente y pos parecida al asteroide padre
 //bajamos uno a su generacion (si es 0 no crea)
-/*void BulletsPool::onCollision(Bullet* a, AsteroidPool::Asteroid* b) {
+void BulletsPool::onCollision(Bullet* a, Asteroid* b) {
 	//b->inUse = false;
 	a->inUse = false;
 	
-}*/
+}
 
 
 void BulletsPool::shoot(Vector2D pos, Vector2D vel, double w, double h) {
@@ -41,6 +43,7 @@ void BulletsPool::shoot(Vector2D pos, Vector2D vel, double w, double h) {
 		b->width_ = w;
 		b->height_ = h;
 		b->rotation = (Vector2D(0, -1).angle(vel));
+		b->inUse = true;
 	}
 }
 

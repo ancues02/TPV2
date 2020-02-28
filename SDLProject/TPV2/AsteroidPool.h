@@ -1,7 +1,8 @@
 #pragma once
 #include "Component.h"
 #include "ObjectPool.h"
-#include "BulletsPool.h"
+
+class Bullet;
 class AsteroidPool : public Component
 {
 public:
@@ -22,7 +23,7 @@ public:
 	//void update() override;
 	void generateAsteroids(int n);
 	void disableAll();
-	void onCollision(Asteroid* a, BulletsPool::Bullet* b);
+	void onCollision(Asteroid* a, Bullet* b);
 	size_t getNumOfAsteroid();
 	std::vector<Asteroid*> getPool();
 private:

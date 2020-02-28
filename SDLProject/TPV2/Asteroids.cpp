@@ -24,6 +24,8 @@
 #include "AsteroidsMotion.h"
 #include "AsteroidsViewer.h"
 #include "BulletsPool.h"
+#include "BulletsMotion.h"
+#include "BulletsViewer.h"
 
 using namespace std;
 
@@ -55,17 +57,26 @@ void Asteroids::initGame() {
 	//leftPaddle->addComponent<VelocityVectorViewer>();
 	Fighter->addComponent<FighterViewer>();
 	Fighter->addComponent<Health>();
-	Fighter->addComponent<Gun>();
 
 	
 	/*Fighter->addComponent<AsteroidPool>();
 	Fighter->getComponent<AsteroidPool>(ecs::CmpIdType(ecs::AsteroidPool))->generateAsteroids(10);*/
 	
+	
+
+	Entity* BulletsPool_ = entityManager_->addEntity();
+	BulletsPool_->addComponent<BulletsPool>();
+	BulletsPool_->addComponent<BulletsMotion>();
+	BulletsPool_->addComponent<BulletsViewer>();
+
+	//despues de añadir el bulletPool
+	Fighter->addComponent<Gun>(SDLK_SPACE, BulletsPool_->getComponent<BulletsPool>(ecs::CmpIdType(ecs::BulletsPool)));
+
+
 	Entity* AsteroidPool_ = entityManager_->addEntity();
 	AsteroidPool_->addComponent<AsteroidPool>();
 	AsteroidPool_->addComponent<AsteroidsMotion>();
 	AsteroidPool_->addComponent<AsteroidsViewer>();
-
 
 	Entity *gameManager = entityManager_->addEntity();
 	gameManager->addComponent<ScoreManager>(5);

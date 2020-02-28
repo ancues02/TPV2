@@ -1,4 +1,6 @@
 #include "AsteroidPool.h"
+#include "BulletsPool.h"
+
 //creacion y activacion de n asteroides en posiciones aleatorias con velocidades aleatorias
 void AsteroidPool::generateAsteroids(int n) {
 
@@ -73,7 +75,7 @@ void AsteroidPool::disableAll() {
 
 //Desactiva la bala y activa dos asteroides con vel  diferente y pos parecida al asteroide padre
 //bajamos uno a su generacion (si es 0 no crea)
-void AsteroidPool::onCollision(Asteroid* a, BulletsPool::Bullet* b) {
+void AsteroidPool::onCollision(Asteroid* a, Bullet* b) {
 	//b->inUse = false;
 	a->inUse = false;
 	if (a->gen > 0) {
