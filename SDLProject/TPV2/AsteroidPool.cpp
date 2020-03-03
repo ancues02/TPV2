@@ -57,15 +57,10 @@ AsteroidPool::~AsteroidPool() {
 }
 //inicializamos del pool
 void AsteroidPool::init() {
-	generateAsteroids(10);
+	//generateAsteroids(10);
 }
 
-/*void AsteroidPool::update() {
 
-	//for (auto& a : pool.getPool()) {
-	//	a->pos_ = a->pos_ + a->vel;
-	//}
-}*/
 //desactivamos todos los asteroides del pool
 void AsteroidPool::disableAll() {
 	for (auto& a : pool.getPool()) {

@@ -1,52 +1,37 @@
 #pragma once
 
 #include "Component.h"
-
+enum State {
+	Stop, Running, Win, Lose
+};
 class ScoreManager: public Component {
 public:
 	ScoreManager();
-	ScoreManager(int rounds);
 	virtual ~ScoreManager();
 
-	int getLeftScore() const {
-		return leftScore_;
-	}
-
-	void setLeftScore(int leftScore) {
-		leftScore_ = leftScore;
-	}
-
-	int getRightScore() const {
-		return rightScore_;
-	}
-
-	void setRightScore(int rightScore) {
-		rightScore_ = rightScore;
-	}
-
-	int getRounds() const {
-		return rounds_;
-	}
-
-	void setRounds(int rounds) {
-		rounds_ = rounds;
-	}
+	
 
 	bool isRunning() const {
-		return running_;
+		return state == Running;
 	}
 
-	void setRunning(bool running) {
-		running_ = running;
+	void setState(State newState) {
+		state = newState;
 	}
+	State getState() {
+		return state;
+	}
+	void addScore(int n) { score += n; }
 
-	bool isGameOver() {
-		return leftScore_ == rounds_ || rightScore_ == rounds_;
+	void resetScore() { score = 0; }
+
+	int getScore() { return score; }
+
+	bool isGameOver() {//ver si quedan asteroides o te quedan vidas
+		return state == Win || state == Lose;
 	}
 
 private:
-	bool running_;
-	int leftScore_;
-	int rightScore_;
-	int rounds_;
+	State state = Stop;
+	int score;
 };

@@ -3,16 +3,19 @@
 #include "Component.h"
 #include "ScoreManager.h"
 #include "Transform.h"
+#include "Health.h"
+#include "AsteroidPool.h"
 
 class GameCtrl: public Component {
 public:
-	GameCtrl(Transform *ballTR);
+	GameCtrl(AsteroidPool* ast_pool,  Health *health);
 	virtual ~GameCtrl();
 	void init() override;
 	void update() override;
 	void draw() override;
 private:
-	Transform *ballTR_;
+	AsteroidPool* ast_pool;
+	Health* health;
 	ScoreManager *scoreManager_;
 };
 

@@ -3,11 +3,15 @@
 #include "Entity.h"
 #include "InputHandler.h"
 
-GameCtrl::GameCtrl(Transform *ballTR) :
+
+
+GameCtrl::GameCtrl(AsteroidPool* ast_pool1, Health* health1) :
 		Component(ecs::GameCtrl), //
-		ballTR_(ballTR), //
+		ast_pool(ast_pool1),
+		health(health1),
 		scoreManager_(nullptr) //
 {
+	
 }
 
 GameCtrl::~GameCtrl() {
@@ -22,18 +26,15 @@ void GameCtrl::update() {
 	if (InputHandler::instance()->keyDownEvent()) {
 		if (!scoreManager_->isRunning()) {
 			RandomNumberGenerator *r = game_->getRandGen();
-			scoreManager_->setRunning(true);
-			int dx = 1 - 2 * r->nextInt(0, 2); // 1 or -1
-			int dy = 1 - 2 * r->nextInt(0, 2); // 1 or -1
-			Vector2D v(dx * r->nextInt(6, 7), // 2 to 6
-			dy * r->nextInt(2, 7) // 2 to 6
-					);
-			ballTR_->setVel(v.normalize() * 5);
+			scoreManager_->setState(Running);
+			ast_pool->generateAsteroids(10);
+			
+			//ballTR_->setVel(v.normalize() * 5);
 
 			// rest the score if the game is over
 			if (scoreManager_->isGameOver()) {
-				scoreManager_->setLeftScore(0);
-				scoreManager_->setRightScore(0);
+				health->reset_health();
+				scoreManager_->resetScore();
 			}
 		}
 	}

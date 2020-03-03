@@ -3,12 +3,12 @@
 #include "Resources.h"
 #include "Entity.h"
 
-GameLogic::GameLogic(Transform *ballTR, Transform *leftPaddleTR,
-		Transform *rightPaddleTR) :
+GameLogic::GameLogic(Transform* fighterTR_, AsteroidPool* ast_pool, BulletsPool* bullet_pool, Health* fighterH_) :
 		Component(ecs::GameLogic), //
-		ballTR_(ballTR), //
-		leftPaddleTR_(leftPaddleTR), //
-		rightPaddleTR_(rightPaddleTR), //
+	fighterTR_(fighterTR_), //
+	ast_pool(ast_pool), //
+	bullet_pool(bullet_pool), //
+	fighterH_(fighterH_),
 		scoreManager_(nullptr) //
 {
 }
@@ -22,36 +22,41 @@ void GameLogic::init() {
 }
 
 void GameLogic::update() {
-	// check for collision of ball with paddles
-	if (Collisions::collides(ballTR_->getPos(), ballTR_->getW(),
-			ballTR_->getH(), leftPaddleTR_->getPos(), leftPaddleTR_->getW(),
-			leftPaddleTR_->getH())
-			|| Collisions::collides(ballTR_->getPos(), ballTR_->getW(),
-					ballTR_->getH(), rightPaddleTR_->getPos(),
-					rightPaddleTR_->getW(), rightPaddleTR_->getH())) {
-		Vector2D v = ballTR_->getVel();
-		v.setX(-v.getX());
-		ballTR_->setVel(v * 1.2);
-		game_->getAudioMngr()->playChannel(Resources::Paddle_Hit, 0);
-	}
+	//vector<Asteroid*
+	if (scoreManager_->isRunning()) {
+		for (int i = 0; i < ast_pool->getPool().size(); i++) {//comprobamos colision entre asteroide y fighter
+			AsteroidPool::Asteroid* as = ast_pool->getPool().at(i);
+			if (as->inUse) {
+				if (Collisions::collides(fighterTR_->getPos(), fighterTR_->getW(),
+					fighterTR_->getH(), as->pos_, as->width_, as->height_))
+				{
+					ast_pool->disableAll();
+					bullet_pool->disableAll();
+					fighterH_->decrease_health();
+					if (fighterH_->getHealth() <= 0)
+						scoreManager_->setState(Lose);
+					else scoreManager_->setState(Stop);
+				}
 
-	// check if the back exit from sides
-	if (ballTR_->getPos().getX() <= 0) {
-		scoreManager_->setRightScore(scoreManager_->getRightScore() + 1);
-		scoreManager_->setRunning(false);
-		ballTR_->setVel(Vector2D(0, 0));
-		ballTR_->setPos(
-				Vector2D(game_->getWindowWidth() / 2 - 6,
-						game_->getWindowHeight() / 2 - 6));
+				else {//comprobacion de colisiones de balas con asteroides
+					for (int j = 0; j < bullet_pool->getPool().size(); j++) {
+						BulletsPool::Bullet* bullet = bullet_pool->getPool().at(j);
+						if (bullet->inUse &&
+							Collisions::collides(bullet->pos_, bullet->width_,
+								bullet->height_, as->pos_, as->width_, as->height_)) {
 
-	} else if (ballTR_->getPos().getX() + ballTR_->getW()
-			>= game_->getWindowWidth()) {
-		scoreManager_->setLeftScore(scoreManager_->getLeftScore() + 1);
-		scoreManager_->setRunning(false);
-		ballTR_->setPos(
-				Vector2D(game_->getWindowWidth() / 2 - 6,
-						game_->getWindowHeight() / 2 - 6));
-		ballTR_->setVel(Vector2D(0, 0));
+							scoreManager_->addScore(1);
+							if (ast_pool->getNumOfAsteroid() == 0) {
+								scoreManager_->setState(Win);
+							}
+						}
+					}
+
+				}
+			}  
+
+		}
+		
 	}
 }
 

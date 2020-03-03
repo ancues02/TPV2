@@ -10,6 +10,9 @@ public:
 	void draw() override;
 	void decrease_health(int damage = 1);
 	void reset_health();
+	int getHealth() {
+		return health;
+	}
 private:
 	Transform* tr_;
 	Texture* texture = nullptr;

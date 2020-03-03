@@ -52,11 +52,11 @@ void Asteroids::initGame() {
 	Fighter->addComponent<FighterCtrl>();
 	Fighter->addComponent<FighterMotion>();
 	//leftPaddle->addComponent<Rectangle,SDL_Color>({COLOR(0xAA0000FF)});
-	FighterTr->setPos(5, game_->getWindowHeight() / 2 - 25);
-	FighterTr->setWH(100, 100);
+	FighterTr->setPos(game_->getWindowWidth()/2, game_->getWindowHeight() / 2 - 25);
+	FighterTr->setWH(50, 50 );
 	//leftPaddle->addComponent<VelocityVectorViewer>();
 	Fighter->addComponent<FighterViewer>();
-	Fighter->addComponent<Health>();
+	Health* FigtherH=Fighter->addComponent<Health>();
 
 	
 	/*Fighter->addComponent<AsteroidPool>();
@@ -65,7 +65,7 @@ void Asteroids::initGame() {
 	
 
 	Entity* BulletsPool_ = entityManager_->addEntity();
-	BulletsPool_->addComponent<BulletsPool>();
+	BulletsPool* bPool = BulletsPool_->addComponent<BulletsPool>();
 	BulletsPool_->addComponent<BulletsMotion>();
 	BulletsPool_->addComponent<BulletsViewer>();
 
@@ -74,15 +74,15 @@ void Asteroids::initGame() {
 
 
 	Entity* AsteroidPool_ = entityManager_->addEntity();
-	AsteroidPool_->addComponent<AsteroidPool>();
+	AsteroidPool* astPool = AsteroidPool_->addComponent<AsteroidPool>();
 	AsteroidPool_->addComponent<AsteroidsMotion>();
 	AsteroidPool_->addComponent<AsteroidsViewer>();
 
 	Entity *gameManager = entityManager_->addEntity();
-	gameManager->addComponent<ScoreManager>(5);
-	//gameManager->addComponent<GameLogic>(ballTR, leftPaddleTR, rightPaddleTR);
+	gameManager->addComponent<ScoreManager>();
+	gameManager->addComponent<GameLogic>(FighterTr, astPool, bPool, FigtherH);
 	gameManager->addComponent<ScoreViewer>();
-	//gameManager->addComponent<GameCtrl>(GETCMP2(ball, Transform));
+	gameManager->addComponent<GameCtrl>(astPool,FigtherH);
 
 	
 }
