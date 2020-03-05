@@ -40,7 +40,7 @@ void AsteroidPool::generateAsteroids(int n) {
 			a->pos_ = p;
 			a->vel = vel;
 			a->rotation = game_->getRandGen()->nextInt(0, 361);
-			a->gen = game_->getRandGen()->nextInt(1, 4);
+			a->gen = game_->getRandGen()->nextInt(1, 3);
 			a->height_ = a->width_ = 10 + 3 * a->gen;
 			a->inUse = true;
 		}	
