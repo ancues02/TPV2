@@ -98,6 +98,6 @@ size_t AsteroidPool::getNumOfAsteroid() {
 	return numAsteroid;
 }
 
- std::vector<AsteroidPool::Asteroid*> AsteroidPool::getPool(){
+ std::vector<Asteroid*> AsteroidPool::getPool(){
 	 return pool.getPool();
 }

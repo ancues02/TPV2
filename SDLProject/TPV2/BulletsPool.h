@@ -3,16 +3,19 @@
 #include "ObjectPool.h"
 
 class Asteroid;
+class Bullet {
+public:
+	Vector2D pos_, vel;
+	int rotation;
+	int width_;
+	int height_;
+	bool inUse = false;
+};
+
 class BulletsPool : public Component
 {
 public:
-	struct Bullet {
-		Vector2D pos_, vel;
-		int rotation;
-		int width_;
-		int height_;
-		bool inUse = false;
-	};
+	
 	BulletsPool();
 	virtual ~BulletsPool();
 

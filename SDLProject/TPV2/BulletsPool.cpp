@@ -47,6 +47,6 @@ void BulletsPool::shoot(Vector2D pos, Vector2D vel, double w, double h) {
 	}
 }
 
-std::vector<BulletsPool::Bullet*> BulletsPool::getPool() {
+std::vector<Bullet*> BulletsPool::getPool() {
 	return pool.getPool();
 }
