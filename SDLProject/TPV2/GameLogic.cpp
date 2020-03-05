@@ -22,7 +22,8 @@ void GameLogic::init() {
 
 void GameLogic::update() {
 	//vector<Asteroid*
-	if (scoreManager_->isRunning()) {
+	switch (scoreManager_->getState()) {
+	case Running://comprobamos colisiones
 		for (int i = 0; i < ast_pool->getPool().size(); i++) {//comprobamos colision entre asteroide y fighter
 			Asteroid* as = ast_pool->getPool().at(i);
 			if (as->inUse) {
@@ -32,6 +33,7 @@ void GameLogic::update() {
 					ast_pool->disableAll();
 					bullet_pool->disableAll();
 					fighterH_->decrease_health();
+					
 					if (fighterH_->getHealth() <= 0)
 						scoreManager_->setState(Lose);
 					else scoreManager_->setState(Stop);
@@ -55,10 +57,32 @@ void GameLogic::update() {
 					}
 
 				}
-			}  
+			}
 
 		}
-		
+		break;
+	case Stop:
+		fighterTR_->setVel(0, 0);
+		fighterTR_->setPos(game_->getWindowWidth() / 2, game_->getWindowHeight() / 2);
+		bullet_pool->disableAll();
+		break;
+	
+	case Lose:
+		fighterTR_->setVel(0, 0);
+		fighterTR_->setPos(game_->getWindowWidth() / 2, game_->getWindowHeight() / 2);
+		bullet_pool->disableAll();
+		fighterH_->reset_health();
+		scoreManager_->resetScore();
+		break;
+	case Win:
+		fighterTR_->setVel(0, 0);
+		fighterTR_->setPos(game_->getWindowWidth() / 2, game_->getWindowHeight() / 2);
+		bullet_pool->disableAll();
+		fighterH_->reset_health();
+		scoreManager_->resetScore();
+		break;
 	}
+	
+
 }
 
