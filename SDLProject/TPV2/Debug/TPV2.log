@@ -1,8 +1,1 @@
-﻿  GameLogic.cpp
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\BulletsPool.h(5,15): warning C4099:  'Asteroid': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\AsteroidPool.h(6): message :  vea la declaración de 'Asteroid'
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\BulletsPool.h(6,15): warning C4099:  'Bullet': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\BulletsPool.h(6): message :  vea la declaración de 'Bullet'
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\GameLogic.cpp(27,21): warning C4018:  '<': no coinciden signed/unsigned
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\GameLogic.cpp(43,24): warning C4018:  '<': no coinciden signed/unsigned
-  TPV2.vcxproj -> C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\bin\TPV2Debug.exe
+﻿
