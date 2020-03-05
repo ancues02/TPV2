@@ -70,24 +70,27 @@ void AsteroidPool::disableAll() {
 
 //Desactiva la bala y activa dos asteroides con vel  diferente y pos parecida al asteroide padre
 //bajamos uno a su generacion (si es 0 no crea)
-void AsteroidPool::onCollision(Asteroid* a, Bullet* b) {
-	//b->inUse = false;
-	a->inUse = false;
+void AsteroidPool::onCollision(Asteroid* a, Bullet* b){
 	if (a->gen > 0) {
-		
-		Vector2D v = a->vel.rotate(a->gen * 45);
-		Vector2D pos = a->pos_ + v.normalize();
-		Asteroid* a1 = pool.getObj(),
-			* a2 = pool.getObj();
-		a1->pos_ = pos;
+		Vector2D v = a->vel.rotate((double)a->gen * 45);;
+		Asteroid* a1 = pool.getObj();
+		a1->inUse = true;
+		a1->pos_ = a->pos_ + v.normalize();
 		a1->vel = v;
-		a1->gen = a->gen - 1;
+		a1->gen = (a->gen) - 1;
+		a1->rotation = game_->getRandGen()->nextInt(0, 361);
+		a1->height_ = a1->width_ = 10 + 3 * a1->gen;
 
-		a2->pos_ = pos;
+		Asteroid* a2 = pool.getObj();
+		a2->inUse = true;
+		a2->pos_ = a->pos_ - v.normalize();
 		a2->vel = v * -1;
 		a2->gen = a->gen - 1;
-
+		a1->rotation = game_->getRandGen()->nextInt(0, 361);
+		a2->height_ = a2->width_ = 10 + 3 * a2->gen;
 	}
+	a->inUse = false;	//al final para cojer dos asteroides distintos
+
 }
 
 size_t AsteroidPool::getNumOfAsteroid() {

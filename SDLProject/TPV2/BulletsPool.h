@@ -3,7 +3,7 @@
 #include "ObjectPool.h"
 
 class Asteroid;
-class Bullet {
+struct Bullet {
 public:
 	Vector2D pos_, vel;
 	int rotation;
