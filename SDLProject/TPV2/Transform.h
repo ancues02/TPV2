@@ -70,6 +70,13 @@ public:
 		width_ = width;
 		height_ = height;
 	}
+	//reinicia las variables menos su ancho y alto
+	//se usa para colocar en el centro al fighter entre rondas
+	void reset() {
+		position_ = {game_->getWindowWidth()/2 - width_/2, game_->getWindowHeight()/2 - height_/2 };
+		velocity_ = { 0, 0 };
+		rotation_ = 0;
+	}
 
 private:
 	Vector2D position_;

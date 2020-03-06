@@ -4,7 +4,7 @@
 //creacion y activacion de n asteroides en posiciones aleatorias con velocidades aleatorias
 void AsteroidPool::generateAsteroids(int n) {
 
-	for (int i = 0; i < 1; i++) {
+	for (int i = 0; i < n; i++) {
 		Asteroid* a = pool.getObj();
 		if (a != nullptr) {
 			
@@ -34,9 +34,8 @@ void AsteroidPool::generateAsteroids(int n) {
 			c.setX(game_->getWindowWidth() / 2 + rx);
 			c.setY(game_->getWindowHeight() / 2 + ry);
 
-			Vector2D vel = (c - p).normalize() * (game_->getRandGen()->nextInt(0, 11))/10;
+			Vector2D vel = (c - p).normalize() * (game_->getRandGen()->nextInt(1, 11))/10;
 
-			//cout << vel << endl << c << endl << p << endl << endl;
 			a->pos_ = p;
 			a->vel = vel;
 			a->rotation = game_->getRandGen()->nextInt(0, 361);

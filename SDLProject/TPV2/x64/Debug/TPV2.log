@@ -3,9 +3,13 @@ F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(5,15): warning C4099: 'Asteroid':
 F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.h(6): message : vea la declaración de 'Asteroid'
 F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6,15): warning C4099: 'Bullet': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
 F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6): message : vea la declaración de 'Bullet'
+  Asteroids.cpp
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(5,15): warning C4099: 'Asteroid': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.h(6): message : vea la declaración de 'Asteroid'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6,15): warning C4099: 'Bullet': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6): message : vea la declaración de 'Bullet'
   AsteroidsMotion.cpp
   AsteroidsViewer.cpp
-  AudioManager.cpp
   BulletsMotion.cpp
   BulletsPool.cpp
 F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.h(5,13): warning C4099: 'Bullet': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
@@ -16,13 +20,11 @@ F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.cpp(43,15): warning C4244: '=': con
 F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.cpp(44,16): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
 F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.cpp(45,39): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   BulletsViewer.cpp
-  Collisions.cpp
   Component.cpp
   Entity.cpp
+  FighterCtrl.cpp
   FighterMotion.cpp
   FighterViewer.cpp
-  Font.cpp
-  FontsManager.cpp
   GameCtrl.cpp
   GameLogic.cpp
 F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(5,15): warning C4099: 'Asteroid': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
@@ -31,42 +33,17 @@ F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6,15): warning C4099: 'Bullet': n
 F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6): message : vea la declaración de 'Bullet'
   Gun.cpp
   Health.cpp
-  InputHandler.cpp
-  jute.cpp
-  Generando código...
-  Compilando...
-  main.cpp
   Manager.cpp
-  ObjectPool.cpp
-  FighterCtrl.cpp
   PaddleMouseCtrl.cpp
-  Asteroids.cpp
-F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(5,15): warning C4099: 'Asteroid': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.h(6): message : vea la declaración de 'Asteroid'
-F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6,15): warning C4099: 'Bullet': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6): message : vea la declaración de 'Bullet'
-  RandomNumberGenerator.cpp
   Rectangle.cpp
   Resources.cpp
-  ScoreManager.cpp
-  ScoreViewer.cpp
-  SDLAudioManager.cpp
-  SDLFontsManager.cpp
-F:\UCM\TPV2\TPV2\SDLProject\TPV2\SDLFontsManager.cpp(38,19): warning C4267: 'argumento': conversión de 'size_t' a 'const int'; posible pérdida de datos
-F:\UCM\TPV2\TPV2\SDLProject\TPV2\SDLFontsManager.cpp(47,26): warning C4267: 'argumento': conversión de 'size_t' a 'const int'; posible pérdida de datos
-F:\UCM\TPV2\TPV2\SDLProject\TPV2\SDLFontsManager.cpp(50,13): warning C4267: 'argumento': conversión de 'size_t' a 'const int'; posible pérdida de datos
-  SDLGame.cpp
-  SDLTexturesManager.cpp
-  sdl_macros.cpp
-  SimpleMoveBahviour.cpp
-  SRandBasedGenerator.cpp
-F:\UCM\TPV2\TPV2\SDLProject\TPV2\SRandBasedGenerator.cpp(11,8): warning C4244: 'inicializando': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-  Texture.cpp
-  TexturesManager.cpp
   Generando código...
   Compilando...
+  SDLGame.cpp
+  ScoreManager.cpp
+  ScoreViewer.cpp
+  SimpleMoveBahviour.cpp
   Transform.cpp
-  Vector2D.cpp
   VelocityVectorViewer.cpp
 F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,86): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
 F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,71): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
@@ -88,6 +65,11 @@ F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,64): warning C4244:
 F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,48): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
 F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,34): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
 F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,31): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+  main.cpp
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(5,15): warning C4099: 'Asteroid': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.h(6): message : vea la declaración de 'Asteroid'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6,15): warning C4099: 'Bullet': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6): message : vea la declaración de 'Bullet'
   Generando código...
      Creando biblioteca F:\UCM\TPV2\TPV2\SDLProject\bin\TPV2Debug.lib y objeto F:\UCM\TPV2\TPV2\SDLProject\bin\TPV2Debug.exp
 Font.obj : error LNK2019: símbolo externo TTF_OpenFont sin resolver al que se hace referencia en la función "public: bool __cdecl Font::load(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)" (?load@Font@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z)
