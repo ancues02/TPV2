@@ -30,13 +30,21 @@ void GameLogic::update() {
 				if (Collisions::collides(fighterTR_->getPos(), fighterTR_->getW(),
 					fighterTR_->getH(), as->pos_, as->width_, as->height_))
 				{
+					game_->getAudioMngr()->playChannel(Resources::Explosion, 0, 1);
+
 					ast_pool->disableAll();
 					bullet_pool->disableAll();
 					fighterH_->decrease_health();
 					
-					if (fighterH_->getHealth() <= 0)
+					if (fighterH_->getHealth() <= 0) {
+						game_->getAudioMngr()->playMusic(Resources::Boooo,0);
 						scoreManager_->setState(Lose);
-					else scoreManager_->setState(Stop);
+					}
+					else {
+						scoreManager_->setState(Stop);
+						game_->getAudioMngr()->haltMusic();
+
+					}
 				}
 
 				else {//comprobacion de colisiones de balas con asteroides
@@ -45,13 +53,16 @@ void GameLogic::update() {
 						if (bullet->inUse &&
 							Collisions::collides(bullet->pos_, bullet->width_,
 								bullet->height_, as->pos_, as->width_, as->height_)) {
+							game_->getAudioMngr()->playChannel(Resources::Explosion, 0, 1);
 
 							bullet_pool->onCollision(bullet, as);
 							ast_pool->onCollision(as, bullet);
 
 							scoreManager_->addScore(1);
 							if (ast_pool->getNumOfAsteroid() == 0) {
-								scoreManager_->setState(Win);
+								game_->getAudioMngr()->playMusic(Resources::Cheer,0);
+
+     								scoreManager_->setState(Win);
 							}
 						}
 					}
@@ -71,15 +82,15 @@ void GameLogic::update() {
 		fighterTR_->setVel(0, 0);
 		fighterTR_->setPos(game_->getWindowWidth() / 2, game_->getWindowHeight() / 2);
 		bullet_pool->disableAll();
-		fighterH_->reset_health();
-		scoreManager_->resetScore();
+		//fighterH_->reset_health();
+		//scoreManager_->resetScore();
 		break;
 	case Win:
 		fighterTR_->setVel(0, 0);
 		fighterTR_->setPos(game_->getWindowWidth() / 2, game_->getWindowHeight() / 2);
 		bullet_pool->disableAll();
-		fighterH_->reset_health();
-		scoreManager_->resetScore();
+		//fighterH_->reset_health();
+		//scoreManager_->resetScore();
 		break;
 	}
 	

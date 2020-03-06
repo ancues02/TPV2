@@ -4,6 +4,32 @@
 
 #include "Manager.h"
 #include "SDLGame.h"
+//#include "SDLAudioManager.h"
+
+#include "GameCtrl.h"
+#include "GameLogic.h"
+#include "InputHandler.h"
+#include "FighterCtrl.h"
+#include "VelocityVectorViewer.h"
+#include "PaddleMouseCtrl.h"
+#include "FighterMotion.h"
+#include "Rectangle.h"
+#include "ScoreManager.h"
+#include "ScoreViewer.h"
+#include "SimpleMoveBahviour.h"
+#include "Transform.h"
+
+#include "FighterViewer.h"
+#include "Health.h"
+#include "Gun.h"
+#include "SDL_macros.h"
+#include "AsteroidPool.h"
+#include "AsteroidsMotion.h"
+#include "AsteroidsViewer.h"
+#include "BulletsPool.h"
+#include "BulletsMotion.h"
+#include "BulletsViewer.h"
+
 
 class Asteroids {
 

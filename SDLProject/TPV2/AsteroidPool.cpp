@@ -4,7 +4,7 @@
 //creacion y activacion de n asteroides en posiciones aleatorias con velocidades aleatorias
 void AsteroidPool::generateAsteroids(int n) {
 
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < 1; i++) {
 		Asteroid* a = pool.getObj();
 		if (a != nullptr) {
 			

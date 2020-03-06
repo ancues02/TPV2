@@ -24,18 +24,16 @@ void GameCtrl::init() {
 void GameCtrl::update() {
 
 	if (InputHandler::instance()->keyDownEvent()) {
+		//game_->getAudioMngr().
+		// rest the score if the game is over
+		if (scoreManager_->isGameOver()) {
+			health->reset_health();
+			scoreManager_->resetScore();
+		}
 		if (!scoreManager_->isRunning()) {
-			RandomNumberGenerator *r = game_->getRandGen();
 			scoreManager_->setState(Running);
-			ast_pool->generateAsteroids(10);
-			
-			//ballTR_->setVel(v.normalize() * 5);
-
-			// rest the score if the game is over
-			if (scoreManager_->isGameOver()) {
-				health->reset_health();
-				scoreManager_->resetScore();
-			}
+			game_->getAudioMngr()->playMusic(Resources::Imperial);
+			ast_pool->generateAsteroids(10);	
 		}
 	}
 }
@@ -50,11 +48,23 @@ void GameCtrl::draw() {
 				game_->getWindowHeight() - hitanykey->getHeight() - 50);
 	}
 
+	 
 	// game over message when game is over
-	if (scoreManager_->isGameOver()) {
-		Texture *gameOver = game_->getTextureMngr()->getTexture(
+	if (scoreManager_->getState()==Lose) {
+
+		Texture* gameOver = game_->getTextureMngr()->getTexture(
 				Resources::GameOver);
 		gameOver->render(game_->getWindowWidth() / 2 - gameOver->getWidth() / 2,
-				game_->getWindowHeight() - gameOver->getHeight() - 150);
+			game_->getWindowHeight() - gameOver->getHeight() - 150);
 	}
+	else if(scoreManager_->getState() == Win){
+		//game_->getAudioMngr()->playMusic(Resources::Cheer);
+
+		Texture* gameOver = game_->getTextureMngr()->getTexture(
+			Resources::Win);
+		gameOver->render(game_->getWindowWidth() / 2 - gameOver->getWidth() / 2,
+			game_->getWindowHeight() - gameOver->getHeight() - 150);
+	}
+	
 }
+

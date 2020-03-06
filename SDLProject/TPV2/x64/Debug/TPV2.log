@@ -1,11 +1,20 @@
 ﻿  AsteroidPool.cpp
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(5,15): warning C4099: 'Asteroid': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.h(6): message : vea la declaración de 'Asteroid'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6,15): warning C4099: 'Bullet': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6): message : vea la declaración de 'Bullet'
   AsteroidsMotion.cpp
   AsteroidsViewer.cpp
   AudioManager.cpp
   BulletsMotion.cpp
   BulletsPool.cpp
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\BulletsPool.cpp(43,15): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\BulletsPool.cpp(44,16): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.h(5,13): warning C4099: 'Bullet': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6): message : vea la declaración de 'Bullet'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.h(6,17): warning C4099: 'Asteroid': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.h(6): message : vea la declaración de 'Asteroid'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.cpp(43,15): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.cpp(44,16): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.cpp(45,39): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   BulletsViewer.cpp
   Collisions.cpp
   Component.cpp
@@ -16,6 +25,10 @@ C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\BulletsPool.cpp(44,1
   FontsManager.cpp
   GameCtrl.cpp
   GameLogic.cpp
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(5,15): warning C4099: 'Asteroid': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.h(6): message : vea la declaración de 'Asteroid'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6,15): warning C4099: 'Bullet': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6): message : vea la declaración de 'Bullet'
   Gun.cpp
   Health.cpp
   InputHandler.cpp
@@ -28,6 +41,10 @@ C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\BulletsPool.cpp(44,1
   FighterCtrl.cpp
   PaddleMouseCtrl.cpp
   Asteroids.cpp
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(5,15): warning C4099: 'Asteroid': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\AsteroidPool.h(6): message : vea la declaración de 'Asteroid'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6,15): warning C4099: 'Bullet': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\BulletsPool.h(6): message : vea la declaración de 'Bullet'
   RandomNumberGenerator.cpp
   Rectangle.cpp
   Resources.cpp
@@ -35,15 +52,15 @@ C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\BulletsPool.cpp(44,1
   ScoreViewer.cpp
   SDLAudioManager.cpp
   SDLFontsManager.cpp
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\BulletsPool.cpp(45,39): warning C4244:  '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\SDLFontsManager.cpp(38,19): warning C4267:  'argumento': conversión de 'size_t' a 'const int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\SDLFontsManager.cpp(47,26): warning C4267:  'argumento': conversión de 'size_t' a 'const int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\SDLFontsManager.cpp(38,19): warning C4267: 'argumento': conversión de 'size_t' a 'const int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\SDLFontsManager.cpp(47,26): warning C4267: 'argumento': conversión de 'size_t' a 'const int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\SDLFontsManager.cpp(50,13): warning C4267: 'argumento': conversión de 'size_t' a 'const int'; posible pérdida de datos
   SDLGame.cpp
   SDLTexturesManager.cpp
   sdl_macros.cpp
   SimpleMoveBahviour.cpp
   SRandBasedGenerator.cpp
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\SDLFontsManager.cpp(50,13): warning C4267:  'argumento': conversión de 'size_t' a 'const int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\SRandBasedGenerator.cpp(11,8): warning C4244: 'inicializando': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
   Texture.cpp
   TexturesManager.cpp
   Generando código...
@@ -51,29 +68,28 @@ C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\SDLFontsManager.cpp(
   Transform.cpp
   Vector2D.cpp
   VelocityVectorViewer.cpp
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\SRandBasedGenerator.cpp(11,8): warning C4244:  'inicializando': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,86): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,71): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,56): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,41): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,86): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,71): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,56): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,41): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,86): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,71): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,56): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,41): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,86): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,71): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,56): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,41): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,64): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,48): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,34): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,86): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,71): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,56): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(45,41): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,86): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,71): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,56): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(46,41): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,86): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,71): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,56): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(47,41): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,86): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,71): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,56): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(48,41): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,64): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,48): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,34): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+F:\UCM\TPV2\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,31): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
   Generando código...
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\VelocityVectorViewer.cpp(61,31): warning C4244:  'argumento': conversión de 'double' a 'int'; posible pérdida de datos
-     Creando biblioteca C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\bin\TPV2Debug.lib y objeto C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\bin\TPV2Debug.exp
+     Creando biblioteca F:\UCM\TPV2\TPV2\SDLProject\bin\TPV2Debug.lib y objeto F:\UCM\TPV2\TPV2\SDLProject\bin\TPV2Debug.exp
 Font.obj : error LNK2019: símbolo externo TTF_OpenFont sin resolver al que se hace referencia en la función "public: bool __cdecl Font::load(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,int)" (?load@Font@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z)
 Font.obj : error LNK2019: símbolo externo TTF_RenderText_Solid sin resolver al que se hace referencia en la función "public: struct SDL_Surface * __cdecl Font::renderText(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,struct SDL_Color)const " (?renderText@Font@@QEBAPEAUSDL_Surface@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@USDL_Color@@@Z)
 Font.obj : error LNK2019: símbolo externo TTF_CloseFont sin resolver al que se hace referencia en la función "public: void __cdecl Font::close(void)" (?close@Font@@QEAAXXZ)
@@ -135,10 +151,10 @@ Texture.obj : error LNK2019: símbolo externo SDL_DestroyTexture sin resolver al
 Texture.obj : error LNK2019: símbolo externo IMG_Load sin resolver al que se hace referencia en la función "public: bool __cdecl Texture::loadFromImg(struct SDL_Renderer *,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?loadFromImg@Texture@@QEAA_NPEAUSDL_Renderer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
 VelocityVectorViewer.obj : error LNK2019: símbolo externo SDL_RenderDrawLine sin resolver al que se hace referencia en la función "public: virtual void __cdecl VelocityVectorViewer::draw(void)" (?draw@VelocityVectorViewer@@UEAAXXZ)
 MSVCRTD.lib(exe_main.obj) : error LNK2019: símbolo externo main sin resolver al que se hace referencia en la función "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\SDL2-2.0.7\lib\x86\SDL2.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\SDL2-2.0.7\lib\x86\SDL2main.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\SDL2_image-2.0.1\lib\x86\SDL2_image.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\SDL2_ttf-2.0.14\lib\x86\SDL2_ttf.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\SDL2_mixer-2.0.2\lib\x86\SDL2_mixer.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\SDL2_net-2.0.1\lib\x86\SDL2_net.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
-C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\bin\TPV2Debug.exe : fatal error LNK1120: 52 externos sin resolver
+F:\UCM\TPV2\TPV2\SDLProject\SDL2-2.0.7\lib\x86\SDL2.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+F:\UCM\TPV2\TPV2\SDLProject\SDL2-2.0.7\lib\x86\SDL2main.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+F:\UCM\TPV2\TPV2\SDLProject\SDL2_image-2.0.1\lib\x86\SDL2_image.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+F:\UCM\TPV2\TPV2\SDLProject\SDL2_ttf-2.0.14\lib\x86\SDL2_ttf.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+F:\UCM\TPV2\TPV2\SDLProject\SDL2_mixer-2.0.2\lib\x86\SDL2_mixer.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+F:\UCM\TPV2\TPV2\SDLProject\SDL2_net-2.0.1\lib\x86\SDL2_net.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+F:\UCM\TPV2\TPV2\SDLProject\bin\TPV2Debug.exe : fatal error LNK1120: 52 externos sin resolver

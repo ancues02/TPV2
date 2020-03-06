@@ -44,7 +44,10 @@ void BulletsPool::shoot(Vector2D pos, Vector2D vel, double w, double h) {
 		b->height_ = h;
 		b->rotation = (Vector2D(0, -1).angle(vel));
 		b->inUse = true;
+		game_->getAudioMngr()->playChannel(Resources::GunShot, 0, 0);
+
 	}
+
 }
 
 std::vector<Bullet*> BulletsPool::getPool() {

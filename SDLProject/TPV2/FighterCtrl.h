@@ -9,13 +9,6 @@ public:
 	FighterCtrl(SDL_Keycode left, SDL_Keycode right, SDL_Keycode mov);
 	virtual ~FighterCtrl();
 
-	/*inline void setCtrlKeys(SDL_Keycode left, SDL_Keycode right,
-			SDL_Keycode mov) {
-		rotateLeft = left;
-		rotateRight = right;
-		move = mov;
-	}*/
-
 	void init() override;
 	void update() override;
 

@@ -2,30 +2,6 @@
 #include "Asteroids.h"
 #include <assert.h>
 
-#include "GameCtrl.h"
-#include "GameLogic.h"
-#include "InputHandler.h"
-#include "FighterCtrl.h"
-#include "VelocityVectorViewer.h"
-#include "PaddleMouseCtrl.h"
-#include "FighterMotion.h"
-#include "Rectangle.h"
-#include "ScoreManager.h"
-#include "ScoreViewer.h"
-#include "SimpleMoveBahviour.h"
-#include "Transform.h"
-#include "SDLGame.h"
-
-#include "FighterViewer.h"
-#include "Health.h"
-#include "Gun.h"
-#include "SDL_macros.h"
-#include "AsteroidPool.h"
-#include "AsteroidsMotion.h"
-#include "AsteroidsViewer.h"
-#include "BulletsPool.h"
-#include "BulletsMotion.h"
-#include "BulletsViewer.h"
 
 using namespace std;
 
@@ -44,26 +20,18 @@ void Asteroids::initGame() {
 	
 
 	game_ = SDLGame::init("Asteroids", _WINDOW_WIDTH_, _WINDOW_HEIGHT_);
-
 	entityManager_ = new EntityManager(game_);
 
 	Entity *Fighter = entityManager_->addEntity();
 	Transform * FighterTr = Fighter->addComponent<Transform>();
 	Fighter->addComponent<FighterCtrl>();
 	Fighter->addComponent<FighterMotion>();
-	//leftPaddle->addComponent<Rectangle,SDL_Color>({COLOR(0xAA0000FF)});
 	FighterTr->setPos(game_->getWindowWidth()/2, game_->getWindowHeight() / 2 - 25);
 	FighterTr->setWH(50, 50 );
-	//leftPaddle->addComponent<VelocityVectorViewer>();
 	Fighter->addComponent<FighterViewer>();
 	Health* FigtherH=Fighter->addComponent<Health>();
 
 	
-	/*Fighter->addComponent<AsteroidPool>();
-	Fighter->getComponent<AsteroidPool>(ecs::CmpIdType(ecs::AsteroidPool))->generateAsteroids(10);*/
-	
-	
-
 	Entity* BulletsPool_ = entityManager_->addEntity();
 	BulletsPool* bPool = BulletsPool_->addComponent<BulletsPool>();
 	BulletsPool_->addComponent<BulletsMotion>();
@@ -93,7 +61,7 @@ void Asteroids::closeGame() {
 
 void Asteroids::start() {
 	exit_ = false;
-
+	
 	while (!exit_) {
 		Uint32 startTime = game_->getTime();
 
