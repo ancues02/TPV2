@@ -15,21 +15,14 @@ public:
 class AsteroidPool : public Component
 {
 public:
-	
 	AsteroidPool();
 	virtual ~AsteroidPool();
-
-	
-
-	void init() override;
-	//void update() override;
 	void generateAsteroids(int n);
 	void disableAll();
 	void onCollision(Asteroid* a, Bullet* b);
 	size_t getNumOfAsteroid();
 	std::vector<Asteroid*> getPool();
 private:
-
 	ObjectPool<Asteroid,30> pool;
 };
 

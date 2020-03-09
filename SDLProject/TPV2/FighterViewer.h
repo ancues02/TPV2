@@ -13,4 +13,3 @@ private:
 	Transform* tr_;
 	Texture* texture=nullptr;
 };
-

@@ -15,18 +15,12 @@ public:
 class BulletsPool : public Component
 {
 public:
-	
 	BulletsPool();
 	virtual ~BulletsPool();
-
-
-
 	void init() override;
-	//void update() override;
 	void shoot(Vector2D pos, Vector2D vel, double w, double h);
 	void disableAll();
 	void onCollision(Bullet* a, Asteroid* b);
-	//size_t getNumOfAsteroid();
 	std::vector<Bullet*> getPool();
 private:
 	ObjectPool<Bullet, 10> pool;

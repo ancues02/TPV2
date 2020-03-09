@@ -47,16 +47,13 @@ void AsteroidPool::generateAsteroids(int n) {
 	}
 }
 
+//Pasa la funcion lambda al objectPool
 AsteroidPool::AsteroidPool() :
 	Component(ecs::AsteroidPool),
 	pool([](Asteroid* o) {return o->inUse; })
 {}
 	
 AsteroidPool::~AsteroidPool() {
-}
-//inicializamos del pool
-void AsteroidPool::init() {
-	//generateAsteroids(10);
 }
 
 
@@ -88,10 +85,11 @@ void AsteroidPool::onCollision(Asteroid* a, Bullet* b){
 		a1->rotation = game_->getRandGen()->nextInt(0, 361);
 		a2->height_ = a2->width_ = 10 + 3 * a2->gen;
 	}
-	a->inUse = false;	//al final para cojer dos asteroides distintos
+	a->inUse = false;	//al final para tener acceso a dos asteroides distintos
 
 }
 
+//Devuelve el numero de asteroides activos
 size_t AsteroidPool::getNumOfAsteroid() {
 	int numAsteroid = 0;
 	for (auto& a : pool.getPool()) {

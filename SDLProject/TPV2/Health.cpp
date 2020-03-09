@@ -26,8 +26,8 @@ void Health::draw() {
 	}
 }
 
-void Health::decrease_health(int damage ) {
-	health -= damage;
+void Health::decrease_health(int damage) {
+	health = max(0, health - damage);
 }
 
 void Health::reset_health() {

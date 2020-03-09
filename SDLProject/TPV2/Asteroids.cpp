@@ -17,21 +17,20 @@ Asteroids::~Asteroids() {
 }
 
 void Asteroids::initGame() {
-	
-
 	game_ = SDLGame::init("Asteroids", _WINDOW_WIDTH_, _WINDOW_HEIGHT_);
 	entityManager_ = new EntityManager(game_);
 
+	//Entidad del caza con todos sus componentes nedesarios
 	Entity *Fighter = entityManager_->addEntity();
 	Transform * FighterTr = Fighter->addComponent<Transform>();
 	Fighter->addComponent<FighterCtrl>();
 	Fighter->addComponent<FighterMotion>();
-	FighterTr->setPos(game_->getWindowWidth()/2, game_->getWindowHeight() / 2 - 25);
-	FighterTr->setWH(50, 50 );
+	FighterTr->setPos(game_->getWindowWidth()/2, (game_->getWindowHeight() / 2) - 25);
+	FighterTr->setWH(50, 50);
 	Fighter->addComponent<FighterViewer>();
 	Health* FigtherH=Fighter->addComponent<Health>();
 
-	
+	//Entidad para el manejo del bulletPool
 	Entity* BulletsPool_ = entityManager_->addEntity();
 	BulletsPool* bPool = BulletsPool_->addComponent<BulletsPool>();
 	BulletsPool_->addComponent<BulletsMotion>();
@@ -40,19 +39,18 @@ void Asteroids::initGame() {
 	//despues de añadir el bulletPool
 	Fighter->addComponent<Gun>(SDLK_SPACE, BulletsPool_->getComponent<BulletsPool>(ecs::CmpIdType(ecs::BulletsPool)));
 
-
+	//Entidad para el manejo del asteroidPool
 	Entity* AsteroidPool_ = entityManager_->addEntity();
 	AsteroidPool* astPool = AsteroidPool_->addComponent<AsteroidPool>();
 	AsteroidPool_->addComponent<AsteroidsMotion>();
 	AsteroidPool_->addComponent<AsteroidsViewer>();
 
+	//GameManager
 	Entity *gameManager = entityManager_->addEntity();
 	gameManager->addComponent<ScoreManager>();
 	gameManager->addComponent<GameLogic>(FighterTr, astPool, bPool, FigtherH);
 	gameManager->addComponent<ScoreViewer>();
 	gameManager->addComponent<GameCtrl>(astPool,FigtherH);
-
-	
 }
 
 void Asteroids::closeGame() {
@@ -97,7 +95,6 @@ void Asteroids::handleInput() {
 			} else {
 				SDL_SetWindowFullscreen(game_->getWindow(),
 						SDL_WINDOW_FULLSCREEN);
-				
 			}
 		}
 	}

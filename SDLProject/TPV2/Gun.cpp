@@ -19,9 +19,9 @@ Gun::~Gun() {
 
 void Gun::init() {
 	tr_ = GETCMP1_(Transform);
-	//b_pool = GETCMP1_(BulletsPool);
 }
 
+//Dispara una bala según el input y la dirección del caza
 void Gun::update() {
 	
 	InputHandler* ih = InputHandler::instance();
@@ -32,10 +32,6 @@ void Gun::update() {
 			Vector2D bulletPos = tr_->getPos() + Vector2D(tr_->getW() / 2, tr_->getH() / 2) + Vector2D(0, -(tr_->getH() / 2 + 5.0)).rotate(tr_->getRot());
 			Vector2D bulletVel = Vector2D(0, -1).rotate(tr_->getRot()) * 2;
 			b_pool->shoot(bulletPos, bulletVel, 2,15);
-
 		}
-		
-
 	}
 }
-

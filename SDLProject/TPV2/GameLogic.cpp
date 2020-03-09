@@ -18,7 +18,7 @@ GameLogic::~GameLogic() {
 void GameLogic::init() {
 	scoreManager_ = GETCMP1_(ScoreManager);
 }
-//hacer cosas dependiendo delestado en el que nos econtremos (lo mas interesante son las colisiones)
+//hacer cosas dependiendo del estado en el que nos econtremos (lo mas interesante son las colisiones)
 void GameLogic::update() {
 	switch (scoreManager_->getState()) {
 	case Running://comprobamos colisiones
@@ -41,7 +41,6 @@ void GameLogic::update() {
 					else {
 						scoreManager_->setState(Stop);
 						game_->getAudioMngr()->haltMusic();
-
 					}
 				}
 
@@ -64,10 +63,8 @@ void GameLogic::update() {
 							}
 						}
 					}
-
 				}
 			}
-
 		}
 		break;
 	case Stop:
@@ -85,7 +82,5 @@ void GameLogic::update() {
 		bullet_pool->disableAll();
 		break;
 	}
-	
-
 }
 

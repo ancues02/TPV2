@@ -10,7 +10,7 @@ FighterCtrl::FighterCtrl(SDL_Keycode rotateL, SDL_Keycode rotateR, SDL_Keycode m
 		Component(ecs::FighterCtrl), //
 		rotateLeft(rotateL), //
 		rotateRight(rotateR), //
-		move(move),
+		move(move),//
 		tr_(nullptr)//
 {
 }
@@ -22,6 +22,7 @@ void FighterCtrl::init() {
 	tr_ = GETCMP1_(Transform);
 }
 
+//Cambia la rotacion y velocidad del caza según el imput
 void FighterCtrl::update() {
 
 	InputHandler *ih = InputHandler::instance();

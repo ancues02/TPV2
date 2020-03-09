@@ -10,9 +10,7 @@ GameCtrl::GameCtrl(AsteroidPool* ast_pool1, Health* health1) :
 		ast_pool(ast_pool1),
 		health(health1),
 		scoreManager_(nullptr) //
-{
-	
-}
+{}
 
 GameCtrl::~GameCtrl() {
 }
@@ -24,8 +22,7 @@ void GameCtrl::init() {
 void GameCtrl::update() {
 
 	if (InputHandler::instance()->keyDownEvent()) {
-		//game_->getAudioMngr().
-		// rest the score if the game is over
+		// Reinicia la puntuacion si termina el juego
 		if (scoreManager_->isGameOver()) {
 			health->reset_health();
 			scoreManager_->resetScore();
@@ -49,7 +46,7 @@ void GameCtrl::draw() {
 	}
 
 	 
-	// game over message when game is over
+	// Mensaje de GameOver cuando pierde
 	if (scoreManager_->getState()==Lose) {
 
 		Texture* gameOver = game_->getTextureMngr()->getTexture(
@@ -57,9 +54,8 @@ void GameCtrl::draw() {
 		gameOver->render(game_->getWindowWidth() / 2 - gameOver->getWidth() / 2,
 			game_->getWindowHeight() - gameOver->getHeight() - 150);
 	}
+	// Mensaje de Win cuando gana
 	else if(scoreManager_->getState() == Win){
-		//game_->getAudioMngr()->playMusic(Resources::Cheer);
-
 		Texture* gameOver = game_->getTextureMngr()->getTexture(
 			Resources::Win);
 		gameOver->render(game_->getWindowWidth() / 2 - gameOver->getWidth() / 2,

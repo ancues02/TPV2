@@ -15,9 +15,8 @@ public:
 	}
 private:
 	Transform* tr_;
-	Texture* texture = nullptr;
-	int health, 
-		ini_health = 3;
-
+	Texture* texture = nullptr;	
+	int health,			//puntos de vida
+		ini_health = 3;	//puntos de vida iniciales
 };
 

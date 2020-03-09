@@ -20,4 +20,3 @@ private:
 	Health* fighterH_;
 	ScoreManager *scoreManager_;
 };
-

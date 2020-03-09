@@ -13,6 +13,9 @@ AsteroidsMotion::~AsteroidsMotion() {
 void AsteroidsMotion::init() {
 	pool = GETCMP1_(AsteroidPool);
 }
+
+//Comprueba si los asteroides activos estan en los limites para el rebote
+// y actualiza su posicion y rotacion
 void AsteroidsMotion::update() {
 	for (auto& a : pool->getPool()) {
 		if (a->inUse) {

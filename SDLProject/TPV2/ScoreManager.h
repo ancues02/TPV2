@@ -9,8 +9,6 @@ public:
 	ScoreManager();
 	virtual ~ScoreManager();
 
-	
-
 	bool isRunning() const {
 		return state == Running;
 	}

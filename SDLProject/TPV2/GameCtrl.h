@@ -18,4 +18,3 @@ private:
 	Health* health;
 	ScoreManager *scoreManager_;
 };
-

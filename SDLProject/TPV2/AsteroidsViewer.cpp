@@ -14,7 +14,6 @@ AsteroidsViewer::~AsteroidsViewer() {
 void AsteroidsViewer::init() {
 	pool = GETCMP1_(AsteroidPool);
 	texture = game_->getTextureMngr()->getTexture(Resources::Asteroid);
-
 }
 
 //dibuja las balas en uso

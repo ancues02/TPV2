@@ -15,7 +15,7 @@ private:
 	SDL_Keycode shoot;
 	Transform* tr_;
 	BulletsPool* b_pool;
-	Uint32 cd = 0;
+	Uint32 cd = 0;	//registra la ultima vez que se disparó
 	size_t limitTime = 250;//tiempo entre cada dissparo minimo
 };
 

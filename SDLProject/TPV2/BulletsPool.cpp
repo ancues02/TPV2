@@ -1,6 +1,7 @@
 #include "BulletsPool.h"
 #include "AsteroidPool.h"
 
+//Pasa la funcion lambda al objectPool
 BulletsPool::BulletsPool() :
 	Component(ecs::BulletsPool),
 	pool([](Bullet* o) {return o->inUse; })
@@ -13,28 +14,19 @@ BulletsPool::~BulletsPool() {
 void BulletsPool::init() {
 }
 
-/*void AsteroidPool::update() {
-
-	//for (auto& a : pool.getPool()) {
-	//	a->pos_ = a->pos_ + a->vel;
-	//}
-}*/
-
+//Desactiva todas las balas (las marca como no usadas)
 void BulletsPool::disableAll() {
 	for (auto& a : pool.getPool()) {
 		a->inUse = false;
 	}
 }
 
-//Desactiva la bala y activa dos asteroides con vel  diferente y pos parecida al asteroide padre
-//bajamos uno a su generacion (si es 0 no crea)
+//Desactiva la bala cuando colisiona con un asteroide
 void BulletsPool::onCollision(Bullet* a, Asteroid* b) {
-	//b->inUse = false;
 	a->inUse = false;
-	
 }
 
-
+//Añade una bala a la escena
 void BulletsPool::shoot(Vector2D pos, Vector2D vel, double w, double h) {
 	Bullet* b = pool.getObj();
 	if (b != nullptr) {
@@ -45,9 +37,7 @@ void BulletsPool::shoot(Vector2D pos, Vector2D vel, double w, double h) {
 		b->rotation = (Vector2D(0, -1).angle(vel));
 		b->inUse = true;
 		game_->getAudioMngr()->playChannel(Resources::GunShot, 0, 0);
-
 	}
-
 }
 
 std::vector<Bullet*> BulletsPool::getPool() {

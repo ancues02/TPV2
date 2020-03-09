@@ -13,7 +13,9 @@ FighterMotion::~FighterMotion() {
 void FighterMotion::init() {
 	tr_ = GETCMP1_(Transform);
 }
-//modificamos la posicion dependiendo de la velocidad sin que pueda salirse de los limites y desacelera
+
+//modificamos la posicion dependiendo de la velocidad 
+//sin que pueda salirse de los limites y desacelera
 void FighterMotion::update() {
 
 	Vector2D v = tr_->getPos() + tr_->getVel();

@@ -17,7 +17,7 @@ void BulletsViewer::init() {
 
 }
 
-//dibuja los asteroides usados
+//dibuja las balas usadas
 void BulletsViewer::draw() {
 	for (auto& a : pool->getPool()) {
 		if (a->inUse) {
