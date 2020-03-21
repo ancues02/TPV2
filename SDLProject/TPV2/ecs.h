@@ -9,11 +9,12 @@ using HdlrIdType = std::size_t;
 using SysIdType = std::size_t;
 
 enum CmpId : CmpIdType {
-	Transform = 0,
-	ImageComponent,
-	LifeTime,
-	Rotation,
-	Score,
+	Transform,// el de antes, pero usando struct -- incluido en la plantilla
+	ImageComponent, // incluye una textura -- incluido en la plantilla
+	AsteroidLifeTime, // incluye el número de generaciones del asteroid
+	GameState, // incluye el estado del juego (parado, terminado, etc.) y el ganador
+	Score, // incluye el total de puntos
+	Health, // incluye el número de vidas (rondas) que quedan al caza
 	//
 	// don't touch the rest of this enum, it is to identify the max
 	// number of components
@@ -21,7 +22,8 @@ enum CmpId : CmpIdType {
 };
 
 enum GrpId : GrpIdType {
-	_grp_Star,
+	_grp_Bullet,
+	_grp_Asteroid,
 	//
 	// don't touch the rest of this enum, it is to identify the max
 	// number of groups
@@ -29,8 +31,9 @@ enum GrpId : GrpIdType {
 };
 
 enum HdlrId : HdlrIdType {
-	_hdlr_PacMan,
-	_hdlr_GameState,
+	_hdlr_Fighter, // handler para la entidad del caza
+	_hdlr_GameState, // handler para la entidad del estado del juego
+
 	//
 	// don't touch the rest of this enum, it is to identify the max
 	// number of handlers
@@ -38,11 +41,14 @@ enum HdlrId : HdlrIdType {
 };
 
 enum SysId : SysIdType {
-	_sys_GameCtrl,
-	_sys_PackMan,
-	_sys_Stars,
-	_sys_Render,
-	_sys_Collisions,
+
+	_sys_GameCtrl, // sistema de control del juego (para empezar el juego, etc.)
+	_sys_Asteroids, // sistema de los asteroids (para mover los asteroides)
+	_sys_Bullets, // sistema de las balas (para mover las balas)
+	_sys_Fighter, // sistema del caza (para gestionar el movimiento del caza)
+	_sys_FighterGun, // sistema del arma (para disparar -- arma para el caza)
+	_sys_Collisions, // sistema de colisiones (para comprobar todas las colisiones)
+	_sys_Render, // sistema de rendering (para dibujar las entidades, etc.)
 	//
 	// don't touch the rest of this enum, it is to identify the max
 	// number of systems

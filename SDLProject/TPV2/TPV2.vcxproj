@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AsteroidLifeTime.h" />
+    <ClInclude Include="AsteroidPool.h" />
+    <ClInclude Include="AsteroidSystem.h" />
     <ClInclude Include="AudioManager.h" />
     <ClInclude Include="checkML.h" />
     <ClInclude Include="Collisions.h" />
@@ -61,6 +64,9 @@
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AsteroidLifeTime.cpp" />
+    <ClCompile Include="AsteroidPool.cpp" />
+    <ClCompile Include="AsteroidSystem.cpp" />
     <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="Collisions.cpp" />
     <ClCompile Include="CollisionSystem.cpp" />

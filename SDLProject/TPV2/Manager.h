@@ -37,7 +37,7 @@ public:
 
 	// groups
 	inline void addToGroup(ecs::GrpIdType grpId, Entity *e) {
-		events_.push_back([this, grpId, e]() {
+		events_.push_back([this, grpId, e]() {	
 			entsGroups_[grpId].push_back(e);
 		});
 	}
