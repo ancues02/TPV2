@@ -19,14 +19,12 @@ public:
 		SpaceShips,
 		Airplanes,
 		Star,
-		Heart,
-		Asteroid,
-		Bullet,
+		PacMan,
+
 		// text
 		HelloWorld,
 		PressAnyKey,
 		GameOver,
-		Win,
 	};
 
 	enum AudioId : std::size_t {
@@ -34,15 +32,10 @@ public:
 		Beat,
 		Cheer,
 		Boooo,
-		Imperial,
-		
 
 		// sound effects
 		Wall_Hit,
-		Paddle_Hit,
-		ScoreUpdate,
-		GunShot,
-		Explosion,
+		Paddle_Hit
 	};
 
 	enum FontId : std::size_t {

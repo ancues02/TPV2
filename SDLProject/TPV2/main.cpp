@@ -1,22 +1,26 @@
 #include <iostream>
 
-#include "Asteroids.h"
+#include "PacMan.h"
 
 using namespace std;
 
+
 void start() {
-	Asteroids g;
+	PacMan g;
 	g.start();
 }
 
-int main(int ac, char **av) {
+int main(int ac, char** av) {
 	try {
 		start();
-	} catch (std::string &e) { // catch errors thrown as strings
+	}
+	catch (std::string & e) { // catch errors thrown as strings
 		cerr << e << endl;
-	} catch (const std::exception &e) { // catch other exceptions
+	}
+	catch (const std::exception & e) { // catch other exceptions
 		cerr << e.what();
-	} catch (...) {
+	}
+	catch (...) {
 		cerr << "Caught and exception of unknown type ..";
 	}
 
