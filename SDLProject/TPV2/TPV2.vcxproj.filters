@@ -33,9 +33,6 @@
     <ClInclude Include="System.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StarsSystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="StarsPool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -63,9 +60,6 @@
     <ClInclude Include="Score.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Rotation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Resources.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -73,12 +67,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RandomNumberGenerator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PacManSystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PacMan.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OFFacotry.h">
@@ -91,9 +79,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LifeTime.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="jute.h">
@@ -142,6 +127,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AsteroidSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FighterSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PacMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PacManSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -200,12 +194,6 @@
     <ClCompile Include="RandomNumberGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PacManSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PacMan.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="OFFacotry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -255,6 +243,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AsteroidSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FighterSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PacMan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PacManSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

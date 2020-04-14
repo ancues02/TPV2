@@ -41,12 +41,12 @@ public:
 	void update() override {
 
 		// draw stars
-		for (auto &e : mngr_->getGroupEntities(ecs::_grp_Star)) {
+		for (auto &e : mngr_->getGroupEntities(ecs::_grp_Asteroid)) {
 			draw(e);
 		}
 
 		// draw pacman
-		draw(mngr_->getHandler(ecs::_hdlr_PacMan));
+		draw(mngr_->getHandler(ecs::_hdlr_Fighter));
 
 		// draw score
 		drawScore();

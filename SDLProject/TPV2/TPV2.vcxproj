@@ -30,13 +30,13 @@
     <ClInclude Include="DefFactory.h" />
     <ClInclude Include="ecs.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="FighterSystem.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="FontsManager.h" />
     <ClInclude Include="GameCtrlSystem.h" />
     <ClInclude Include="ImageComponent.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="jute.h" />
-    <ClInclude Include="LifeTime.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="ObjectFactory.h" />
     <ClInclude Include="ObjectPool.h" />
@@ -46,7 +46,6 @@
     <ClInclude Include="RandomNumberGenerator.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="Resources.h" />
-    <ClInclude Include="Rotation.h" />
     <ClInclude Include="Score.h" />
     <ClInclude Include="SDLAudioManager.h" />
     <ClInclude Include="SDLFontsManager.h" />
@@ -56,7 +55,6 @@
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="SRandBasedGenerator.h" />
     <ClInclude Include="StarsPool.h" />
-    <ClInclude Include="StarsSystem.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TexturesManager.h" />
@@ -72,6 +70,7 @@
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="DefFactory.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="FighterSystem.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="FontsManager.cpp" />
     <ClCompile Include="GameCtrlSystem.cpp" />

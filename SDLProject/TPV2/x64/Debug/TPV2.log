@@ -45,6 +45,7 @@ C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\AsteroidPool.h(22): 
 C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\AsteroidPool.h(22): message :         [
 C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\AsteroidPool.h(22): message :             T=AsteroidPool
 C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\AsteroidPool.h(22): message :         ]
+  CollisionSystem.cpp
   FighterSystem.cpp
 C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\AsteroidPool.h(10): message :  vea la referencia a la creación de instancias de clase plantilla "Singleton<AsteroidPool>" que se está compilando
 C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\Singleton.h(36): error C3861:  'assert': no se encontró el identificador
@@ -69,6 +70,14 @@ C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\AsteroidPool.h(22): 
 C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\AsteroidPool.h(22): message :         [
 C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\AsteroidPool.h(22): message :             T=AsteroidPool
 C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\AsteroidPool.h(22): message :         ]
+  Font.cpp
+  GameCtrlSystem.cpp
   main.cpp
+  OFFacotry.cpp
+  PacMan.cpp
+  Singleton.cpp
+  StarsPool.cpp
+  StarsSystem.cpp
+  Vector2D.cpp
   Generando código...
 C:\Users\andre\OneDrive\Escritorio\UCM\TPV2\SDLProject\TPV2\AsteroidPool.h(10): message :  vea la referencia a la creación de instancias de clase plantilla "Singleton<AsteroidPool>" que se está compilando

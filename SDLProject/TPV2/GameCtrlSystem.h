@@ -4,7 +4,7 @@
 #include "StarsSystem.h"
 #include "System.h"
 #include "Score.h"
-
+#include "AsteroidSystem.h"
 
 class GameCtrlSystem: public System {
 public:
@@ -24,7 +24,7 @@ public:
 		auto ih = game_->getInputHandler();
 
 		if ( ih->keyDownEvent() && ih->isKeyDown(SDLK_RETURN)) {
-			mngr_->getSystem<StarsSystem>(ecs::_sys_Stars)->addStars(10);
+			mngr_->getSystem<AsteroidSystem>(ecs::_sys_Asteroids)->addAsteroids(10);
 		}
 	}
 

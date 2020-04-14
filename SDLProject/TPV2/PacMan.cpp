@@ -11,6 +11,7 @@
 #include "StarsSystem.h"
 #include "StarsPool.h"
 
+
 using namespace std;
 
 PacMan::PacMan() :
@@ -28,13 +29,13 @@ void PacMan::initGame() {
 
 	game_ = SDLGame::init("Stars", _WINDOW_WIDTH_, _WINDOW_HEIGHT_);
 
-	StarsPool::init(100);
+	AsteroidPool::init(100);
 
 	mngr_ = new Manager(game_);
 
 	renderSystem_ = mngr_->addSystem<RenderSystem>();
-	starsSystem_ = mngr_->addSystem<StarsSystem>();
-	pacmanSystem_ = mngr_->addSystem<PacManSystem>();
+	asteroidSystem_ = mngr_->addSystem<AsteroidSystem>();
+	fighterSystem_ = mngr_->addSystem<FighterSystem>();
 	collisionSystem_ = mngr_->addSystem<CollisionSystem>();
 	gameCtrlSystem_ = mngr_->addSystem<GameCtrlSystem>();
 }
@@ -63,8 +64,8 @@ void PacMan::start() {
 		mngr_->refresh();
 
 		gameCtrlSystem_->update();
-		starsSystem_->update();
-		pacmanSystem_->update();
+		asteroidSystem_->update();
+		fighterSystem_->update();
 		collisionSystem_->update();
 		renderSystem_->update();
 

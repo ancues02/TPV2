@@ -10,7 +10,7 @@
 
 class PacManSystem: public System {
 public:
-	PacManSystem() :
+	/*PacManSystem() :
 			System(ecs::_sys_PackMan), ///
 			pacman_(nullptr), //
 			tr_(nullptr) {
@@ -58,6 +58,6 @@ public:
 	}
 private:
 	Entity *pacman_;
-	Transform *tr_;
+	Transform *tr_;*/
 };
 

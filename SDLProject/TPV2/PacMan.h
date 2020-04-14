@@ -9,6 +9,7 @@
 #include "RenderSystem.h"
 #include "SDLGame.h"
 #include "StarsSystem.h"
+#include "AsteroidSystem.h"
 
 class PacMan {
 
@@ -31,8 +32,8 @@ private:
 	bool exit_;
 
 	RenderSystem *renderSystem_;
-	StarsSystem *starsSystem_;
-	PacManSystem *pacmanSystem_;
+	AsteroidSystem*asteroidSystem_;
+	FighterSystem*fighterSystem_;
 	CollisionSystem *collisionSystem_;
 	GameCtrlSystem *gameCtrlSystem_;
 

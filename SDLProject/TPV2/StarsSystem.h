@@ -2,11 +2,11 @@
 
 #include <cmath>
 #include "SDL_macros.h"
-#include "LifeTime.h"
+//#include "LifeTime.h"
 #include "System.h"
 #include "Transform.h"
 #include "Entity.h"
-#include "Rotation.h"
+//#include "Rotation.h"
 #include "StarsPool.h"
 #include "Manager.h"
 #include "Score.h"
@@ -16,7 +16,7 @@
 
 class StarsSystem: public System {
 public:
-	StarsSystem() :
+	/*StarsSystem() :
 			System(ecs::_sys_Stars) {
 	}
 
@@ -75,6 +75,6 @@ public:
 
 		}
 
-	}
+	}*/
 };
 

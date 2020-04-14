@@ -4,8 +4,8 @@
 #include "ImageComponent.h"
 #include "ObjectPool.h"
 #include "Singleton.h"
-#include "LifeTime.h"
-#include "Rotation.h"
+//#include "LifeTime.h"
+//#include "Rotation.h"
 #include "Transform.h"
 
 
@@ -32,10 +32,10 @@ public:
 			tr->position_.set(x,y);
 			tr->width_ = w;
 			tr->height_ = w;
-			LifeTime *st = e->getComponent<LifeTime>(ecs::LifeTime);
-			st->lifeTime_ = lifeTime*1000;
-			st->creatiomTime_ = SDLGame::instance()->getTime();
-			e->getComponent<Rotation>(ecs::Rotation)->rotation_ = r;
+			//LifeTime *st = e->getComponent<LifeTime>(ecs::LifeTime);
+			//st->lifeTime_ = lifeTime*1000;
+			//st->creatiomTime_ = SDLGame::instance()->getTime();
+			//e->getComponent<Rotation>(ecs::Rotation)->rotation_ = r;
 		}
 		return e;
 	}
@@ -52,8 +52,8 @@ private:
 			pool_(n) {
 		for (Entity *e : pool_.getPool()) {
 			e->addComponent<Transform>();
-			e->addComponent<LifeTime>();
-			e->addComponent<Rotation>();
+			//e->addComponent<LifeTime>();
+			//e->addComponent<Rotation>();
 			e->addComponent<ImageComponent>(SDLGame::instance()->getTextureMngr()->getTexture(Resources::Star));
 		}
 	}
