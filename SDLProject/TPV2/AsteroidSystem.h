@@ -26,12 +26,12 @@ public:
 			double rotation2 = game_->getRandGen()->nextInt(0, 361);
 			double width = 10 + 3 * newGen;
 			double height = width;
-			Entity* a1 = mngr_->addEntity<AsteroidPool>(pos, vel, width, height, rotation, newGen);
+			/*Entity* a1 = mngr_->addEntity<AsteroidPool>(pos, vel, width, height, rotation, newGen);
 			if (a1 != nullptr)
 				a1->addToGroup(ecs::_grp_Asteroid);
 			Entity* a2 = mngr_->addEntity<AsteroidPool>(pos2, (vel * -1), width, height, rotation2, newGen);
 			if (a2 != nullptr)
-				a2->addToGroup(ecs::_grp_Asteroid);
+				a2->addToGroup(ecs::_grp_Asteroid);*/
 
 		}
 	}
@@ -70,9 +70,9 @@ public:
 			double h = w;
 			double rotation = game_->getRandGen()->nextInt(0, 361);
 
-			Entity* e = mngr_->addEntity<AsteroidPool>(p, vel, w, h, rotation, gen);
+			/*Entity* e = mngr_->addEntity<AsteroidPool>(p, vel, w, h, rotation, gen);
 			if (e != nullptr)
-				e->addToGroup(ecs::_grp_Asteroid);
+				e->addToGroup(ecs::_grp_Asteroid);*/
 		}
 	}
 

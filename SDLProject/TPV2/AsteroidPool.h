@@ -1,9 +1,11 @@
 #pragma once
-#include "Singleton.h"
-#include "Entity.h"
-#include "ecs.h"
-#include "ImageComponent.h"
 #include "ObjectPool.h"
+
+#include "Singleton.h"
+
+#include "ecs.h"
+#include "Entity.h"
+#include "ImageComponent.h"
 #include "Transform.h"
 #include "AsteroidLifeTime.h"
 

@@ -5,12 +5,17 @@
 #include "AsteroidPool.h"
 #include "Manager.h"
 #include "SDLGame.h"
-
+#include "Health.h"
 class FighterSystem : public System
 {
+private:
+	Entity* fighter_;
+	Transform* tr_;
 public:
 	FighterSystem() :
-		System(ecs::_sys_Fighter) {
+		System(ecs::_sys_Fighter),
+		fighter_(nullptr),
+		tr_(nullptr){
 	}
 
 	// - desactivar el asteroide “a” y crear 2 asteroides como en la práctica 1.
@@ -37,7 +42,12 @@ public:
 	}
 
 	void init() override {
+		fighter_ = mngr_->addEntity();
 
+		fighter_->addComponent<Transform>(Vector2D(game_->getWindowWidth() / 2, (game_->getWindowHeight() / 2) - 25), Vector2D( 0,0 ),50,50,0);
+		fighter_->addComponent<Health>(3);
+		fighter_->addComponent<ImageComponent>(game_->getTextureMngr()->getTexture(Resources::Airplanes));
+		mngr_->setHandler(ecs::_hdlr_Fighter, fighter_);
 	}
 
 	void update() override {
