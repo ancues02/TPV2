@@ -142,6 +142,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BulletsSystem.h">
+    <ClInclude Include="BulletPool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -264,6 +265,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BulletsSystem.cpp">
+    <ClCompile Include="BulletPool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
