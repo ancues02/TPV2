@@ -33,6 +33,7 @@ public:
 			tr->width_ = width;
 			tr->height_ = height;
 			tr->rotation_ = rotation;
+			tr->velocity_ = vel;
 			AsteroidLifeTime* ast = e->getComponent<AsteroidLifeTime>(ecs::AsteroidLifeTime);
 			ast->gen_ = generations;
 		}

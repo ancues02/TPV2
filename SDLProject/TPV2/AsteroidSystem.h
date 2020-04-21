@@ -8,6 +8,8 @@
 
 class AsteroidSystem : public System
 {
+private:
+	std::size_t numOfAsteroids_;
 public:
 	AsteroidSystem() :
 		System(ecs::_sys_Asteroids) {
@@ -32,11 +34,13 @@ public:
 			Entity* a2 = mngr_->addEntity<AsteroidPool>(pos2, (vel * -1), width, height, rotation2, newGen);
 			if (a2 != nullptr)
 				a2->addToGroup(ecs::_grp_Asteroid);*/
-
+			numOfAsteroids_ += 1;
 		}
+		else numOfAsteroids_ -= 1;
 	}
 
 	void addAsteroids(int n) {
+		numOfAsteroids_ = n;
 		for (auto i = 0; i < n; i++) {
 			Vector2D p(0, 0);
 			switch (game_->getRandGen()->nextInt(0, 4)) {
@@ -70,9 +74,9 @@ public:
 			double h = w;
 			double rotation = game_->getRandGen()->nextInt(0, 361);
 
-			/*Entity* e = mngr_->addEntity<AsteroidPool>(p, vel, w, h, rotation, gen);
+			Entity* e = mngr_->addEntity<AsteroidPool>(p, vel, w, h, rotation, gen);
 			if (e != nullptr)
-				e->addToGroup(ecs::_grp_Asteroid);*/
+				e->addToGroup(ecs::_grp_Asteroid);
 		}
 	}
 

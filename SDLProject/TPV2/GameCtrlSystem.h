@@ -5,7 +5,7 @@
 #include "System.h"
 #include "Score.h"
 #include "AsteroidSystem.h"
-
+//#include "GameState.h"
 class GameCtrlSystem: public System {
 public:
 
@@ -17,6 +17,7 @@ public:
 		Entity *e = mngr_->addEntity();
 		auto sc = e->addComponent<Score>();
 		sc->points_ = 0;
+		//e->addComponent<GameState>();
 		mngr_->setHandler(ecs::_hdlr_GameState,e);
 	}
 
@@ -27,6 +28,8 @@ public:
 			mngr_->getSystem<AsteroidSystem>(ecs::_sys_Asteroids)->addAsteroids(10);
 		}
 	}
+
+
 
 };
 
