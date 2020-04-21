@@ -1,5 +1,5 @@
 #include "SDL_macros.h"
-#include "PacMan.h"
+#include "Asteroid.h"
 #include <assert.h>
 
 #include "ImageComponent.h"
@@ -14,18 +14,18 @@
 
 using namespace std;
 
-PacMan::PacMan() :
+Asteroid::Asteroid() :
 		game_(nullptr), //
 		mngr_(nullptr), //
 		exit_(false) {
 	initGame();
 }
 
-PacMan::~PacMan() {
+Asteroid::~Asteroid() {
 	closeGame();
 }
 
-void PacMan::initGame() {
+void Asteroid::initGame() {
 
 	game_ = SDLGame::init("Stars", _WINDOW_WIDTH_, _WINDOW_HEIGHT_);
 
@@ -38,13 +38,15 @@ void PacMan::initGame() {
 	fighterSystem_ = mngr_->addSystem<FighterSystem>();
 	collisionSystem_ = mngr_->addSystem<CollisionSystem>();
 	gameCtrlSystem_ = mngr_->addSystem<GameCtrlSystem>();
+	fighterGunSystem_ = mngr_->addSystem<FigtherGunSystem>();
+	bulletSystem_ = mngr_->addSystem<BulletsSystem>();
 }
 
-void PacMan::closeGame() {
+void Asteroid::closeGame() {
 	delete mngr_;
 }
 
-void PacMan::start() {
+void Asteroid::start() {
 	exit_ = false;
 	auto ih = InputHandler::instance();
 
@@ -66,9 +68,10 @@ void PacMan::start() {
 		gameCtrlSystem_->update();
 		asteroidSystem_->update();
 		fighterSystem_->update();
+		fighterGunSystem_->update();
+		bulletSystem_->update();
 		collisionSystem_->update();
 		renderSystem_->update();
-
 
 		SDL_RenderPresent(game_->getRenderer());
 

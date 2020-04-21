@@ -132,17 +132,19 @@
     <ClInclude Include="FighterSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PacMan.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PacManSystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Health.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BulletsSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="BulletPool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FigtherGunSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Asteroid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -255,17 +257,19 @@
     <ClCompile Include="FighterSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PacMan.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PacManSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Health.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BulletsSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="BulletPool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FigtherGunSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Asteroid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

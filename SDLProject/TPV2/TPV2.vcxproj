@@ -33,6 +33,7 @@
     <ClInclude Include="ecs.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="FighterSystem.h" />
+    <ClInclude Include="FigtherGunSystem.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="FontsManager.h" />
     <ClInclude Include="GameCtrlSystem.h" />
@@ -44,8 +45,7 @@
     <ClInclude Include="ObjectFactory.h" />
     <ClInclude Include="ObjectPool.h" />
     <ClInclude Include="OFFacotry.h" />
-    <ClInclude Include="PacMan.h" />
-    <ClInclude Include="PacManSystem.h" />
+    <ClInclude Include="Asteroid.h" />
     <ClInclude Include="RandomNumberGenerator.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="Resources.h" />
@@ -76,6 +76,7 @@
     <ClCompile Include="DefFactory.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FighterSystem.cpp" />
+    <ClCompile Include="FigtherGunSystem.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="FontsManager.cpp" />
     <ClCompile Include="GameCtrlSystem.cpp" />
@@ -87,8 +88,7 @@
     <ClCompile Include="ObjectFactory.cpp" />
     <ClCompile Include="ObjectPool.cpp" />
     <ClCompile Include="OFFacotry.cpp" />
-    <ClCompile Include="PacMan.cpp" />
-    <ClCompile Include="PacManSystem.cpp" />
+    <ClCompile Include="Asteroid.cpp" />
     <ClCompile Include="RandomNumberGenerator.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="Resources.cpp" />

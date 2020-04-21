@@ -5,6 +5,7 @@
 #include "AsteroidPool.h"
 #include "Manager.h"
 #include "SDLGame.h"
+
 #include "Health.h"
 class FighterSystem : public System
 {
@@ -18,33 +19,31 @@ public:
 		tr_(nullptr){
 	}
 
-	// - desactivar el asteroide “a” y crear 2 asteroides como en la práctica 1.
+	// - poner el caza en el centro con velocidad 0 y rotación 0. No hace falta
+	// desactivar la entidad (no dibujarla si el juego está parado en RenderSystem).
 	void onCollisionWithAsteroid(Entity* a) {
-		/*AsteroidLifeTime* aLT = a->getComponent<AsteroidLifeTime>(ecs::AsteroidLifeTime);
-		Transform* aTR = a->getComponent<Transform>(ecs::Transform);
-		if (aLT->gen_ > 0) {
-			Vector2D vel = aTR->velocity_.rotate((double)aLT->gen_ * 45);
-			int newGen = aLT->gen_ - 1;
-			Vector2D pos = aTR->position_ + vel.normalize();
-			Vector2D pos2 = aTR->position_ - vel.normalize();
-			double rotation = game_->getRandGen()->nextInt(0, 361);
-			double rotation2 = game_->getRandGen()->nextInt(0, 361);
-			double width = 10 + 3 * newGen;
-			double height = width;
-			Entity* a1 = mngr_->addEntity<AsteroidPool>(pos, vel, width, height, rotation, newGen);
-			if (a1 != nullptr)
-				a1->addToGroup(ecs::_grp_Asteroid);
-			Entity* a2 = mngr_->addEntity<AsteroidPool>(pos2, (vel * -1), width, height, rotation2, newGen);
-			if (a2 != nullptr)
-				a2->addToGroup(ecs::_grp_Asteroid);
-
+		
+		Health* health = fighter_->getComponent<Health>(ecs::Health);
+		health->health_ = max(health->health_ - 1, 0);
+		/*if (health->health_ <= 0) {
+			game_->getAudioMngr()->playMusic(Resources::Boooo, 0);
+			scoreManager_->setState(Lose);
+		}
+		else {
+			scoreManager_->setState(Stop);
+			game_->getAudioMngr()->haltMusic();
 		}*/
+		Transform* tr = fighter_->getComponent<Transform>(ecs::Transform);
+		tr->velocity_ = { 0,0 };
+		tr->rotation_ = 0;
+		tr->position_ = Vector2D( game_->getWindowWidth() / 2, (game_->getWindowHeight() / 2) - 25.0 );
+		
 	}
 
 	void init() override {
 		fighter_ = mngr_->addEntity();
 
-		tr_ = fighter_->addComponent<Transform>(Vector2D(game_->getWindowWidth() / 2, (game_->getWindowHeight() / 2) - 25), Vector2D( 0,0 ),50,50,0);
+		tr_ = fighter_->addComponent<Transform>(Vector2D(game_->getWindowWidth() / 2, (game_->getWindowHeight() / 2) - 25.0), Vector2D( 0,0 ),50,50,0);
 		fighter_->addComponent<Health>(3);
 		fighter_->addComponent<ImageComponent>(game_->getTextureMngr()->getTexture(Resources::Airplanes));
 		mngr_->setHandler(ecs::_hdlr_Fighter, fighter_);

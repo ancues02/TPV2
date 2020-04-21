@@ -44,7 +44,10 @@ public:
 		for (auto &e : mngr_->getGroupEntities(ecs::_grp_Asteroid)) {
 			draw(e);
 		}
-
+		for (auto& e : mngr_->getGroupEntities(ecs::_grp_Bullet)) {
+			draw(e);
+		}
+		
 		// draw pacman
 		draw(mngr_->getHandler(ecs::_hdlr_Fighter));
 

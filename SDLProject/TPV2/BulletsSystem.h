@@ -3,24 +3,26 @@
 #include "Vector2D.h"
 #include "Entity.h"
 #include "BulletPool.h"
+#include "Manager.h"
+#include "SDLGame.h"
+
 class BulletsSystem : public System
 {
+public:
+	BulletsSystem() :
+		System(ecs::_sys_Bullets) {
+	}
+
 	// - añadir una bala al juego, como en la práctica 1 pero usando entidades.
 // - no olvidar añadir la bala al grupo _grp_Bullet
 	void shoot(Vector2D pos, Vector2D vel, double width, double height) {
-		//Bullet* b = pool.getObj();
-		if (b != nullptr) {
-			b->pos_ = pos;
-			b->vel = vel;
-			b->width_ = w;
-			b->height_ = h;
-			b->rotation = (Vector2D(0, -1).angle(vel));
-			b->inUse = true;
-			game_->getAudioMngr()->playChannel(Resources::GunShot, 0, 0);
-		}
+		
+		double rotation = (Vector2D(0, -1).angle(vel));
+	
+		//game_->getAudioMngr()->playChannel(Resources::GunShot, 0, 0);
 		Entity* e = mngr_->addEntity<BulletPool>(pos, vel, width, height, rotation);
 		if (e != nullptr)
-			e->addToGroup(ecs::_grp_Asteroid);
+			e->addToGroup(ecs::_grp_Bullet);
 	}
 		// - desactivar la bala “b”
 	void onCollisionWithAsteroid(Entity* b, Entity* a) {
@@ -29,7 +31,24 @@ class BulletsSystem : public System
 		// - si el juego está parado no hacer nada.
 		// - mover las balas y desactivar las que se salen de la ventana
 	void update() override {
-
+		for (auto& e : mngr_->getGroupEntities(ecs::_grp_Bullet)) {
+			if(!e->isActive())
+				return;
+			Transform* tr = e->getComponent<Transform>(ecs::Transform);
+			
+				if (tr->position_.getX() > game_->getWindowWidth())
+					e->setActive( false);
+				else if (tr->position_.getX() + tr->width_ < 0)
+					e->setActive(false);
+				else if (tr->position_.getY() > game_->getWindowHeight())
+					e->setActive(false);
+				else if (tr->position_.getY() + tr->height_ < 0)
+					e->setActive(false);
+				else
+					tr->position_ = tr->position_ + tr->velocity_;
+				
+			
+		}
 	}
 };
 
