@@ -20,8 +20,8 @@ public:
 
 
 	void addAsteroids(int n) {
-		numOfAsteroids_ = 1;
-		for (auto i = 0; i < 1; i++) {
+		numOfAsteroids_ = n;
+		for (auto i = 0; i < n; i++) {
 			Vector2D p(0, 0);
 			switch (game_->getRandGen()->nextInt(0, 4)) {
 			case 0://left
