@@ -50,5 +50,10 @@ public:
 			
 		}
 	}
+	void disableAll() {
+		for (auto& e : mngr_->getGroupEntities(ecs::_grp_Bullet)) {
+			e->setActive(false);
+		}
+	}
 };
 

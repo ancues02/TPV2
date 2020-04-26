@@ -9,41 +9,19 @@
 class AsteroidSystem : public System
 {
 private:
-	std::size_t numOfAsteroids_=0;
+	std::size_t numOfAsteroids_ = 0;
 public:
 	AsteroidSystem() :
 		System(ecs::_sys_Asteroids) {
 	}
 
 	// - desactivar el asteroide “a” y crear 2 asteroides como en la práctica 1.
-	void onCollisionWithBullet(Entity* a, Entity* b) {
-		a->setActive(false);
-		AsteroidLifeTime* aLT = a->getComponent<AsteroidLifeTime>(ecs::AsteroidLifeTime);
-		Transform* aTR = a->getComponent<Transform>(ecs::Transform);
-		if (aLT->gen_ > 0) {
-			Vector2D vel = aTR->velocity_.rotate((double)aLT->gen_ * 45);
-			int newGen = aLT->gen_ - 1;
-			Vector2D pos = aTR->position_ + vel.normalize();
-			Vector2D pos2 = aTR->position_ - vel.normalize();
-			double rotation = game_->getRandGen()->nextInt(0, 361);
-			double rotation2 = game_->getRandGen()->nextInt(0, 361);
-			double width = 10 + 3 * newGen;
-			double height = width;
+	void onCollisionWithBullet(Entity* a, Entity* b);
 
-			Entity* a1 = mngr_->addEntity<AsteroidPool>(pos, vel, width, height, rotation, newGen);
-			if (a1 != nullptr)
-				a1->addToGroup(ecs::_grp_Asteroid);
-			Entity* a2 = mngr_->addEntity<AsteroidPool>(pos2, (vel * -1), width, height, rotation2, newGen);
-			if (a2 != nullptr)
-				a2->addToGroup(ecs::_grp_Asteroid);
-			numOfAsteroids_ += 1;
-		}
-		else numOfAsteroids_ -= 1;
-	}
 
 	void addAsteroids(int n) {
-		numOfAsteroids_ = n;
-		for (auto i = 0; i < n; i++) {
+		numOfAsteroids_ = 1;
+		for (auto i = 0; i < 1; i++) {
 			Vector2D p(0, 0);
 			switch (game_->getRandGen()->nextInt(0, 4)) {
 			case 0://left
@@ -100,6 +78,12 @@ public:
 			tr->rotation_ += 1;
 
 			tr->position_ = tr->position_ + tr->velocity_;
+		}
+	}
+
+	void disableAll() {
+		for (auto& e : mngr_->getGroupEntities(ecs::_grp_Asteroid)) {
+			e->setActive(false);
 		}
 	}
 };

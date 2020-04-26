@@ -9,7 +9,6 @@
 #include "FigtherGunSystem.h"
 #include "RenderSystem.h"
 #include "SDLGame.h"
-#include "StarsSystem.h"
 #include "AsteroidSystem.h"
 
 class Asteroid {
@@ -26,7 +25,6 @@ private:
 	void initGame();
 	void closeGame();
 
-	void addStars(std::size_t n);
 
 	SDLGame *game_;
 	Manager *mngr_;

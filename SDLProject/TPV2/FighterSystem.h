@@ -5,8 +5,8 @@
 #include "AsteroidPool.h"
 #include "Manager.h"
 #include "SDLGame.h"
-
 #include "Health.h"
+
 class FighterSystem : public System
 {
 private:
@@ -21,25 +21,8 @@ public:
 
 	// - poner el caza en el centro con velocidad 0 y rotación 0. No hace falta
 	// desactivar la entidad (no dibujarla si el juego está parado en RenderSystem).
-	void onCollisionWithAsteroid(Entity* a) {
-		
-		Health* health = fighter_->getComponent<Health>(ecs::Health);
-		health->health_ = max(health->health_ - 1, 0);
-		/*if (health->health_ <= 0) {
-			game_->getAudioMngr()->playMusic(Resources::Boooo, 0);
-			scoreManager_->setState(Lose);
-		}
-		else {
-			scoreManager_->setState(Stop);
-			game_->getAudioMngr()->haltMusic();
-		}*/
-		Transform* tr = fighter_->getComponent<Transform>(ecs::Transform);
-		tr->velocity_ = { 0,0 };
-		tr->rotation_ = 0;
-		tr->position_ = Vector2D( game_->getWindowWidth() / 2, (game_->getWindowHeight() / 2) - 25.0 );
-		
-	}
-
+	void onCollisionWithAsteroid(Entity* a);
+	void resetPosition();
 	void init() override {
 		fighter_ = mngr_->addEntity();
 

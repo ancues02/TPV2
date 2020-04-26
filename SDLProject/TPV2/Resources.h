@@ -21,6 +21,7 @@ public:
 		Star,
 		PacMan,
 		Asteroid,
+		Heart,
 
 		// text
 		HelloWorld,

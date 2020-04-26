@@ -8,8 +8,7 @@
 #include "SDLGame.h"
 
 #include "SDL_macros.h"
-#include "StarsSystem.h"
-#include "StarsPool.h"
+
 
 
 using namespace std;

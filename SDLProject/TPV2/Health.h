@@ -17,5 +17,6 @@ struct Health : public Component
 	}
 
 	int health_, init_Health_;
+
 };
 

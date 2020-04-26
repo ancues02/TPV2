@@ -18,7 +18,8 @@ vector<Resources::ImageInfo> Resources::images_ {
 		{ Airplanes, "resources/images/airplanes.png" }, //
 		{ Star, "resources/images/star.png" }, //
 		{ PacMan, "resources/images/pacman.png" }, //
-		{ Asteroid, "resources/images/asteroid.png" } //
+		{ Asteroid, "resources/images/asteroid.png" }, //
+		{ Heart, "resources/images/heart.png" } //
 
 };
 

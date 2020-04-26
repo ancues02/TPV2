@@ -6,6 +6,7 @@
 #include "Transform.h"
 #include "BulletsSystem.h"
 #include "AsteroidSystem.h"
+#include "Score.h"
 class CollisionSystem: public System {
 public:
 	CollisionSystem() :
@@ -28,9 +29,10 @@ public:
 					auto btr = b->getComponent<Transform>(ecs::Transform);
 
 					if (Collisions::collides(btr->position_, btr->width_, btr->height_, atr->position_, atr->width_, atr->height_)) {
-
+						mngr_->getHandler(ecs::_hdlr_GameState)->getComponent<Score>(ecs::Score)->points_++;
 						mngr_->getSystem<BulletsSystem>(ecs::_sys_Bullets)->onCollisionWithAsteroid(b, a);
 						mngr_->getSystem<AsteroidSystem>(ecs::_sys_Asteroids)->onCollisionWithBullet(a, b);
+
 					}
 				}
 			}
