@@ -22,6 +22,7 @@ public:
 	// - poner el caza en el centro con velocidad 0 y rotación 0. No hace falta
 	// desactivar la entidad (no dibujarla si el juego está parado en RenderSystem).
 	void onCollisionWithAsteroid(Entity* a);
+	
 	void resetPosition();
 	void init() override {
 		fighter_ = mngr_->addEntity();
