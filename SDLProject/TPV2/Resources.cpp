@@ -19,7 +19,8 @@ vector<Resources::ImageInfo> Resources::images_ {
 		{ Star, "resources/images/star.png" }, //
 		{ PacMan, "resources/images/pacman.png" }, //
 		{ Asteroid, "resources/images/asteroid.png" }, //
-		{ Heart, "resources/images/heart.png" } //
+		{ Heart, "resources/images/heart.png" }, //
+		{ Bullet, "resources/images/whiterect.png" } //
 
 };
 
@@ -34,12 +35,16 @@ vector<Resources::MusicInfo> Resources::musics_ {
 //
 		{ Beat, "resources/sound/beat.wav" }, //
 		{ Cheer, "resources/sound/cheer.wav" }, //
-		{ Boooo, "resources/sound/boooo.wav" } //
+		{ Boooo, "resources/sound/boooo.wav" }, //
+		{ Imperial, "resources/sound/imperial_march.wav" } //
 };
 
 vector<Resources::SoundInfo> Resources::sounds_ {
 //
 		{ Wall_Hit, "resources/sound/wall_hit.wav" }, //
-		{ Paddle_Hit, "resources/sound/paddle_hit.wav" } //
+		{ Paddle_Hit, "resources/sound/paddle_hit.wav" }, //
+		{ GunShot, "resources/sound/GunShot.wav" }, //
+		{ Explosion, "resources/sound/explosion.wav" }, //
+		{ ScoreUpdate, "resources/sound/score_update.wav" }  //
 };
 

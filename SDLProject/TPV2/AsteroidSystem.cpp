@@ -6,6 +6,7 @@ void AsteroidSystem::onCollisionWithBullet(Entity* a, Entity* b)
 	a->setActive(false);
 	AsteroidLifeTime* aLT = a->getComponent<AsteroidLifeTime>(ecs::AsteroidLifeTime);
 	Transform* aTR = a->getComponent<Transform>(ecs::Transform);
+	game_->getAudioMngr()->playChannel(Resources::Explosion, 0, 1);
 	if (aLT->gen_ > 0) {
 		Vector2D vel = aTR->velocity_.rotate((double)aLT->gen_ * 45);
 		int newGen = aLT->gen_ - 1;

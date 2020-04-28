@@ -29,6 +29,7 @@ void Asteroid::initGame() {
 	game_ = SDLGame::init("Stars", _WINDOW_WIDTH_, _WINDOW_HEIGHT_);
 
 	AsteroidPool::init(100);
+	BulletPool::init(10);
 
 	mngr_ = new Manager(game_);
 

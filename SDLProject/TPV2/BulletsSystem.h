@@ -19,10 +19,11 @@ public:
 		
 		double rotation = (Vector2D(0, -1).angle(vel));
 	
-		//game_->getAudioMngr()->playChannel(Resources::GunShot, 0, 0);
 		Entity* e = mngr_->addEntity<BulletPool>(pos, vel, width, height, rotation);
-		if (e != nullptr)
+		if (e != nullptr) {
 			e->addToGroup(ecs::_grp_Bullet);
+			game_->getAudioMngr()->playChannel(Resources::GunShot, 0, 0);
+		}
 	}
 		// - desactivar la bala “b”
 	void onCollisionWithAsteroid(Entity* b, Entity* a) {
