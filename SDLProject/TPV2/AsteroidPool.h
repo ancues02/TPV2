@@ -1,8 +1,6 @@
 #pragma once
 #include "ObjectPool.h"
-
 #include "Singleton.h"
-
 #include "ecs.h"
 #include "Entity.h"
 #include "ImageComponent.h"
