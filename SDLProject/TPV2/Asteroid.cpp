@@ -24,14 +24,20 @@ Asteroid::~Asteroid() {
 	closeGame();
 }
 
+void Asteroid::stop() {
+	exit_ = true;
+}
+
 void Asteroid::initGame() {
 
 	game_ = SDLGame::init("Stars", _WINDOW_WIDTH_, _WINDOW_HEIGHT_);
-
+	game_->getAudioMngr()->setMusicVolume(30);
+	game_->getAudioMngr()->setChannelVolume(10);
 	AsteroidPool::init(100);
+	BulletPool::init(10);
 
 	mngr_ = new Manager(game_);
-
+	
 	renderSystem_ = mngr_->addSystem<RenderSystem>();
 	asteroidSystem_ = mngr_->addSystem<AsteroidSystem>();
 	fighterSystem_ = mngr_->addSystem<FighterSystem>();
@@ -63,13 +69,16 @@ void Asteroid::start() {
 		}
 
 		mngr_->refresh();
-
 		gameCtrlSystem_->update();
-		asteroidSystem_->update();
-		fighterSystem_->update();
-		fighterGunSystem_->update();
-		bulletSystem_->update();
-		collisionSystem_->update();
+		
+		auto gh = mngr_->getHandler(ecs::_hdlr_GameState)->getComponent<GameState>(ecs::GameState);
+		if (gh->currentState == gh->Running) {
+			asteroidSystem_->update();
+			fighterSystem_->update();
+			fighterGunSystem_->update();
+			bulletSystem_->update();
+			collisionSystem_->update();
+		}
 		renderSystem_->update();
 
 		SDL_RenderPresent(game_->getRenderer());

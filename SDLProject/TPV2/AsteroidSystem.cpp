@@ -10,23 +10,25 @@ void AsteroidSystem::onCollisionWithBullet(Entity* a, Entity* b)
 {
 	a->setActive(false);
 	AsteroidLifeTime* aLT = a->getComponent<AsteroidLifeTime>(ecs::AsteroidLifeTime);
+	game_->getAudioMngr()->playChannel(Resources::Explosion, 0, 1);
 	if (aLT->gen_ > 0) {
 		Transform* aTR = a->getComponent<Transform>(ecs::Transform);
 		Vector2D vel = aTR->velocity_.rotate((double)aLT->gen_ * 45);
 		int newGen = aLT->gen_ - 1;
-		Vector2D pos = aTR->position_ + vel.normalize();
-		Vector2D pos2 = aTR->position_ - vel.normalize();
-		double rotation = game_->getRandGen()->nextInt(0, 361);
-		double rotation2 = game_->getRandGen()->nextInt(0, 361);
+		double rotation;
+		Vector2D pos;
 		double width = 10 + 3 * newGen;
 		double height = width;
-
-		Entity* a1 = mngr_->addEntity<AsteroidPool>(pos, vel, width, height, rotation, newGen);
-		if (a1 != nullptr)
-			a1->addToGroup(ecs::_grp_Asteroid);
-		Entity* a2 = mngr_->addEntity<AsteroidPool>(pos2, (vel * -1), width, height, rotation2, newGen);
-		if (a2 != nullptr)
-			a2->addToGroup(ecs::_grp_Asteroid);
+		Entity* newA;
+		for (int i = 0; i < 2; i++) {	//solo funciona para generar dos asteroides
+			int aux = 1 - 2 * (i % 2);			
+			pos = aTR->position_ + (vel.normalize() * aux);
+			rotation = game_->getRandGen()->nextInt(0, 361);
+			newA = mngr_->addEntity<AsteroidPool>(pos, (vel * aux), width, height, rotation, newGen);
+			if (newA != nullptr) {
+				newA->addToGroup(ecs::_grp_Asteroid);
+			}
+		}
 		numOfAsteroids_ += 1;//se divide en dos pero se quita el actual
 	}
 	else {
@@ -37,7 +39,7 @@ void AsteroidSystem::onCollisionWithBullet(Entity* a, Entity* b)
 	}
 }
 
-//se añaden n asteroides con posicion, velocidad ... diferentes pero yendo hacia el centro de la pantalla
+//se aï¿½aden n asteroides con posicion, velocidad ... diferentes pero yendo hacia el centro de la pantalla
 void AsteroidSystem::addAsteroids(int n)
 {
 	numOfAsteroids_ = n;
@@ -74,7 +76,7 @@ void AsteroidSystem::addAsteroids(int n)
 		double h = w;
 		double rotation = game_->getRandGen()->nextInt(0, 361);
 
-		//se añaden las entidades
+		//se aï¿½aden las entidades
 		Entity* e = mngr_->addEntity<AsteroidPool>(p, vel, w, h, rotation, gen);
 		if (e != nullptr)
 			e->addToGroup(ecs::_grp_Asteroid);

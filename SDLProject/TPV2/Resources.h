@@ -22,6 +22,7 @@ public:
 		PacMan,
 		Asteroid,
 		Heart,
+		Bullet,
 
 		// text
 		HelloWorld,
@@ -34,10 +35,14 @@ public:
 		Beat,
 		Cheer,
 		Boooo,
+		Imperial,
 
 		// sound effects
 		Wall_Hit,
-		Paddle_Hit
+		Paddle_Hit,
+		ScoreUpdate,
+		GunShot,
+		Explosion
 	};
 
 	enum FontId : std::size_t {

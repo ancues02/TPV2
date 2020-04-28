@@ -18,7 +18,7 @@ public:
 	void init() override;
 
 	void update() override;
-	// - actualizar los componentes correspondientes (Score, Heath, GameState, …).
+	// - actualizar los componentes correspondientes (Score, Heath, GameState, ï¿½).
 	void onFighterDeath();
 	
 	

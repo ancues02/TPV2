@@ -24,7 +24,7 @@ public:
 
 	void update() override;
 
-	//se desactivan todas las balas, se utiliza por ejemplo cuando te hacen daño
+	//se desactivan todas las balas, se utiliza por ejemplo cuando te hacen daï¿½o
 	void disableAll() {
 		for (auto& e : mngr_->getGroupEntities(ecs::_grp_Bullet)) {
 			e->setActive(false);

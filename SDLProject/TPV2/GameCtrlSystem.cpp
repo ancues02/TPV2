@@ -26,7 +26,7 @@ void GameCtrlSystem::update()
 		}
 		if (gh->currentState != gh->Running) {
 			gh->currentState = gh->Running;
-			//game_->getAudioMngr()->playMusic(Resources::Imperial);
+			game_->getAudioMngr()->playMusic(Resources::Imperial);
 			mngr_->getSystem<AsteroidSystem>(ecs::_sys_Asteroids)->addAsteroids(10);
 		}
 	}
@@ -43,12 +43,13 @@ void GameCtrlSystem::onFighterDeath()
 	auto gh = mngr_->getHandler(ecs::_hdlr_GameState)->getComponent<GameState>(ecs::GameState);
 	Health* fighterHealth = mngr_->getHandler(ecs::_hdlr_Fighter)->getComponent<Health>(ecs::Health);
 	if (fighterHealth->health_ <= 0) {
-		//game->getAudioMngr()->playMusic(Resources::Boooo, 0);
+		game_->getAudioMngr()->playMusic(Resources::Boooo, 0);
 		gh->currentState = gh->Lose;
 	}
 	else {
+		game_->getAudioMngr()->playChannel(Resources::Explosion, 0, 1);
 		gh->currentState = gh->Stop;
-		//game_->getAudioMngr()->haltMusic();
+		game_->getAudioMngr()->haltMusic();
 	}
 
 }
@@ -58,5 +59,6 @@ void GameCtrlSystem::onAsteroidsExtenction()
 	mngr_->getSystem<BulletsSystem>(ecs::_sys_Bullets)->disableAll();
 	mngr_->getSystem<FighterSystem>(ecs::_sys_Fighter)->resetPosition();
 	auto gh = mngr_->getHandler(ecs::_hdlr_GameState)->getComponent<GameState>(ecs::GameState);
-	gh->currentState = gh->Win;
+	game_->getAudioMngr()->playMusic(Resources::Cheer, 0);
+	gh->currentState = gh->Win;	
 }
