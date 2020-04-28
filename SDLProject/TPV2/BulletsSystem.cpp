@@ -7,8 +7,10 @@ void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double heigh
 
 	//game_->getAudioMngr()->playChannel(Resources::GunShot, 0, 0);
 	Entity* e = mngr_->addEntity<BulletPool>(pos, vel, width, height, rotation);
-	if (e != nullptr)
+	if (e != nullptr) {
 		e->addToGroup(ecs::_grp_Bullet);
+		game_->getAudioMngr()->playChannel(Resources::GunShot, 0, 0);
+	}
 }
 
 //se actualiza su posicion y si se sale de los limites se desactiva 
