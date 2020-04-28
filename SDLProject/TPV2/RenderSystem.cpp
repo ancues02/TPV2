@@ -76,7 +76,7 @@ void RenderSystem::update()
 		}
 
 		// info message
-		Texture msg(game_->getRenderer(), "Press ENTER to start game", game_->getFontMngr()->getFont(Resources::ARIAL24), { COLOR(0xff0000ff) });
+		Texture msg(game_->getRenderer(), "Press ANY KEY to start game", game_->getFontMngr()->getFont(Resources::ARIAL24), { COLOR(0xff0000ff) });
 		msg.render(game_->getWindowWidth() / 2 - msg.getWidth() / 2, game_->getWindowHeight() - msg.getHeight() - 10);
 	}
 	// draw fighter
