@@ -91,6 +91,8 @@ void AsteroidSystem::update()
 			return;
 
 		Transform* tr = e->getComponent<Transform>(ecs::Transform);
+		tr->rotation_ += 1;
+		tr->position_ = tr->position_ + tr->velocity_;
 		if (tr->position_.getX() > game_->getWindowWidth())
 			tr->position_.setX(-tr->width_);
 		else if (tr->position_.getX() + tr->width_ < 0)
@@ -99,8 +101,6 @@ void AsteroidSystem::update()
 			tr->position_.setY(-tr->height_);
 		else if (tr->position_.getY() + tr->height_ < 0)
 			tr->position_.setY(game_->getWindowHeight());
-		tr->rotation_ += 1;
-
-		tr->position_ = tr->position_ + tr->velocity_;
+		
 	}
 }
