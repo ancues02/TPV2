@@ -15,7 +15,6 @@ public:
 		System(ecs::_sys_Asteroids) {
 	}
 
-	// - desactivar el asteroide “a” y crear 2 asteroides como en la práctica 1.
 	void onCollisionWithBullet(Entity* a, Entity* b);
 
 
@@ -24,6 +23,7 @@ public:
 
 	void update() override;
 
+	//desactiva todos los asteroides
 	void disableAll() {
 		for (auto& e : mngr_->getGroupEntities(ecs::_grp_Asteroid)) {
 			e->setActive(false);

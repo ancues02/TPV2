@@ -18,7 +18,7 @@ void BulletsSystem::update()
 		if (!e->isActive())
 			return;
 		Transform* tr = e->getComponent<Transform>(ecs::Transform);
-
+		tr->position_ = tr->position_ + tr->velocity_;
 		if (tr->position_.getX() > game_->getWindowWidth())
 			e->setActive(false);
 		else if (tr->position_.getX() + tr->width_ < 0)
@@ -27,8 +27,8 @@ void BulletsSystem::update()
 			e->setActive(false);
 		else if (tr->position_.getY() + tr->height_ < 0)
 			e->setActive(false);
-		else
-			tr->position_ = tr->position_ + tr->velocity_;
+		
+			
 
 
 	}
