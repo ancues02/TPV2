@@ -40,14 +40,20 @@ void RenderSystem::drawCtrlMessages() {
 	auto gameState =
 			mngr_->getSystem<GameCtrlSystem>(ecs::_sys_GameCtrl)->getState();
 
-	if (gameState != GameCtrlSystem::RUNNING) {
+	if (gameState == GameCtrlSystem::READY) {
+		auto msgTex = game_->getTextureMngr()->getTexture(
+			Resources::WaitingForPlayer);
+		msgTex->render((game_->getWindowWidth() - msgTex->getWidth()) / 2,
+			(game_->getWindowHeight() - msgTex->getHeight() - 10));
+	}
+	else if (gameState == GameCtrlSystem::RUNNING) {
 		auto msgTex = game_->getTextureMngr()->getTexture(
 				Resources::PressEnter);
 		msgTex->render((game_->getWindowWidth() - msgTex->getWidth()) / 2,
 				(game_->getWindowHeight() - msgTex->getHeight() - 10));
 	}
 
-	if (gameState == GameCtrlSystem::GAMEOVER) {
+	else if (gameState == GameCtrlSystem::GAMEOVER) {
 		auto msgTex = game_->getTextureMngr()->getTexture(Resources::GameOver);
 		msgTex->render((game_->getWindowWidth() - msgTex->getWidth()) / 2,
 				(game_->getWindowHeight() - msgTex->getHeight()) / 2);

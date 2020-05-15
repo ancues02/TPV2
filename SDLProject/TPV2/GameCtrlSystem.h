@@ -14,6 +14,7 @@ public:
 	GameCtrlSystem();
 	void init() override;
 	void update() override;
+	void recieve(const msg::Message& msg) override;
 	State getState() {
 		return state_;
 	}

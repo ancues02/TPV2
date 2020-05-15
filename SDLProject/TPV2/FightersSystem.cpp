@@ -21,6 +21,28 @@ FightersSystem::FightersSystem() :
 FightersSystem::~FightersSystem() {
 }
 
+void FightersSystem::recieve(const msg::Message& msg)
+{
+	switch (msg.id){
+	case msg::_FIGHTER_INFO: {
+		if (msg.senderClientId == mngr_->getClientId())
+			return;
+		Transform* tr_ = nullptr;
+		if (msg.senderClientId == 0)
+			tr_ = mngr_->getHandler(ecs::_hdlr_Fighter0)->getComponent<Transform>(ecs::Transform);
+		else
+			tr_ = mngr_->getHandler(ecs::_hdlr_Fighter1)->getComponent<Transform>(ecs::Transform);
+		//sincronizar la posición del otro caza
+		msg::FighterInfoMsg fMsg = static_cast<const msg::FighterInfoMsg&>(msg);	
+		tr_->position_ = fMsg.pos;
+		tr_->rotation_ = fMsg.rot;
+		break;
+	}
+	default:
+		break;
+	}
+}
+
 void FightersSystem::resetFighterPositions() {
 	auto f0Tr = fighter0_->getComponent<Transform>(ecs::Transform);
 	f0Tr->velocity_ = Vector2D(0.0, 0.0);
@@ -76,9 +98,10 @@ void FightersSystem::update() {
 			mngr_->getSystem<GameCtrlSystem>(ecs::_sys_GameCtrl)->getState();
 	if (gameState != GameCtrlSystem::RUNNING)
 		return;
-
-	updateFighter(fighter0_);
-	updateFighter(fighter1_);
+	if(mngr_->getClientId() == 0)
+		updateFighter(fighter0_);
+	else
+		updateFighter(fighter1_);
 
 }
 
@@ -130,4 +153,6 @@ void FightersSystem::updateFighter(Entity *e) {
 		tr->velocity_ = Vector2D();
 		tr->position_ = oldPos;
 	}
+
+	mngr_->send<msg::FighterInfoMsg>(tr->position_, tr->rotation_);
 }

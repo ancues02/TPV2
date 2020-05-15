@@ -252,4 +252,138 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="resources\sound\beat.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="resources\sound\boooo.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="resources\sound\cheer.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="resources\sound\explosion.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="resources\sound\gunshot.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="resources\sound\imperial_march.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="resources\sound\missed.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="resources\sound\paddle_hit.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="resources\sound\score_update.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="resources\sound\wall_hit.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="resources\sound\bonus-bell.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="resources\sound\game-over.mp3">
+      <Filter>Resource Files</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\images\a5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\ai.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\airplanes.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\asteroid.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\badges.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\bird.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\black-hole.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\blank.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\bullet.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\c4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\explosion.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\fighter.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\fireegg.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\heart.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\keyboard.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\life.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\monster.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\mouse.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\mute.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\pacman.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\red_arrow copy.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\spaceships.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\star.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\tennis_ball.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\whiterect.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="resources\fonts\ARIAL.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
+    <Font Include="resources\fonts\Capture_it.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
+    <Font Include="resources\fonts\NES-Chimera.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\cfg\pingpong.1.cfg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\cfg\pingpong.cfg">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>

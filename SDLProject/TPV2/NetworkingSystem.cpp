@@ -27,7 +27,15 @@ void NetworkingSystem::update() {
 			mngr_->forwardMsg<msg::ClientDisconnectedMsg>(msg->senderClientId,
 					static_cast<msg::ClientDisconnectedMsg*>(msg)->clientId);
 			break;
-
+		case msg::_PLAYER_INFO:
+			mngr_->forwardMsg<msg::Message>(msg->senderClientId, msg::_PLAYER_INFO);
+			break;
+		case msg::_FIGHTER_INFO: {
+			msg::FighterInfoMsg* fMsg = static_cast<msg::FighterInfoMsg*>(msg);
+			mngr_->forwardMsg<msg::FighterInfoMsg>(msg->senderClientId,
+				fMsg->pos, fMsg->rot);
+			break;
+		}
 		default:
 			assert(false);
 			break;

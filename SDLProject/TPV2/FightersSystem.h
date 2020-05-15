@@ -11,6 +11,7 @@ class FightersSystem: public System {
 public:
 	FightersSystem();
 	virtual ~FightersSystem();
+	void recieve(const msg::Message& msg) override;
 	void init() override;
 	void update() override;
 	void resetFighterPositions();

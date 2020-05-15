@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
+#include "Vector2D.h"
 
 namespace msg {
 
@@ -12,7 +13,8 @@ enum MsgId : uint8_t {
 	_CONNECTED, //
 	_CONNECTION_REFUSED, //
 	_CLIENT_DISCONNECTED, //
-
+	_PLAYER_INFO, //
+	_FIGHTER_INFO, //
 	//
 	_last_MsgId_
 };
@@ -46,7 +48,13 @@ struct ClientDisconnectedMsg: Message {
 	uint32_t clientId;
 };
 
-
+struct FighterInfoMsg : Message {
+	FighterInfoMsg(const Vector2D& pos, double rot) :
+		Message(sizeof(FighterInfoMsg), _FIGHTER_INFO), pos(pos), rot(rot) {
+	}
+	Vector2D pos;
+	double rot;
+};
 #pragma pack(pop)
 
 }

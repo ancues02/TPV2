@@ -16,12 +16,32 @@ GameCtrlSystem::GameCtrlSystem() :
 	resetScore();
 }
 
+void GameCtrlSystem::recieve(const msg::Message& msg) {
+	switch (msg.id) {
+		case msg::_PLAYER_INFO: {
+			if (msg.senderClientId == mngr_->getClientId())
+				return;
+			state_ = RUNNING;
+			mngr_->send<msg::Message>(msg::_PLAYER_INFO);
+			break;
+		}
+		case msg::_CLIENT_DISCONNECTED: {
+			state_ = READY;
+			mngr_->getSystem<FightersSystem>(ecs::_sys_Fighters)->resetFighterPositions();
+			resetScore();
+			break;
+		}
+		default:
+			break;
+	}
+}
+
 void GameCtrlSystem::init() {
 	state_ = READY;
+	mngr_->send<msg::Message>(msg::_PLAYER_INFO);
 }
 
 void GameCtrlSystem::update() {
-
 	if (state_ != RUNNING) {
 		InputHandler *ih = game_->getInputHandler();
 		if (ih->keyDownEvent() && ih->isKeyDown(SDLK_RETURN)) {
