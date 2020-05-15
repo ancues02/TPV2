@@ -100,6 +100,56 @@
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\cfg\pingpong.1.cfg" />
+    <None Include="resources\cfg\pingpong.cfg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="resources\fonts\ARIAL.ttf" />
+    <Font Include="resources\fonts\Capture_it.ttf" />
+    <Font Include="resources\fonts\NES-Chimera.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\images\a5.png" />
+    <Image Include="resources\images\ai.png" />
+    <Image Include="resources\images\airplanes.png" />
+    <Image Include="resources\images\asteroid.png" />
+    <Image Include="resources\images\badges.png" />
+    <Image Include="resources\images\bird.png" />
+    <Image Include="resources\images\black-hole.png" />
+    <Image Include="resources\images\blank.png" />
+    <Image Include="resources\images\bullet.png" />
+    <Image Include="resources\images\c4.png" />
+    <Image Include="resources\images\explosion.png" />
+    <Image Include="resources\images\fighter.png" />
+    <Image Include="resources\images\fireegg.png" />
+    <Image Include="resources\images\heart.png" />
+    <Image Include="resources\images\keyboard.png" />
+    <Image Include="resources\images\life.png" />
+    <Image Include="resources\images\monster.png" />
+    <Image Include="resources\images\mouse.png" />
+    <Image Include="resources\images\mute.png" />
+    <Image Include="resources\images\pacman.png" />
+    <Image Include="resources\images\red_arrow copy.png" />
+    <Image Include="resources\images\spaceships.png" />
+    <Image Include="resources\images\star.png" />
+    <Image Include="resources\images\tennis_ball.png" />
+    <Image Include="resources\images\whiterect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="resources\sound\beat.wav" />
+    <Media Include="resources\sound\bonus-bell.mp3" />
+    <Media Include="resources\sound\boooo.wav" />
+    <Media Include="resources\sound\cheer.wav" />
+    <Media Include="resources\sound\explosion.wav" />
+    <Media Include="resources\sound\game-over.mp3" />
+    <Media Include="resources\sound\gunshot.wav" />
+    <Media Include="resources\sound\imperial_march.wav" />
+    <Media Include="resources\sound\missed.wav" />
+    <Media Include="resources\sound\paddle_hit.wav" />
+    <Media Include="resources\sound\score_update.wav" />
+    <Media Include="resources\sound\wall_hit.wav" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{AB972A8F-25F8-4C47-A8F2-6BF10D3F83D8}</ProjectGuid>
