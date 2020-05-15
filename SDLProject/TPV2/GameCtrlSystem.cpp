@@ -31,6 +31,15 @@ void GameCtrlSystem::recieve(const msg::Message& msg) {
 			resetScore();
 			break;
 		}
+		case msg::_START_REQ: {
+			if (state_ != RUNNING)
+				mngr_->send<msg::Message>(msg::_START_GAME);	//posicionar players?	
+			break;
+		}
+		case msg::_START_GAME: {
+			startGame();
+			break;
+		}
 		default:
 			break;
 	}
@@ -54,7 +63,7 @@ void GameCtrlSystem::startGame() {
 	if (state_ == GAMEOVER) {
 		resetScore();
 	}
-	mngr_->getSystem<FightersSystem>(ecs::_sys_Fighters)->resetFighterPositions();
+	mngr_->getSystem<FightersSystem>(ecs::_sys_Fighters)->resetFighterPositions();	//cambiar de sitio a fighterSystem
 	state_ = RUNNING;
 }
 

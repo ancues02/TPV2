@@ -15,6 +15,9 @@ enum MsgId : uint8_t {
 	_CLIENT_DISCONNECTED, //
 	_PLAYER_INFO, //
 	_FIGHTER_INFO, //
+	_BULLET_INFO, //
+	_START_GAME, //
+	_START_REQ, //
 	//
 	_last_MsgId_
 };
@@ -55,6 +58,17 @@ struct FighterInfoMsg : Message {
 	Vector2D pos;
 	double rot;
 };
+
+struct BulletInfoMsg : Message {
+	BulletInfoMsg(const Vector2D& pos, const Vector2D& vel, double w, double h) :
+		Message(sizeof(BulletInfoMsg), _BULLET_INFO), pos(pos), vel(vel), w(w), h(h) {
+	}
+	Vector2D pos;
+	Vector2D vel;
+	double w;
+	double h;
+}; 
+
 #pragma pack(pop)
 
 }

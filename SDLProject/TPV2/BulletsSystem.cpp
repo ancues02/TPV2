@@ -8,12 +8,23 @@ BulletsSystem::BulletsSystem() :
 		System(ecs::_sys_Bullets) {
 }
 
-void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double w, double h) {
-
-	Entity *b = mngr_->addEntity<BulletsPool>(pos,vel,w,h);
-	if (b != nullptr) {
-		b->addToGroup(ecs::_grp_Bullets);
+void BulletsSystem::recieve(const msg::Message& msg){
+	switch (msg.id)
+	{
+	case msg::_BULLET_INFO: {
+		msg::BulletInfoMsg bMsg = static_cast<const msg::BulletInfoMsg&>(msg);
+		Entity* b = mngr_->addEntity<BulletsPool>(bMsg.pos, bMsg.vel, bMsg.w, bMsg.h);
+		if (b != nullptr) {
+			b->addToGroup(ecs::_grp_Bullets);
+		}
 	}
+	default:
+		break;
+	}
+}
+
+void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double w, double h) {
+	mngr_->send<msg::BulletInfoMsg>(pos,vel,w,h);
 }
 
 void BulletsSystem::disableAll() {
@@ -35,6 +46,10 @@ void BulletsSystem::update() {
 		} else {
 			tr->position_ = p;
 		}
+
+		
 	}
 }
+
+
 

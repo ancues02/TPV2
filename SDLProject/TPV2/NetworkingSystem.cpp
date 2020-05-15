@@ -36,6 +36,12 @@ void NetworkingSystem::update() {
 				fMsg->pos, fMsg->rot);
 			break;
 		}
+		case msg::_BULLET_INFO: {
+			msg::BulletInfoMsg* bMsg = static_cast<msg::BulletInfoMsg*>(msg);
+			mngr_->forwardMsg<msg::BulletInfoMsg>(msg->senderClientId,
+				bMsg->pos, bMsg->vel, bMsg->w, bMsg->h);
+			break;
+		}
 		default:
 			assert(false);
 			break;

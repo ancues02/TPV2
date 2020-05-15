@@ -8,6 +8,7 @@ class BulletsSystem: public System {
 public:
 	BulletsSystem();
 	void update() override;
+	void recieve(const msg::Message& msg) override;
 	void shoot(Vector2D pos, Vector2D vel, double w, double h);
 	void disableAll();
 private:
