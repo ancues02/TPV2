@@ -4,8 +4,8 @@
 #include "SDL_macros.h"
 using namespace std;
 
-StarWars::StarWars() :
-		exit_(false) {
+StarWars::StarWars(char* host, int port) :
+		exit_(false), host_(host), port_(port) {
 	initGame();
 }
 
