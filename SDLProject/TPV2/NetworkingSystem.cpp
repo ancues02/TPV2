@@ -42,6 +42,19 @@ void NetworkingSystem::update() {
 				bMsg->pos, bMsg->vel, bMsg->w, bMsg->h);
 			break;
 		}
+		case msg::_START_REQ: {
+			mngr_->forwardMsg<msg::Message>(msg->senderClientId, msg::_START_REQ);
+			break;
+		}
+		case msg::_START_GAME: {
+			mngr_->forwardMsg<msg::Message>(msg->senderClientId, msg::_START_GAME);
+			break;
+		}
+		case msg::_BULLET_FIGHTER_COLLISION: {
+			mngr_->forwardMsg<msg::BulletFighterCollisionMsg>(msg->senderClientId,
+				static_cast<msg::BulletFighterCollisionMsg*>(msg)->fighter_id);
+			break;
+		}
 		default:
 			assert(false);
 			break;

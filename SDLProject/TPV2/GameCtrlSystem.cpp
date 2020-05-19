@@ -21,8 +21,10 @@ void GameCtrlSystem::recieve(const msg::Message& msg) {
 		case msg::_PLAYER_INFO: {
 			if (msg.senderClientId == mngr_->getClientId())
 				return;
-			state_ = RUNNING;
-			mngr_->send<msg::Message>(msg::_PLAYER_INFO);
+			if (state_ == READY) {
+				state_ = ROUNDOVER;
+				mngr_->send<msg::Message>(msg::_PLAYER_INFO);
+			}
 			break;
 		}
 		case msg::_CLIENT_DISCONNECTED: {
@@ -31,12 +33,13 @@ void GameCtrlSystem::recieve(const msg::Message& msg) {
 			resetScore();
 			break;
 		}
+		//si el juego no esta en marcha, quiero pedir que se inicie
 		case msg::_START_REQ: {
 			if (state_ != RUNNING)
-				mngr_->send<msg::Message>(msg::_START_GAME);	//posicionar players?	
+				mngr_->send<msg::Message>(msg::_START_GAME);
 			break;
 		}
-		case msg::_START_GAME: {
+		case msg::_START_GAME: {	
 			startGame();
 			break;
 		}
@@ -54,12 +57,15 @@ void GameCtrlSystem::update() {
 	if (state_ != RUNNING) {
 		InputHandler *ih = game_->getInputHandler();
 		if (ih->keyDownEvent() && ih->isKeyDown(SDLK_RETURN)) {
-			startGame();
+			//startGame();
+			mngr_->send<msg::Message>(msg::_START_REQ);
 		}
 	}
 }
 
 void GameCtrlSystem::startGame() {
+	//if (state_ == RUNNING)	//ignorar la peticion si ya hemos empezado el juego
+	//	return;
 	if (state_ == GAMEOVER) {
 		resetScore();
 	}
