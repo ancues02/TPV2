@@ -84,7 +84,8 @@ void FightersSystem::init() {
 	f1Tr->width_ = 50.0;
 	f1Tr->height_ = 50.0;
 	f1Tr->rotation_ = -90.0;
-	fighter1_->addComponent<CtrlKeys>(SDLK_a, SDLK_s, SDLK_w, SDLK_z, SDLK_x);
+	fighter1_->addComponent<CtrlKeys>(SDLK_LEFT, SDLK_RIGHT, SDLK_UP, SDLK_DOWN,
+		SDLK_SPACE);
 
 	fighter1_->addComponent<Image>(
 			game_->getTextureMngr()->getTexture(Resources::Fighter));

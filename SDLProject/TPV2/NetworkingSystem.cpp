@@ -55,6 +55,10 @@ void NetworkingSystem::update() {
 				static_cast<msg::BulletFighterCollisionMsg*>(msg)->fighter_id);
 			break;
 		}
+		case msg::_FIGHTER_FIGTHER_COLLISION: {
+			mngr_->forwardMsg<msg::Message>(msg->senderClientId, msg::_FIGHTER_FIGTHER_COLLISION);
+			break;
+		}
 		default:
 			assert(false);
 			break;

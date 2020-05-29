@@ -19,6 +19,7 @@ public:
 		return state_;
 	}
 	void onFighterDeath(uint8_t fighterId);
+	void bothFighterCollision();
 	uint8_t getScore(uint8_t fighterId) {
 		assert(fighterId >= 0 && fighterId <= 1);
 		return score[fighterId];

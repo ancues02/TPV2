@@ -20,7 +20,13 @@ void CollisionSystem::recieve(const msg::Message& msg)
 	case msg::_BULLET_FIGHTER_COLLISION: {
 		mngr_->getSystem<BulletsSystem>(ecs::_sys_Bullets)->disableAll();
 		mngr_->getSystem<GameCtrlSystem>(ecs::_sys_GameCtrl)->onFighterDeath(static_cast<const msg::BulletFighterCollisionMsg&>(msg).fighter_id);
+		break;
 	}
+	case msg::_FIGHTER_FIGTHER_COLLISION: {
+		mngr_->getSystem<GameCtrlSystem>(ecs::_sys_GameCtrl)->bothFighterCollision();
+		break;
+	}
+											 
 
 	default:
 		break;
@@ -47,7 +53,16 @@ void CollisionSystem::update() {
 					fTR->height_, fTR->rotation_)) {
 				mngr_->send<msg::BulletFighterCollisionMsg>(f->getComponent<FighterInfo>(ecs::FighterInfo)->fighterId);
 			}
+			
 		}
-	}	
+	}
+	Transform* f0 = mngr_->getHandler(ecs::_hdlr_Fighter0)->getComponent<Transform>(ecs::Transform);
+	Transform* f1 = mngr_->getHandler(ecs::_hdlr_Fighter1)->getComponent<Transform>(ecs::Transform);
+	if (Collisions::collidesWithRotation(f0->position_, f0->width_,
+		f0->height_, f0->rotation_, f1->position_, f1->width_,
+		f1->height_, f1->rotation_)) {
+		mngr_->send<msg::Message>(msg::_FIGHTER_FIGTHER_COLLISION);
+	}
+
 }
 

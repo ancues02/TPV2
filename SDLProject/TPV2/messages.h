@@ -19,6 +19,7 @@ enum MsgId : uint8_t {
 	_START_REQ, //
 	_START_GAME, //
 	_BULLET_FIGHTER_COLLISION, //
+	_FIGHTER_FIGTHER_COLLISION,
 	//
 	_last_MsgId_
 };

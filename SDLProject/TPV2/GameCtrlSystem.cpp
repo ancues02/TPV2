@@ -57,7 +57,6 @@ void GameCtrlSystem::update() {
 	if (state_ != RUNNING) {
 		InputHandler *ih = game_->getInputHandler();
 		if (ih->keyDownEvent() && ih->isKeyDown(SDLK_RETURN)) {
-			//startGame();
 			mngr_->send<msg::Message>(msg::_START_REQ);
 		}
 	}
@@ -84,6 +83,14 @@ void GameCtrlSystem::onFighterDeath(uint8_t fighterId) {
 		state_ = GAMEOVER;
 
 }
+
+void GameCtrlSystem::bothFighterCollision()
+{
+	state_ = ROUNDOVER;
+
+}
+
+
 
 void GameCtrlSystem::resetScore() {
 	score[0] = score[1] = 0;
