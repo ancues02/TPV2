@@ -153,6 +153,9 @@
     <ClInclude Include="BulletsPool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerName.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -261,6 +264,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BulletsPool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerName.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

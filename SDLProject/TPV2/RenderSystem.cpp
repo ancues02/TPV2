@@ -39,6 +39,14 @@ void RenderSystem::drawImage(Entity *e) {
 void RenderSystem::drawCtrlMessages() {
 	auto gameCtr = mngr_->getSystem<GameCtrlSystem>(ecs::_sys_GameCtrl);
 	auto gameState = gameCtr->getState();
+
+	//Name text
+	Texture nameTex(game_->getRenderer(),
+		mngr_->getName(),
+		game_->getFontMngr()->getFont(Resources::ARIAL24),
+		{ COLOR(0xff00ffff) });
+	if()
+	nameTex.render(game_->getWindowWidth() / 2 - nameTex.getWidth() / 2, 10);
 	
 	if (gameState == GameCtrlSystem::READY) {
 		auto msgTex = game_->getTextureMngr()->getTexture(

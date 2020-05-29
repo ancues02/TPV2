@@ -11,6 +11,7 @@
 
 #include <cstdint>
 #include <algorithm>
+#include "PlayerName.h"
 
 using ecs::CmpId;
 
@@ -74,6 +75,7 @@ void FightersSystem::init() {
 	fighter0_->addToGroup(ecs::_grp_Fighters);
 	mngr_->setHandler(ecs::_hdlr_Fighter0, fighter0_);
 	fighter0_->addComponent<FighterInfo>(0);
+	fighter0_->addComponent<PlayerName>();
 
 	// right fighter
 	fighter1_ = mngr_->addEntity();
@@ -92,6 +94,7 @@ void FightersSystem::init() {
 	fighter1_->addToGroup(ecs::_grp_Fighters);
 	fighter1_->addComponent<FighterInfo>(1);
 	mngr_->setHandler(ecs::_hdlr_Fighter1, fighter1_);
+	fighter1_->addComponent<PlayerName>();
 }
 
 void FightersSystem::update() {

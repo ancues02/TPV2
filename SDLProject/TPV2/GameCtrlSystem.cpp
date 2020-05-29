@@ -7,6 +7,7 @@
 #include "FighterInfo.h"
 #include "FightersSystem.h"
 #include "Manager.h"
+#include "PlayerName.h"
 
 using ecs::CmpId;
 
@@ -43,6 +44,22 @@ void GameCtrlSystem::recieve(const msg::Message& msg) {
 			startGame();
 			break;
 		}
+		case msg::_PLAYER_NAME: {
+			/*if (msg.senderClientId == mngr_->getClientId())
+				return;*/
+			//string name_0 = mngr_->getHandler(ecs::_hdlr_Fighter0)->getComponent<PlayerName>(ecs::PlayerName)->name_;
+			//string name_1 = mngr_->getHandler(ecs::_hdlr_Fighter1)->getComponent<PlayerName>(ecs::PlayerName)->name_;
+			////if(name_0 == "" )
+			//if (name_0 == "" || name_1 == "") {
+			//	if (msg.senderClientId == 0)
+			//		mngr_->getHandler(ecs::_hdlr_Fighter0)->getComponent<PlayerName>(ecs::PlayerName)->name_ = static_cast<const msg::PlayerNameMsg&>(msg).name_;
+			//	else
+			//		mngr_->getHandler(ecs::_hdlr_Fighter1)->getComponent<PlayerName>(ecs::PlayerName)->name_ = static_cast<const msg::PlayerNameMsg&>(msg).name_;
+			//	mngr_->send<msg::PlayerNameMsg>(mngr_->getName());
+			//}
+
+			break;
+		}
 		default:
 			break;
 	}
@@ -51,6 +68,11 @@ void GameCtrlSystem::recieve(const msg::Message& msg) {
 void GameCtrlSystem::init() {
 	state_ = READY;
 	mngr_->send<msg::Message>(msg::_PLAYER_INFO);
+	/*if (mngr_->getClientId() == 0)
+		mngr_->getHandler(ecs::_hdlr_Fighter0)->getComponent<PlayerName>(ecs::PlayerName)->name_ = mngr_->getName();
+	else
+		mngr_->getHandler(ecs::_hdlr_Fighter1)->getComponent<PlayerName>(ecs::PlayerName)->name_ = mngr_->getName();*/
+	//mngr_->send<msg::PlayerNameMsg>(mngr_->getName());
 }
 
 void GameCtrlSystem::update() {

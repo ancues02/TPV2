@@ -4,8 +4,8 @@
 #include "SDL_macros.h"
 using namespace std;
 
-StarWars::StarWars(char* host, int port) :
-		exit_(false), host_(host), port_(port) {
+StarWars::StarWars(char* host, int port, const char* name) :
+		exit_(false), host_(host), port_(port), name_(name) {
 	initGame();
 }
 
@@ -19,6 +19,7 @@ void StarWars::initGame() {
 	if (!game_->getNetworking()->client(host_, port_))
 		throw "Couldn't connect to server";
 	mngr_ = new Manager(game_);
+	mngr_->setName(name_);
 
 	BulletsPool::init(100);
 
@@ -28,7 +29,6 @@ void StarWars::initGame() {
 	bulletsSystem_ = mngr_->addSystem<BulletsSystem>();
 	collisionSystem_ = mngr_->addSystem<CollisionSystem>();
 	renderSystem_ = mngr_->addSystem<RenderSystem>();
-
 }
 
 void StarWars::closeGame() {

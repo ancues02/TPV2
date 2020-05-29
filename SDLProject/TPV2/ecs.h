@@ -14,6 +14,7 @@ enum CmpId : CmpIdType {
 	GameState,
 	CtrlKeys,
 	FighterInfo,
+	PlayerName,
 	//
 	// don't touch the rest of this enum, it is to identify the max
 	// number of components

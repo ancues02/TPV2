@@ -23,7 +23,6 @@ vector<Resources::TextMsgInfo> Resources::messages_ {
 		{ Win, "You win!", { COLOR(0xdc143cff) }, ARIAL24 }, //
 		{ Lose, "You lose...", { COLOR(0xdc143cff) }, ARIAL24 }, //
 		{ Draw, "Draw", { COLOR(0x000000ff) }, ARIAL24 } //
-
 };
 
 vector<Resources::MusicInfo> Resources::musics_ {

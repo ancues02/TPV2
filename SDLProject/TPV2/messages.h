@@ -19,7 +19,8 @@ enum MsgId : uint8_t {
 	_START_REQ, //
 	_START_GAME, //
 	_BULLET_FIGHTER_COLLISION, //
-	_FIGHTER_FIGTHER_COLLISION,
+	_FIGHTER_FIGTHER_COLLISION, //
+	_PLAYER_NAME,
 	//
 	_last_MsgId_
 };
@@ -76,6 +77,14 @@ struct BulletFighterCollisionMsg : Message {
 		Message(sizeof(BulletFighterCollisionMsg), _BULLET_FIGHTER_COLLISION), fighter_id(id) {
 	}
 	uint8_t fighter_id;
+};
+
+struct PlayerNameMsg : Message {
+	PlayerNameMsg(char* name) :
+		Message(sizeof(PlayerNameMsg), _PLAYER_NAME) {
+		strcpy_s(&name_[0], sizeof(name), name);
+	}
+	char name_[11];
 };
 
 #pragma pack(pop)

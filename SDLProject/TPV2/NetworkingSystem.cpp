@@ -59,6 +59,11 @@ void NetworkingSystem::update() {
 			mngr_->forwardMsg<msg::Message>(msg->senderClientId, msg::_FIGHTER_FIGTHER_COLLISION);
 			break;
 		}
+		case msg::_PLAYER_NAME: {
+			mngr_->forwardMsg<msg::PlayerNameMsg>(msg->senderClientId,
+				static_cast<msg::PlayerNameMsg*>(msg)->name);
+			break;
+		}
 		default:
 			assert(false);
 			break;
