@@ -63,13 +63,14 @@ struct FighterInfoMsg : Message {
 };
 
 struct BulletInfoMsg : Message {
-	BulletInfoMsg(const Vector2D& pos, const Vector2D& vel, double w, double h) :
+	BulletInfoMsg(const Vector2D& pos, const Vector2D& vel, double_t w, double_t h) :
 		Message(sizeof(BulletInfoMsg), _BULLET_INFO), pos(pos), vel(vel), w(w), h(h) {
 	}
 	Vector2D pos;
 	Vector2D vel;
-	double w;
-	double h;
+	
+	double_t w;
+	double_t h;
 }; 
 
 struct BulletFighterCollisionMsg : Message {

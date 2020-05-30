@@ -130,13 +130,11 @@ public:
 	}
 
 	inline const char* getName() {
-		return name_;
+		return name_; 
 	}
 
 	inline void setName(char* name) {
-		//strcpy_s(&name_[0], 11, name);
 		name_ = name;
-		cout << std::strlen(name_) << endl;
 	}
 
 private:

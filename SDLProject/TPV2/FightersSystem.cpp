@@ -127,8 +127,7 @@ void FightersSystem::updateFighter(Entity *e) {
 		} else if (ih->isKeyDown(keys->slowdown)) { // slow down
 			tr->velocity_ = Vector2D(0.0, -1.0).rotate(tr->rotation_)
 					* (std::max(tr->velocity_.magnitude() - 0.2, 0.0));
-		} else if (ih->isKeyDown(keys->shoot)
-				&& game_->getTime() - keys->lastShootTime > 1000) { // shoot
+		} else if (ih->isKeyDown(keys->shoot) && game_->getTime() - keys->lastShootTime > 1000) { // shoot
 			keys->lastShootTime = game_->getTime();
 			Vector2D p = tr->position_
 					+ Vector2D(tr->width_ / 2, tr->height_ / 2)
@@ -137,7 +136,6 @@ void FightersSystem::updateFighter(Entity *e) {
 			Vector2D d = Vector2D(0, -1).rotate(tr->rotation_) * 2;
 
 			mngr_->getSystem<BulletsSystem>(ecs::_sys_Bullets)->shoot(p,d,2,5);
-
 		}
 
 	}

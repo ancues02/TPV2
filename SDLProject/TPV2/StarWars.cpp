@@ -5,21 +5,22 @@
 using namespace std;
 
 StarWars::StarWars(char* host, int port,  char* name) :
-		exit_(false), host_(host), port_(port), name_(name) {
-	initGame();
+		exit_(false), host_(host), port_(port){
+	initGame(name);
 }
 
 StarWars::~StarWars() {
 	closeGame();
 }
 
-void StarWars::initGame() {
+// Pasamos el nombre por parámetro para no tenerlo como variable en StarWars
+void StarWars::initGame(char* name) {
 
 	game_ = SDLGame::init("Star Wars", _WINDOW_WIDTH_, _WINDOW_HEIGHT_);
 	if (!game_->getNetworking()->client(host_, port_))
 		throw "Couldn't connect to server";
 	mngr_ = new Manager(game_);
-	mngr_->setName(name_);
+	mngr_->setName(name);
 	BulletsPool::init(100);
 
 	networkingSystem_ = mngr_->addSystem<NetworkingSystem>();

@@ -1,18 +1,15 @@
 #pragma once
 #include "Component.h"
-#include <iostream>
+#include <string.h>
 
+// Componente para guardar los nombres de los cazas, por defecto es "Not Ready"
+// Utilizamos la variable setted_ para comprobar
+// si hemos puesto el nombre o no y evitar comprobar todos los caracteres
 struct PlayerName : Component
 {
 	PlayerName() :
 		Component(ecs::PlayerName){
 		strcpy_s(&name_[0], 11, "Not Ready");
-		//strcpy_s(name, 11, "Hola");
-		//std::cout << name << " " << std::strlen(name) << std::endl;
-		/*
-		for (int i = 0; i < 11; i++) {
-			std::cout << name_[i] << std::endl;
-		}*/
 	}
 	PlayerName(const char* n) :
 		Component(ecs::PlayerName){
@@ -20,6 +17,5 @@ struct PlayerName : Component
 	}
 	bool setted_ = false;
 	char name_[11];
-	//char* name;
 };
 

@@ -26,8 +26,6 @@ void CollisionSystem::recieve(const msg::Message& msg)
 		mngr_->getSystem<GameCtrlSystem>(ecs::_sys_GameCtrl)->bothFighterCollision();
 		break;
 	}
-											 
-
 	default:
 		break;
 	}
@@ -56,6 +54,8 @@ void CollisionSystem::update() {
 			
 		}
 	}
+
+	//Comprobamos la colision entre ambos cazas
 	Transform* f0 = mngr_->getHandler(ecs::_hdlr_Fighter0)->getComponent<Transform>(ecs::Transform);
 	Transform* f1 = mngr_->getHandler(ecs::_hdlr_Fighter1)->getComponent<Transform>(ecs::Transform);
 	if (Collisions::collidesWithRotation(f0->position_, f0->width_,

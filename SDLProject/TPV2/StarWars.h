@@ -22,14 +22,13 @@ public:
 	void stop();
 
 private:
-	void initGame();
+	void initGame(char* name);
 	void closeGame();
 
 	SDLGame *game_;
 	Manager *mngr_;
 	bool exit_;
 	char* host_;
-	char* name_;
 	int port_;
 	NetworkingSystem *networkingSystem_;
 	RenderSystem *renderSystem_;

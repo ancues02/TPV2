@@ -23,6 +23,7 @@ void BulletsSystem::recieve(const msg::Message& msg){
 	}
 }
 
+// Mandamos el mensaje de disparo para que ambos clientes creen la bala
 void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double w, double h) {
 	mngr_->send<msg::BulletInfoMsg>(pos,vel,w,h);
 }
@@ -45,11 +46,6 @@ void BulletsSystem::update() {
 			e->setActive(false);
 		} else {
 			tr->position_ = p;
-		}
-
-		
+		}	
 	}
 }
-
-
-

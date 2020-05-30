@@ -14,14 +14,12 @@ void server(int port) {
 
 void client(char* host, int port, char* name) {
 	try {
-		size_t size = std::strlen(name);
-		//cout <<  name  << endl << size << endl;
-		if (size < 10) {
+		if (std::strlen(name) < 10) {
 			StarWars g(host, port, name);
 			g.start();
 		}
 		else
-			throw "Name size is superior to 10";
+			throw std::string("Name size is superior to 10");
 	}
 	catch (std::string & e) { // catch errors thrown as strings
 		cerr << e << endl;
@@ -40,14 +38,14 @@ int main(int argc, char** argv) {
 	if (argc == 3 && strcmp(argv[1], "server") == 0) {
 		server(atoi(argv[2])); // start in server mode
 	}
-	else if (argc == 4 && strcmp(argv[1], "client") == 0) {
-		char* aux = new char[11];
-		strcpy_s(&aux[0], 11, "Anonymous");
-		client(argv[2], atoi(argv[3]), aux); // start in client mode
-		delete aux;
-	}
-	else if (argc == 5 && strcmp(argv[1], "client") == 0) {
-		client(argv[2], atoi(argv[3]), argv[4]); // start in client mode
+	else if (argc >= 4 && strcmp(argv[1], "client") == 0) {
+		if(argc == 5)
+			client(argv[2], atoi(argv[3]), argv[4]); // start in client mode
+		else {
+			char aux[] = "Anonymous";
+			char* auxPtr = aux;
+			client(argv[2], atoi(argv[3]), auxPtr); // start in client mode
+		}
 	}
 	else {
 		cout << "Usage: " << endl;

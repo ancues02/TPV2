@@ -7,6 +7,7 @@
 
 class GameCtrlSystem: public System {
 public:
+	//Ready es que estas esperando al otro jugador
 	enum State : uint8_t {
 		READY, RUNNING, ROUNDOVER, GAMEOVER
 	};
@@ -27,8 +28,10 @@ public:
 private:
 	void resetScore();
 	void startGame();
-	void sendMyInfo();
-
+	//void sendMyInfo();
+	void setUpPlayerName();
+	void resetPlayerName(uint32_t pDisconnected);
+	void updateOtherName(msg::PlayerNameMsg msg);
 	uint8_t score[2];
 	State state_;
 };
