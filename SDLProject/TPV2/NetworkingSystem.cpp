@@ -61,7 +61,7 @@ void NetworkingSystem::update() {
 		}
 		case msg::_PLAYER_NAME: {
 			mngr_->forwardMsg<msg::PlayerNameMsg>(msg->senderClientId,
-				static_cast<msg::PlayerNameMsg*>(msg)->name);
+				static_cast<msg::PlayerNameMsg*>(msg)->name_);
 			break;
 		}
 		default:

@@ -80,9 +80,9 @@ struct BulletFighterCollisionMsg : Message {
 };
 
 struct PlayerNameMsg : Message {
-	PlayerNameMsg(char* name) :
+	PlayerNameMsg(const char* name) :
 		Message(sizeof(PlayerNameMsg), _PLAYER_NAME) {
-		strcpy_s(&name_[0], sizeof(name), name);
+		strcpy_s(&name_[0], 11, name);
 	}
 	char name_[11];
 };

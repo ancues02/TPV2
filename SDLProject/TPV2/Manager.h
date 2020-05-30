@@ -129,17 +129,19 @@ public:
 		return game_->getNetworking()->getClientId();
 	}
 
-	inline const string& getName() {
+	inline const char* getName() {
 		return name_;
 	}
 
-	inline void setName(string name) {
+	inline void setName(char* name) {
+		//strcpy_s(&name_[0], 11, name);
 		name_ = name;
+		cout << std::strlen(name_) << endl;
 	}
 
 private:
 	SDLGame *game_;
-	string name_;
+	char* name_;
 
 	std::vector<uptr_ent> ents_;
 	std::array<std::vector<Entity*>, ecs::maxGroups> entsGroups_;

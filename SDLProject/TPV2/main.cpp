@@ -12,7 +12,7 @@ void server(int port) {
 	net.server(port);
 }
 
-void client(char* host, int port, const char* name) {
+void client(char* host, int port, char* name) {
 	try {
 		size_t size = std::strlen(name);
 		//cout <<  name  << endl << size << endl;
@@ -41,7 +41,10 @@ int main(int argc, char** argv) {
 		server(atoi(argv[2])); // start in server mode
 	}
 	else if (argc == 4 && strcmp(argv[1], "client") == 0) {
-		client(argv[2], atoi(argv[3]), "Anonymous"); // start in client mode
+		char* aux = new char[11];
+		strcpy_s(&aux[0], 11, "Anonymous");
+		client(argv[2], atoi(argv[3]), aux); // start in client mode
+		delete aux;
 	}
 	else if (argc == 5 && strcmp(argv[1], "client") == 0) {
 		client(argv[2], atoi(argv[3]), argv[4]); // start in client mode

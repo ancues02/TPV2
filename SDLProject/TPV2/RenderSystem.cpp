@@ -9,6 +9,7 @@
 #include "Image.h"
 #include "Transform.h"
 #include "Texture.h"
+#include "PlayerName.h"
 
 RenderSystem::RenderSystem() :
 		System(ecs::_sys_Render) {
@@ -41,12 +42,18 @@ void RenderSystem::drawCtrlMessages() {
 	auto gameState = gameCtr->getState();
 
 	//Name text
-	Texture nameTex(game_->getRenderer(),
-		mngr_->getName(),
+	Texture name_0Tex(game_->getRenderer(),
+		mngr_->getHandler(ecs::_hdlr_Fighter0)->getComponent<PlayerName>(ecs::PlayerName)->name_,
 		game_->getFontMngr()->getFont(Resources::ARIAL24),
 		{ COLOR(0xff00ffff) });
-	if()
-	nameTex.render(game_->getWindowWidth() / 2 - nameTex.getWidth() / 2, 10);
+	Texture name_1Tex(game_->getRenderer(),
+		mngr_->getHandler(ecs::_hdlr_Fighter1)->getComponent<PlayerName>(ecs::PlayerName)->name_,
+		game_->getFontMngr()->getFont(Resources::ARIAL24),
+		{ COLOR(0xff00ffff) });
+	
+	name_0Tex.render(0, 10);
+	name_1Tex.render(game_->getWindowWidth() - name_1Tex.getWidth(), 10);
+
 	
 	if (gameState == GameCtrlSystem::READY) {
 		auto msgTex = game_->getTextureMngr()->getTexture(
