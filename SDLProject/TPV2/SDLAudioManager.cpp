@@ -93,6 +93,7 @@ void SDLAudioManager::haltChannel(int channel) {
 }
 
 int SDLAudioManager::setChannelVolume(int volume, int channel) {
+	volume = 25;
 	return Mix_Volume(channel, volume);
 }
 
