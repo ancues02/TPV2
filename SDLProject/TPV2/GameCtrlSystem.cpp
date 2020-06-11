@@ -49,11 +49,28 @@ void GameCtrlSystem::update() {
 	}
 }
 
+void GameCtrlSystem::recieve(const msg::Message& msg)
+{
+	switch (msg.id)
+	{
+	case msg::_NO_MORE_FOOD: {
+		onNoMoreFood();
+		break;
+	}
+	case msg::_PACMAN_DEATH: {
+		onPacManDeath();
+		break;
+	}
+	default:
+		break;
+	}
+}
+
 void GameCtrlSystem::onPacManDeath() {
 	gameState_->state_ = GameState::OVER;
 	gameState_->won_ = false;
-	mngr_->getSystem<GhostsSystem>(ecs::_sys_Ghosts)->disableAll();
-	mngr_->getSystem<FoodSystem>(ecs::_sys_Food)->disableAll();
+	//mngr_->getSystem<GhostsSystem>(ecs::_sys_Ghosts)->disableAll();
+	//mngr_->getSystem<FoodSystem>(ecs::_sys_Food)->disableAll();
 	game_->getAudioMngr()->haltMusic();
 	game_->getAudioMngr()->playChannel(Resources::PacMan_Death,0);
 }
@@ -61,15 +78,15 @@ void GameCtrlSystem::onPacManDeath() {
 void GameCtrlSystem::onNoMoreFood() {
 	gameState_->state_ = GameState::OVER;
 	gameState_->won_ = true;
-	mngr_->getSystem<GhostsSystem>(ecs::_sys_Ghosts)->disableAll();
-	mngr_->getSystem<FoodSystem>(ecs::_sys_Food)->disableAll();
+	//mngr_->getSystem<GhostsSystem>(ecs::_sys_Ghosts)->disableAll();
+	//mngr_->getSystem<FoodSystem>(ecs::_sys_Food)->disableAll();
 	game_->getAudioMngr()->haltMusic();
 	game_->getAudioMngr()->playChannel(Resources::PacMan_Won,0);
 }
 
 void GameCtrlSystem::startGame() {
 	mngr_->send<msg::Message>(msg::_GAME_START);
-	mngr_->getSystem<FoodSystem>(ecs::_sys_Food)->addFood(10);
-	mngr_->getSystem<GhostsSystem>(ecs::_sys_Ghosts)->addGhosts(2);
-	mngr_->getSystem<PacManSystem>(ecs::_sys_PacMan)->resetPacManPosition();
+	// mngr_->getSystem<FoodSystem>(ecs::_sys_Food)->addFood(10);
+	// mngr_->getSystem<GhostsSystem>(ecs::_sys_Ghosts)->addGhosts(2);
+	//mngr_->getSystem<PacManSystem>(ecs::_sys_PacMan)->resetPacManPosition();
 }

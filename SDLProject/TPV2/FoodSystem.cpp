@@ -20,6 +20,28 @@ void FoodSystem::init() {
 void FoodSystem::update() {
 }
 
+void FoodSystem::recieve(const msg::Message& msg)
+{
+	switch (msg.id)
+	{
+	case msg::_GAME_START:{
+		addFood(10);
+		break;
+	}
+	case msg::_PACMAN_DEATH:
+	case msg::_NO_MORE_FOOD: {
+		disableAll();
+		break;
+	}
+	case msg::_PACMAN_EAT: {
+		onEat(static_cast<const msg::PacmanEatMsg&>(msg).e_);
+		break;
+	}
+	default:
+		break;
+	}
+}
+
 void FoodSystem::onEat(Entity *e) {
 	// update score
 	auto gameState = mngr_->getHandler(ecs::_hdlr_GameStateEntity)->getComponent<GameState>(ecs::GameState);
@@ -31,8 +53,9 @@ void FoodSystem::onEat(Entity *e) {
 	e->setActive(false);
 	numOfFoodPieces_--;
 
-	if ( numOfFoodPieces_ == 0)
-		mngr_->getSystem<GameCtrlSystem>(ecs::_sys_GameCtrl)->onNoMoreFood();
+	if (numOfFoodPieces_ == 0)
+		mngr_->send<msg::Message>(msg::_NO_MORE_FOOD);
+		//mngr_->getSystem<GameCtrlSystem>(ecs::_sys_GameCtrl)->onNoMoreFood();
 }
 
 void FoodSystem::addFood(std::size_t n) {

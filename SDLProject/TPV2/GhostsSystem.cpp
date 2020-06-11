@@ -63,9 +63,32 @@ void GhostsSystem::update() {
 	}
 }
 
+void GhostsSystem::recieve(const msg::Message& msg)
+{
+	switch (msg.id)
+	{
+	case msg::_GAME_START: {
+		addGhosts(2);
+		break;
+	}
+	case msg::_PACMAN_GHOST_COLLISION: {
+		onCollisionWithPacMan(static_cast<const msg::PacmanGhostColMsg&>(msg).e_);
+		break;
+	}
+	case msg::_PACMAN_DEATH:
+	case msg::_NO_MORE_FOOD: {
+		disableAll();
+		break;
+	}
+	default:
+		break;
+	}
+}
+
 
 void GhostsSystem::onCollisionWithPacMan(Entity *e) {
-	mngr_->getSystem<GameCtrlSystem>(ecs::_sys_GameCtrl)->onPacManDeath();
+	//mngr_->getSystem<GameCtrlSystem>(ecs::_sys_GameCtrl)->onPacManDeath();
+	mngr_->send<msg::Message>(msg::_PACMAN_DEATH);
 }
 
 void GhostsSystem::addGhosts(std::size_t n) {

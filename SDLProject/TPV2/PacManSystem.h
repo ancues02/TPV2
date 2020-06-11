@@ -9,11 +9,12 @@ public:
 	PacManSystem();
 	void init() override;
 	void update() override;
+	void recieve(const msg::Message& msg) override;
 
-	// TODO: these methods should go private
-	void resetPacManPosition();
 private:
 	Entity *pacman_;
 	Transform *tr_;
+	// TODO: these methods should go private
+	void resetPacManPosition();
 };
 

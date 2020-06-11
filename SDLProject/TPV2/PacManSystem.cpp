@@ -70,6 +70,19 @@ void PacManSystem::update() {
 
 }
 
+void PacManSystem::recieve(const msg::Message& msg)
+{
+	switch (msg.id)
+	{
+	case msg::_GAME_START: {
+		resetPacManPosition();
+		break;
+	}
+	default:
+		break;
+	}
+}
+
 void PacManSystem::resetPacManPosition() {
 	tr_->width_ = tr_->height_ = 30.0;
 	tr_->position_ = Vector2D( (game_->getWindowWidth()-tr_->width_)/2,
