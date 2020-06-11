@@ -8,7 +8,11 @@ namespace msg {
 using msgType = std::size_t;
 
 enum MsgId : msgType {
-	_GAME_START, _GAME_OVER, _PACMAN_GHOST_COLLISION, _PACMAN_EAT, _NO_MORE_FOOD, _PACMAN_DEATH,
+	_GAME_START, _GAME_OVER, _GAME_READY,
+	_PACMAN_GHOST_COLLISION, 
+	_PACMAN_EAT, 
+	_NO_MORE_FOOD,
+	_PACMAN_DEATH,
 
 	//
 	_last_MsgId_

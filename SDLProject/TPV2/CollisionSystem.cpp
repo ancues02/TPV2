@@ -24,7 +24,6 @@ void CollisionSystem::update() {
 		auto etr = e->getComponent<Transform>(ecs::Transform);
 		if (Collisions::collides(ptr->position_, ptr->width_, ptr->height_,
 				etr->position_, etr->width_, etr->height_)) {
-				//mngr_->getSystem<FoodSystem>(ecs::_sys_Food)->onEat(e);
 				mngr_->send<msg::PacmanEatMsg>(e);
 
 		}
@@ -35,7 +34,6 @@ void CollisionSystem::update() {
 		auto etr = e->getComponent<Transform>(ecs::Transform);
 		if (Collisions::collides(ptr->position_, ptr->width_, ptr->height_,
 				etr->position_, etr->width_, etr->height_)) {
-				//mngr_->getSystem<GhostsSystem>(ecs::_sys_Ghosts)->onCollisionWithPacMan(e);
 				mngr_->send<msg::PacmanGhostColMsg>(e);
 				break;
 		}

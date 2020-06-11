@@ -28,8 +28,9 @@ void FoodSystem::recieve(const msg::Message& msg)
 		addFood(10);
 		break;
 	}
-	case msg::_PACMAN_DEATH:
-	case msg::_NO_MORE_FOOD: {
+	//case msg::_PACMAN_DEATH:
+	//case msg::_NO_MORE_FOOD:
+	case msg::_GAME_OVER: {
 		disableAll();
 		break;
 	}
@@ -47,15 +48,12 @@ void FoodSystem::onEat(Entity *e) {
 	auto gameState = mngr_->getHandler(ecs::_hdlr_GameStateEntity)->getComponent<GameState>(ecs::GameState);
 	gameState->score_++;
 
-	game_->getAudioMngr()->playChannel(Resources::PacMan_Eat,0);
-
 	// disbale food
 	e->setActive(false);
 	numOfFoodPieces_--;
 
 	if (numOfFoodPieces_ == 0)
 		mngr_->send<msg::Message>(msg::_NO_MORE_FOOD);
-		//mngr_->getSystem<GameCtrlSystem>(ecs::_sys_GameCtrl)->onNoMoreFood();
 }
 
 void FoodSystem::addFood(std::size_t n) {

@@ -19,7 +19,7 @@ void GameCtrlSystem::init() {
 	Entity *e = mngr_->addEntity();
 	gameState_ = e->addComponent<GameState>();
 	mngr_->setHandler(ecs::_hdlr_GameStateEntity, e);
-	game_->getAudioMngr()->playMusic(Resources::PacMan_Intro);
+
 }
 
 void GameCtrlSystem::update() {
@@ -33,14 +33,10 @@ void GameCtrlSystem::update() {
 		switch ( gameState_->state_) {
 		case GameState::READY:
 			gameState_->state_ = GameState::RUNNING;
-			game_->getAudioMngr()->haltMusic();
 			startGame();
 			break;
 		case GameState::OVER:
-			gameState_->state_ = GameState::READY;
-			gameState_->score_ = 0;
-			gameState_->won_ = false;
-			game_->getAudioMngr()->playMusic(Resources::PacMan_Intro);
+			mngr_->send<msg::Message>(msg::_GAME_READY);			
 			break;
 		default:
 			assert(false); // should not be rechable
@@ -53,6 +49,16 @@ void GameCtrlSystem::recieve(const msg::Message& msg)
 {
 	switch (msg.id)
 	{
+	case msg::_GAME_READY: {
+		gameState_->state_ = GameState::READY;
+		gameState_->score_ = 0;
+		gameState_->won_ = false;
+		break;
+	}
+	case msg::_GAME_OVER: {
+		gameState_->state_ = GameState::OVER;
+		break;
+	}
 	case msg::_NO_MORE_FOOD: {
 		onNoMoreFood();
 		break;
@@ -67,26 +73,15 @@ void GameCtrlSystem::recieve(const msg::Message& msg)
 }
 
 void GameCtrlSystem::onPacManDeath() {
-	gameState_->state_ = GameState::OVER;
 	gameState_->won_ = false;
-	//mngr_->getSystem<GhostsSystem>(ecs::_sys_Ghosts)->disableAll();
-	//mngr_->getSystem<FoodSystem>(ecs::_sys_Food)->disableAll();
-	game_->getAudioMngr()->haltMusic();
-	game_->getAudioMngr()->playChannel(Resources::PacMan_Death,0);
+	mngr_->send<msg::Message>(msg::_GAME_OVER);
 }
 
 void GameCtrlSystem::onNoMoreFood() {
-	gameState_->state_ = GameState::OVER;
 	gameState_->won_ = true;
-	//mngr_->getSystem<GhostsSystem>(ecs::_sys_Ghosts)->disableAll();
-	//mngr_->getSystem<FoodSystem>(ecs::_sys_Food)->disableAll();
-	game_->getAudioMngr()->haltMusic();
-	game_->getAudioMngr()->playChannel(Resources::PacMan_Won,0);
+	mngr_->send<msg::Message>(msg::_GAME_OVER);
 }
 
 void GameCtrlSystem::startGame() {
 	mngr_->send<msg::Message>(msg::_GAME_START);
-	// mngr_->getSystem<FoodSystem>(ecs::_sys_Food)->addFood(10);
-	// mngr_->getSystem<GhostsSystem>(ecs::_sys_Ghosts)->addGhosts(2);
-	//mngr_->getSystem<PacManSystem>(ecs::_sys_PacMan)->resetPacManPosition();
 }

@@ -75,8 +75,9 @@ void GhostsSystem::recieve(const msg::Message& msg)
 		onCollisionWithPacMan(static_cast<const msg::PacmanGhostColMsg&>(msg).e_);
 		break;
 	}
-	case msg::_PACMAN_DEATH:
-	case msg::_NO_MORE_FOOD: {
+	/*case msg::_PACMAN_DEATH:
+	case msg::_NO_MORE_FOOD:*/
+	case msg::_GAME_OVER:{
 		disableAll();
 		break;
 	}
@@ -87,7 +88,6 @@ void GhostsSystem::recieve(const msg::Message& msg)
 
 
 void GhostsSystem::onCollisionWithPacMan(Entity *e) {
-	//mngr_->getSystem<GameCtrlSystem>(ecs::_sys_GameCtrl)->onPacManDeath();
 	mngr_->send<msg::Message>(msg::_PACMAN_DEATH);
 }
 

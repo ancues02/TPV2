@@ -42,6 +42,7 @@ void PacMan::initGame() {
 	renderSystem_ = mngr_->addSystem<RenderSystem>();
 	collisionSystem_ = mngr_->addSystem<CollisionSystem>();
 	gameCtrlSystem_ = mngr_->addSystem<GameCtrlSystem>();
+	audioSystem_ = mngr_->addSystem<AudioSystem>();
 }
 
 void PacMan::closeGame() {

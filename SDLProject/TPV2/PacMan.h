@@ -9,6 +9,7 @@
 #include "Manager.h"
 #include "PacManSystem.h"
 #include "RenderSystem.h"
+#include "AudioSystem.h"
 #include "SDLGame.h"
 
 class PacMan {
@@ -36,6 +37,7 @@ private:
 	FoodSystem   *foodSystem_;
 	CollisionSystem *collisionSystem_;
 	GameCtrlSystem *gameCtrlSystem_;
+	AudioSystem *audioSystem_;
 
 	const static int _WINDOW_WIDTH_ = 640;
 	const static int _WINDOW_HEIGHT_ = 480;

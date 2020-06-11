@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="AnimatedImageComponent.h" />
     <ClInclude Include="AudioManager.h" />
+    <ClInclude Include="AudioSystem.h" />
     <ClInclude Include="checkML.h" />
     <ClInclude Include="Collisions.h" />
     <ClInclude Include="CollisionSystem.h" />
@@ -64,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AudioManager.cpp" />
+    <ClCompile Include="AudioSystem.cpp" />
     <ClCompile Include="Collisions.cpp" />
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="DefFactory.cpp" />
