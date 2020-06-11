@@ -1,126 +1,109 @@
 #include "RenderSystem.h"
 
+#include <cassert>
+#include "AnimatedImageComponent.h"
 #include "ecs.h"
-#include "GameCtrlSystem.h"
 #include "Manager.h"
+#include "ImageComponent.h"
 #include "SDL_macros.h"
 #include "SDLGame.h"
-
-#include "Image.h"
 #include "Transform.h"
+#include "Entity.h"
+#include "GameState.h"
+#include "Manager.h"
+#include "SDLGame.h"
 #include "Texture.h"
-#include "PlayerName.h"
 
 RenderSystem::RenderSystem() :
 		System(ecs::_sys_Render) {
 }
 
-void RenderSystem::update() {
-	for (auto &e : mngr_->getGroupEntities(ecs::_grp_Fighters)) {
-		drawImage(e); // auto cast from unique_ptr to Entity*
-	}
-
-	for (auto &e : mngr_->getGroupEntities(ecs::_grp_Bullets))
-		drawImage(e); // auto cast from unique_ptr to Entity*
-
-	drawCtrlMessages();
-	drawScore();
-	drawNames();
-}
-
-void RenderSystem::drawImage(Entity *e) {
+void RenderSystem::drawAnimated(Entity *e) {
 	Transform *tr = e->getComponent<Transform>(ecs::Transform);
-	Texture *tex = e->getComponent<Image>(ecs::Image)->tex_;
-
+	AnimatedImageComponent *img = e->getComponent<AnimatedImageComponent>(
+			ecs::AnimatedImageComponent);
+	const auto &sprite = img->getSprite(game_->getTime());
 	SDL_Rect dest =
 	RECT(tr->position_.getX(), tr->position_.getY(), tr->width_,
 			tr->height_);
-	tex->render(dest, tr->rotation_);
+	sprite.first->render(dest, tr->rotation_, sprite.second);
 }
 
-void RenderSystem::drawCtrlMessages() {
-	auto gameCtr = mngr_->getSystem<GameCtrlSystem>(ecs::_sys_GameCtrl);
-	auto gameState = gameCtr->getState();
+void RenderSystem::update() {
 
-	if (gameState == GameCtrlSystem::READY) {
-		auto msgTex = game_->getTextureMngr()->getTexture(
-			Resources::WaitingForPlayer);
-		msgTex->render((game_->getWindowWidth() - msgTex->getWidth()) / 2,
-			(game_->getWindowHeight() - msgTex->getHeight() - 10));
-	}
-	else if (gameState == GameCtrlSystem::ROUNDOVER) {
-		auto msgTex = game_->getTextureMngr()->getTexture(
-				Resources::PressEnter);
-		msgTex->render((game_->getWindowWidth() - msgTex->getWidth()) / 2,
-				(game_->getWindowHeight() - msgTex->getHeight() - 10));
-	}
+	auto gameState_ =
+			mngr_->getHandler(ecs::_hdlr_GameStateEntity)->getComponent<GameState>(
+					ecs::GameState);
 
-	else if (gameState == GameCtrlSystem::GAMEOVER) {
-		auto score = gameCtr->getScore(mngr_->getClientId());	//tu puntuación
-
-		auto msgTex = game_->getTextureMngr()->getTexture(Resources::GameOver);
-		msgTex->render((game_->getWindowWidth() - msgTex->getWidth()) / 2,
-				(game_->getWindowHeight() - msgTex->getHeight()) / 2);
-		if(score < 3)
-			msgTex = game_->getTextureMngr()->getTexture(
-				Resources::Lose);
-		else {
-			auto other_score = gameCtr->getScore((mngr_->getClientId() + 1) % 2);
-			if(other_score == score)
-				msgTex = game_->getTextureMngr()->getTexture(
-					Resources::Draw);
-			else
-				msgTex = game_->getTextureMngr()->getTexture(
-					Resources::Win);
-		}
-		msgTex->render((game_->getWindowWidth() - msgTex->getWidth()) / 2,
-			((game_->getWindowHeight() - game_->getWindowHeight()/4) - msgTex->getHeight()/2));
-
-		msgTex = game_->getTextureMngr()->getTexture(
-			Resources::PressEnter);
-		msgTex->render((game_->getWindowWidth() - msgTex->getWidth()) / 2,
-			(game_->getWindowHeight() - msgTex->getHeight() - 10));
-	}
+	drawFood(gameState_);
+	drawGhosts(gameState_);
+	drawPacMan(gameState_);
+	drawState(gameState_);
 
 }
 
-void RenderSystem::drawScore() {
-	auto gameCtrl = mngr_->getSystem<GameCtrlSystem>(ecs::_sys_GameCtrl);
+void RenderSystem::drawFood(GameState *gs) {
+	if (gs->state_ != GameState::RUNNING)
+		return;
 
-	Texture scoreTex(game_->getRenderer(),
-			to_string(gameCtrl->getScore(0)) + " - "
-					+ to_string(gameCtrl->getScore(1)),
+	for (auto &e : mngr_->getGroupEntities(ecs::_grp_Food)) {
+		drawAnimated(e);
+	}
+}
+
+void RenderSystem::drawGhosts(GameState *gs) {
+	if (gs->state_ != GameState::RUNNING)
+		return;
+
+	for (auto &e : mngr_->getGroupEntities(ecs::_grp_Ghost)) {
+		drawAnimated(e);
+	}
+}
+
+void RenderSystem::drawPacMan(GameState *gs) {
+	if (gs->state_ != GameState::RUNNING)
+		return;
+
+	drawAnimated(mngr_->getHandler(ecs::_hdlr_PacManEntity));
+}
+
+void RenderSystem::drawState(GameState *gs) {
+
+	// score
+	Texture scoreMsg(game_->getRenderer(), std::to_string(gs->score_),
 			game_->getFontMngr()->getFont(Resources::ARIAL24),
-			{ COLOR(0x111122ff) });
-	scoreTex.render(game_->getWindowWidth() / 2 - scoreTex.getWidth() / 2, 10);
-}
+			{ COLOR(0xff0000ff) });
+	scoreMsg.render(game_->getWindowWidth() / 2 - scoreMsg.getWidth() / 2, 10);
 
-// Renderiza los nombres de ambos jugadores
-void RenderSystem::drawNames() {
-	// Name and rectangle text
-	int leftTopX = 0;
-	int topY = 10;
-	int rightTopX = game_->getWindowWidth();
+	if (gs->state_ == GameState::RUNNING)
+		return;
 
-	// Names
-	Texture name_0Tex(game_->getRenderer(),
-		mngr_->getHandler(ecs::_hdlr_Fighter0)->getComponent<PlayerName>(ecs::PlayerName)->name_,
-		game_->getFontMngr()->getFont(Resources::ARIAL24),
-		{ COLOR(0xff00ffff) });
-	Texture name_1Tex(game_->getRenderer(),
-		mngr_->getHandler(ecs::_hdlr_Fighter1)->getComponent<PlayerName>(ecs::PlayerName)->name_,
-		game_->getFontMngr()->getFont(Resources::ARIAL24),
-		{ COLOR(0xff00ffff) });
+	int x = 0;
+	int y = 0;
+	switch (gs->state_) {
+	case GameState::READY: {
+		auto startNewGameMsg = game_->getTextureMngr()->getTexture(Resources::PressEnterToStartANewGame);
+		x = (game_->getWindowWidth() - startNewGameMsg->getWidth())/ 2;
+		y = (game_->getWindowHeight() - startNewGameMsg->getHeight()) / 2;
+		startNewGameMsg->render(x, y);
+	}
+		break;
+	case GameState::OVER: {
+		auto toContMsg = game_->getTextureMngr()->getTexture(Resources::PressEnterToContinue);
+		x = (game_->getWindowWidth() - toContMsg->getWidth())/ 2;
+		y = (game_->getWindowHeight() - toContMsg->getHeight()) / 2;
+		toContMsg->render(x, y);
 
-	// Rectangle
-	auto rectTex = game_->getTextureMngr()->getTexture(Resources::WhiteRect);
-	SDL_Rect dest;
-	if (mngr_->getClientId() == 0)
-		dest = RECT(leftTopX, topY, name_0Tex.getWidth(), name_0Tex.getHeight());
-	else
-		dest = RECT(rightTopX - name_1Tex.getWidth(), topY, name_1Tex.getWidth(), name_1Tex.getHeight());
+		auto gameOverMsg = game_->getTextureMngr()->getTexture(Resources::GameOver);
+		x = (game_->getWindowWidth() - gameOverMsg->getWidth())/ 2;
+		y = (game_->getWindowHeight() - gameOverMsg->getHeight()) / 2 - 50;
+		gameOverMsg->render(x, y);
 
-	rectTex->render(dest);
-	name_0Tex.render(0, 10);
-	name_1Tex.render(game_->getWindowWidth() - name_1Tex.getWidth(), 10);
+
+		break;
+	}
+	default:
+		assert(false); // should be unreachable;
+
+	}
 }

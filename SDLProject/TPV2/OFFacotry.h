@@ -11,7 +11,8 @@ public:
 
 	template<typename ...Targs>
 	inline static T* construct(Targs &&...args) {
-		return OFFacotry<T>::instance()->construct_(std::forward<Targs>(args)...);
+		return OFFacotry<T>::instance()->construct_(
+				std::forward<Targs>(args)...);
 	}
 
 	inline static void destroy(T *p) {

@@ -19,33 +19,33 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimatedImageComponent.h" />
     <ClInclude Include="AudioManager.h" />
-    <ClInclude Include="BulletsPool.h" />
-    <ClInclude Include="BulletsSystem.h" />
     <ClInclude Include="checkML.h" />
     <ClInclude Include="Collisions.h" />
     <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="Component.h" />
-    <ClInclude Include="CtrlKeys.h" />
     <ClInclude Include="DefFactory.h" />
     <ClInclude Include="ecs.h" />
     <ClInclude Include="Entity.h" />
-    <ClInclude Include="FighterInfo.h" />
-    <ClInclude Include="FightersSystem.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="FontsManager.h" />
+    <ClInclude Include="FoodPool.h" />
+    <ClInclude Include="FoodSystem.h" />
     <ClInclude Include="GameCtrlSystem.h" />
-    <ClInclude Include="Image.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="GhostsPool.h" />
+    <ClInclude Include="GhostsSystem.h" />
+    <ClInclude Include="ImageComponent.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="jute.h" />
     <ClInclude Include="Manager.h" />
     <ClInclude Include="messages.h" />
-    <ClInclude Include="Networking.h" />
-    <ClInclude Include="NetworkingSystem.h" />
     <ClInclude Include="ObjectFactory.h" />
     <ClInclude Include="ObjectPool.h" />
     <ClInclude Include="OFFacotry.h" />
-    <ClInclude Include="PlayerName.h" />
+    <ClInclude Include="PacMan.h" />
+    <ClInclude Include="PacManSystem.h" />
     <ClInclude Include="RandomNumberGenerator.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="Resources.h" />
@@ -56,7 +56,6 @@
     <ClInclude Include="SDL_macros.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="SRandBasedGenerator.h" />
-    <ClInclude Include="StarWars.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TexturesManager.h" />
@@ -65,26 +64,26 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AudioManager.cpp" />
-    <ClCompile Include="BulletsPool.cpp" />
-    <ClCompile Include="BulletsSystem.cpp" />
     <ClCompile Include="Collisions.cpp" />
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="DefFactory.cpp" />
     <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="FightersSystem.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="FontsManager.cpp" />
+    <ClCompile Include="FoodPool.cpp" />
+    <ClCompile Include="FoodSystem.cpp" />
     <ClCompile Include="GameCtrlSystem.cpp" />
+    <ClCompile Include="GhostsPool.cpp" />
+    <ClCompile Include="GhostsSystem.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="jute.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Manager.cpp" />
-    <ClCompile Include="Networking.cpp" />
-    <ClCompile Include="NetworkingSystem.cpp" />
     <ClCompile Include="ObjectFactory.cpp" />
     <ClCompile Include="ObjectPool.cpp" />
     <ClCompile Include="OFFacotry.cpp" />
-    <ClCompile Include="PlayerName.cpp" />
+    <ClCompile Include="PacMan.cpp" />
+    <ClCompile Include="PacManSystem.cpp" />
     <ClCompile Include="RandomNumberGenerator.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="Resources.cpp" />
@@ -95,7 +94,6 @@
     <ClCompile Include="sdl_macros.cpp" />
     <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="SRandBasedGenerator.cpp" />
-    <ClCompile Include="StarWars.cpp" />
     <ClCompile Include="System.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TexturesManager.cpp" />

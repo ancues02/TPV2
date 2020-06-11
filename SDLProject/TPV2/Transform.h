@@ -11,7 +11,7 @@ struct Transform: Component {
 			velocity_(vel), //
 			width_(width), //
 			height_(height), //
-			rotation_(rotation) //
+			rotation_(0.0) //
 	{
 	}
 

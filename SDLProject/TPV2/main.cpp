@@ -1,60 +1,26 @@
 #include <iostream>
 
-#include "StarWars.h"
-#include "Networking.h"
+#include "PacMan.h"
 
 using namespace std;
 
-
-
-void server(int port) {
-	Networking net;
-	net.server(port);
+void start() {
+	PacMan g;
+	g.start();
 }
 
-void client(char* host, int port, char* name) {
+int main(int ac, char **av) {
+
 	try {
-		if (std::strlen(name) < 10) {
-			StarWars g(host, port, name);
-			g.start();
-		}
-		else
-			throw std::string("Name size is superior to 10");
-	}
-	catch (std::string & e) { // catch errors thrown as strings
+		start();
+	} catch (std::string &e) { // catch errors thrown as strings
 		cerr << e << endl;
-	}
-	catch (const std::exception & e) { // catch other exceptions
+	} catch (const char *e) { // catch errors thrown as char*
+		cerr << e << endl;
+	} catch (const std::exception &e) { // catch other exceptions
 		cerr << e.what();
-	}
-	catch (...) {
+	} catch (...) {
 		cerr << "Caught and exception of unknown type ..";
-	}
-
-}
-
-
-int main(int argc, char** argv) {
-	if (argc == 3 && strcmp(argv[1], "server") == 0) {
-		server(atoi(argv[2])); // start in server mode
-	}
-	else if (argc >= 4 && strcmp(argv[1], "client") == 0) {
-		if(argc == 5)
-			client(argv[2], atoi(argv[3]), argv[4]); // start in client mode
-		else {
-			char aux[] = "Anonymous";
-			char* auxPtr = aux;
-			client(argv[2], atoi(argv[3]), auxPtr); // start in client mode
-		}
-	}
-	else {
-		cout << "Usage: " << endl;
-		cout << "  " << argv[0] << " client host port " << endl;
-		cout << "  " << argv[0] << " server port " << endl;
-		cout << endl;
-		cout << "Example:" << endl;
-		cout << "  " << argv[0] << " server 2000" << endl;
-		cout << "  " << argv[0] << " client localhost 2000" << endl;
 	}
 
 	return 0;

@@ -40,6 +40,7 @@ public:
 //		p->~T();
 		alloc_.destroy(p);
 	}
+
 private:
 	std::size_t size_;
 	T* mem_;

@@ -65,8 +65,6 @@ void SDLGame::closeSDL() {
 
 void SDLGame::initResources() {
 
-	networking_ = new Networking();
-
 	random_ = new SRandBasedGenerator();
 	random_->init();
 
@@ -107,6 +105,5 @@ void SDLGame::closeResources() {
 	delete textures_;
 	delete random_;
 	delete audio_;
-	delete networking_;
 }
 

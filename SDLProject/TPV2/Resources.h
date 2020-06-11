@@ -11,33 +11,26 @@ public:
 
 	enum TextureId : std::size_t {
 		// images
-		Fighter,
-		WhiteRect,
+		PacManSprites,
 
 		// text
-		PressEnter,
+		PressEnterToStartANewGame,
+		PressEnterToContinue,
 		GameOver,
-		WaitingForPlayer,
-		Win,
-		Lose,
-		Draw
 	};
 
 	enum AudioId : std::size_t {
 		// music
-		Beat,
-		Cheer,
-		Boooo,
+		PacMan_Intro,
 
 		// sound effects
-		Wall_Hit,
-		Paddle_Hit,
-		RetroGameOverSound,
-		BonusBellSound
+		PacMan_Eat,
+		PacMan_Death,
+		PacMan_Won
 	};
 
 	enum FontId : std::size_t {
-		ARIAL10, ARIAL12, ARIAL16, ARIAL24,
+		ARIAL16, ARIAL24,
 	};
 
 	struct FontInfo {

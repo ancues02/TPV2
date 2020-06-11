@@ -17,17 +17,11 @@ class Manager {
 public:
 	Manager(SDLGame *game) :
 			game_(game) {
-
 		msgs_ = new std::list<uptr_msg>();
-
-		// needed only when using method flushMessages
-		// that uses the std::swap
-		// supportMsgs_ = new std::list<uptr_msg>();
 	}
 
 	virtual ~Manager() {
 		delete msgs_;
-		// delete supportMsgs_;
 	}
 
 	// entities
@@ -92,20 +86,9 @@ public:
 
 	// messaging
 
-	template<typename T, typename FT = OFFacotry<T>, typename ...Ts>
+	template<typename T, typename FT = DefFactory<T>, typename ...Ts>
 	void send(Ts &&...args) {
 		msg::Message *msg = FT::construct(std::forward<Ts>(args)...);
-		msg->senderClientId = game_->getNetworking()->getClientId();
-		uptr_msg uPtr(msg, [](msg::Message *p) {
-			FT::destroy(static_cast<T*>(p));
-		});
-		msgs_->push_back(std::move(uPtr));
-	}
-
-	template<typename T, typename FT = OFFacotry<T>, typename ...Ts>
-	void forwardMsg(uint32_t clientId, Ts &&...args) {
-		msg::Message *msg = FT::construct(std::forward<Ts>(args)...);
-		msg->senderClientId = clientId;
 		uptr_msg uPtr(msg, [](msg::Message *p) {
 			FT::destroy(static_cast<T*>(p));
 		});
@@ -113,7 +96,6 @@ public:
 	}
 
 	void flushMessages() {
-
 		while (!msgs_->empty()) {
 			uptr_msg msg = std::move(msgs_->front());
 			for (auto &s : systems_) {
@@ -122,25 +104,10 @@ public:
 			}
 			msgs_->pop_front();
 		}
-
-	}
-
-	inline uint32_t getClientId() {
-		return game_->getNetworking()->getClientId();
-	}
-
-	inline const char* getName() {
-		return name_; 
-	}
-
-	inline void setName(char* name) {
-		name_ = name;
 	}
 
 private:
 	SDLGame *game_;
-	char* name_;
-
 	std::vector<uptr_ent> ents_;
 	std::array<std::vector<Entity*>, ecs::maxGroups> entsGroups_;
 	std::array<Entity*, ecs::maxHandlers> handlers_;
@@ -148,6 +115,4 @@ private:
 
 	std::list<std::function<void()>> events_;
 	std::list<uptr_msg> *msgs_;
-	// std::list<uptr_msg> *supportMsgs_;
-
 };

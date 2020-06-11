@@ -6,9 +6,9 @@
 #include <functional>
 
 #include "Component.h"
-#include "DefFactory.h"
 #include "SDLGame.h"
 #include "ecs.h"
+#include "DefFactory.h"
 
 // We don't include the EntityManager class to avoid circular dependeincies
 class Manager;

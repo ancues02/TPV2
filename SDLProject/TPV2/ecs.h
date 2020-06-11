@@ -10,11 +10,9 @@ using SysIdType = std::size_t;
 
 enum CmpId : CmpIdType {
 	Transform = 0,
-	Image,
+	ImageComponent,
+	AnimatedImageComponent,
 	GameState,
-	CtrlKeys,
-	FighterInfo,
-	PlayerName,
 	//
 	// don't touch the rest of this enum, it is to identify the max
 	// number of components
@@ -22,8 +20,9 @@ enum CmpId : CmpIdType {
 };
 
 enum GrpId : GrpIdType {
-	_grp_Fighters,
-	_grp_Bullets,
+	_grp_Star,
+	_grp_Ghost,
+	_grp_Food,
 	//
 	// don't touch the rest of this enum, it is to identify the max
 	// number of groups
@@ -31,8 +30,8 @@ enum GrpId : GrpIdType {
 };
 
 enum HdlrId : HdlrIdType {
-	_hdlr_Fighter0,
-	_hdlr_Fighter1,
+	_hdlr_PacManEntity,
+	_hdlr_GameStateEntity,
 	//
 	// don't touch the rest of this enum, it is to identify the max
 	// number of handlers
@@ -41,16 +40,17 @@ enum HdlrId : HdlrIdType {
 
 enum SysId : SysIdType {
 	_sys_GameCtrl,
-	_sys_Fighters,
-	_sys_Bullets,
-	_sys_Collision,
+	_sys_PacMan,
+	_sys_Ghosts,
+	_sys_Food,
 	_sys_Render,
-	_sys_NetWorking,
+	_sys_Collisions,
 	//
 	// don't touch the rest of this enum, it is to identify the max
 	// number of systems
 	_LastSysId_
 };
+
 
 constexpr std::size_t maxComponents = _LastCmptId_;
 constexpr std::size_t maxGroups = _LastGrpId_;

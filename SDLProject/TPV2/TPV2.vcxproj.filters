@@ -123,37 +123,34 @@
     <ClInclude Include="AudioManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BulletsSystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StarWars.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="NetworkingSystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Networking.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="messages.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Image.h">
+    <ClInclude Include="AnimatedImageComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FightersSystem.h">
+    <ClInclude Include="FoodPool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FighterInfo.h">
+    <ClInclude Include="FoodSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CtrlKeys.h">
+    <ClInclude Include="GameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BulletsPool.h">
+    <ClInclude Include="GhostsPool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerName.h">
+    <ClInclude Include="GhostsSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PacMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PacManSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -248,25 +245,22 @@
     <ClCompile Include="AudioManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BulletsSystem.cpp">
+    <ClCompile Include="FoodPool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StarWars.cpp">
+    <ClCompile Include="FoodSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="NetworkingSystem.cpp">
+    <ClCompile Include="GhostsPool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Networking.cpp">
+    <ClCompile Include="GhostsSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FightersSystem.cpp">
+    <ClCompile Include="PacMan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BulletsPool.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerName.cpp">
+    <ClCompile Include="PacManSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
